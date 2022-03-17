@@ -1,7 +1,7 @@
 # CC5205-3-proyecto
 Proyecto curso CC5205-3, FCFM, Universidad de Chile
 
-
+Índice con la documentación del proyecto [acá](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/doc)📚.
 
 
 
