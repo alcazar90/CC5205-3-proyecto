@@ -1,6 +1,6 @@
 # ¿Cómo cargar datos de Kaggle directamente a Google Colab?
 
-<a href="https://colab.research.google.com/drive/1zvyMKfu_SdXnPcF7fXhyeRauK_X4_4qI?usp=sharing">
+<a href="https://colab.research.google.com/drive/1zvyMKfu_SdXnPcF7fXhyeRauK_X4_4qI?usp=sharing" target="_blank">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
