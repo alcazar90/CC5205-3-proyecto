@@ -13,14 +13,14 @@
 
 **Instrucciones a realizar una vez que se haya descargado el archivo con las credenciales:**
 
-1. Crear el directorio en el home del disco virtual con el nombre: `.kaggle`, utilizar el siguiente comando: `!mkdir ~/.kaggle` _(*)_
-1. Usar la libreria `google.colab` para cargar archivos de nuestro computador al disco remoto, subiremos el archivo `kaggle.json`:
+1. Crear en el directorio home del disco virtual una carpeta con el nombre: `.kaggle`, se puede utilizar el siguiente comando: `!mkdir ~/.kaggle` _(*)_
+2. Usar la libreria `google.colab` para cargar archivos de nuestro computador al disco remoto en colab, subiremos el archivo `kaggle.json` que contiene nuestras credenciales:
 ```python
 from google.colab import files
 files.upload()
 ```
-1. Mover el archivo `kaggle.json` recién subido a la carpeta creada: `!mv kaggle.json ~/.kaggle/`
-1. Debemos cambiar los permisos del archivo `kaggle.json` para que la API pueda acceder a las credenciales: `!chmod 600 ~/.kaggle/kaggle.json`
-1. Ahora podemos usar los comandos para acceder a kaggle directamente desde Colab, ver el notebook para continuar con el ejemplo 
+3. Mover el archivo `kaggle.json` recién subido a la carpeta creada al principio: `!mv kaggle.json ~/.kaggle/`
+4. Debemos cambiar los permisos del archivo `kaggle.json` para que la API pueda acceder a las credenciales: `!chmod 600 ~/.kaggle/kaggle.json`
+5. Ahora podemos usar los comandos para acceder a kaggle directamente desde Colab, ver el notebook para continuar con el ejemplo 
 
 _(*): Se puede ejecutar comandos de terminal en google colab usando el caracter `!` al inicio_
