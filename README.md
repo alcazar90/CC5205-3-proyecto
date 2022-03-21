@@ -23,13 +23,13 @@ atención de los consumidores es extremo, y su tiempo escazo. Los servicios que 
 logren orquestar sus catalogos de servicios y productos tendrán desde una mala
 impresión hasta la pérdida de sus usuarios; todo esto con impacto
 directo en la última línea del estado de resultados. Adicionalmente, hay mayor
-competencia en varios de los servicios que antes gozaban la ventaja de haber sido
-el primero en mover, esto es evidente en la industria  de _streaming_, 
-como es el caso para las películas y series, antes donde estaba solo Netflix ahora
-podemos ver más de una decena de [servicios similares (i.e. hbomax, paramount,
-disney+)](https://www.wired.com/gallery/best-streaming-services/).
-Entregar a los usuarios una cartelera relevante ya no es un _nice to have_, sino
-un requisito para seguir siendo relevante en la industria.
+competencia en servicios donde este tipo de tecnologias es particularmente
+relevante, y que antes gozaban la ventaja de haber sido los primero en mover,
+esto es evidente en la industria  de _streaming_, como es el caso para las películas
+y series, antes donde estaba solo Netflix ahora podemos ver más de una decena 
+de [servicios similares (i.e. hbomax, paramount, disney+)](https://www.wired.com/gallery/best-streaming-services/).
+Recomendar a los usuarios contenido significativo para ellos ya no es un _nice to have_,
+sino un requisito para seguir siendo relevantes en la industria.
 
 Dentro de este contexto se encuentra la competencia [_"The Spotify Million Playlist
 Dataset Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge),
