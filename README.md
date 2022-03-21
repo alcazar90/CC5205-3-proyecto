@@ -28,8 +28,8 @@ el primero en mover, esto es evidente en la industria  de _streaming_,
 como es el caso para las películas y series, antes donde estaba solo Netflix ahora
 podemos ver más de una decena de [servicios similares (i.e. hbomax, paramount,
 disney+)](https://www.wired.com/gallery/best-streaming-services/).
-No entregar una cartelera relevante ya no es un extra, sino un requisito para 
-ser un competidor relevante.
+Entregar a los usuarios una cartelera relevante ya no es un _nice to have_, sino
+un requisito para seguir siendo relevante en la industria.
 
 Dentro de este contexto se encuentra la competencia [_"The Spotify Million Playlist
 Dataset Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge),
