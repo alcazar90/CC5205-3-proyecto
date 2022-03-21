@@ -7,43 +7,45 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 
 ## Motivación
 
-Los sistemas de recomendación ya es una tecnología ampliamente usada en los 
+Los sistemas de recomendación ya son una tecnología ampliamente usada en los 
 servicios digitales, desde el _e-commerce_ hasta las plataformas de _streaming_.
 El entusiasmo e interes de empresas en perfeccionar esta tecnología se puede
 palpar en diversas competencias como la de [Netflix](https://en.wikipedia.org/wiki/Netflix_Prize) y 
 [Spotify](hhttps://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge).
-La idea es acercar la oferta lo máximo posible a los intereses del usuario/consumidor.
-Por un lado, los usuarios ahorran tiempo y frustración evitando el bombardeo
-de opciones irrelevantes, y en el mejor de los casos, pueden incluso encontrar
-su próxima pareja, canción favorita, o la siguiente serie o película que comentaran
-en su próxima reunión de amigos. 
+La idea es acercar la oferta lo máximo posible a los intereses de los usuarios
+y/o consumidores. Por un lado, los usuarios ahorran tiempo y frustración evitando
+el bombardeo de opciones irrelevantes, y en el mejor de los casos, pueden llegar
+a encontrar su próxima pareja, su nueva canción favorita, o la siguiente serie o
+película que comentaran en su próxima reunión de amigos. 
 Desde el lado comercial el desafio es grande. Los consumidores se encuentran
-expuestos cada vez más a una cantidad abismante de información, 
-el ruído en la atención de los consumidores es extremo, y su tiempo vital. Los
-servicios que no logren orquestar sus catalogos de servicios y productos tendrán
-desde una mala impresión hasta la pérdida de sus usuarios; todo esto con impacto
-directo en la última línea del estado de resultados. Adicionalmente, hay una
-fragmentación en los servicios de _streaming_, como es el caso para las películas
-y series, antes donde estaba solo Netflix, ahora podemos ver más de una decena de
-[servicios similares](https://www.wired.com/gallery/best-streaming-services/).
-No entregar una cartelera relevante, ya no es un extra, sino un "_must_" para 
+cada vez más expuestos a una cantidad abismante de información, el ruído en la
+atención de los consumidores es extremo, y su tiempo escazo. Los servicios que no
+logren orquestar sus catalogos de servicios y productos tendrán desde una mala
+impresión hasta la pérdida de sus usuarios; todo esto con impacto
+directo en la última línea del estado de resultados. Adicionalmente, hay mayor
+competencia en varios de los servicios que antes gozaban la ventaja de haber sido
+el primero en mover, esto es evidente en la industria  de _streaming_, 
+como es el caso para las películas y series, antes donde estaba solo Netflix ahora
+podemos ver más de una decena de [servicios similares (i.e. hbomax, paramount,
+disney+)](https://www.wired.com/gallery/best-streaming-services/).
+No entregar una cartelera relevante ya no es un extra, sino un requisito para 
 ser un competidor relevante.
 
-Dentro de este contexto se encuentra la competencia "The Spotify Million Playlist
-Dataset Challenge"(https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge),
+Dentro de este contexto se encuentra la competencia [_"The Spotify Million Playlist
+Dataset Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge),
 cuyo objetivo fue explorar (adivinen) 1 millón de _playlists_ con el próposito
 de investigar relaciones entre playlists y canciones. De esta manera, descubrir
 nuevas formas de entender y enriquecer el servicio conocido como _automatic playlist continuation_,
 el como bien dice su nombre, permite continuar reproduciendo música una vez que
-la lista haya agotado todas sus canciones, recomendando canciones similares,
-basadas en la lista, pero que estén fuera-de-la-lista.
+la lista de canciones haya finalizado, recomendando canciones similares,
+basadas en la lista, pero que estén fuera-de-ella.
 
 Los datos que se pueden ver en la sección _Datasets_, presenten una oportunidad 
 para "descubrir" nuevos artistas, y más allá del sistema de recomendación en sí,
-explorar como categorizar playlists usando otros atributos aparte del genero musical.
+explorar como categorizar _playlists_ usando otros atributos aparte del genero musical.
 Finalmente, tendremos la oportunidad de construir un prótotipo que pueda 
-recomendar canciones dado un playlist, aprendiendo un caso relevante de uso en
-la industria.
+recomendar canciones dado un _playlist_, aprendiendo a menor escala, un caso de
+uso relevante en la industria.
 
 El principal beneficio del servicio _automatic playlist continuation_ es evidente,
 una experiencia más armonica y completa al escuchar música. Además, los usuarios
