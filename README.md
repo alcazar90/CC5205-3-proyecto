@@ -17,7 +17,7 @@ desde el _e-commerce_ hasta las plataformas de _streaming_. Que mejor que al com
 favoritas o al ver una buena pelicula, exista un un algoritmo mágico por atrás que te vaya 
 recomendando cosas parecidas a las que acabas de comprar o ver. 
 
-Como explicamos anteriormentem, el entusiasmo e interés de empresas en perfeccionar esta tecnología 
+Como explicamos anteriormente, el entusiasmo e interés de empresas en perfeccionar esta tecnología 
 se puede palpar en diversas competencias y servicios que utilizamos diariamente, como la de 
 [Netflix](https://en.wikipedia.org/wiki/Netflix_Prize) y 
 [Spotify](hhttps://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge).
