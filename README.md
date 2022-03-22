@@ -35,7 +35,7 @@ tendrán desde una malaimpresión hasta la pérdida de sus usuarios; todo esto c
 la última línea del estado de resultados. Adicionalmente, hay mayor competencia en servicios donde 
 este tipo de tecnologias es particularmente relevante, y que antes gozaban la ventaja de haber sido
 los primero en mover, esto es evidente en la industria  de _streaming_, como es el caso para las 
-películas y series, antes donde estaba solo Netflix ahora podemos ver más de una decenade
+películas y series, antes donde estaba solo Netflix ahora podemos ver más de una decena de
 [servicios similares (i.e. hbomax, paramount, disney+)](https://www.wired.com/gallery/best-streaming-services/).
 Recomendar a los usuarios contenido significativo para ellos ya no es un _nice to have_, sino un 
 requisito para seguir siendo relevantes en la industria.
