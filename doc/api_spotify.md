@@ -40,7 +40,7 @@ sp.artist('spotify:artist:3s398TKZNahAURRacx7oIT')
 sp.artists(['spotify:artist:0X380XXQSNBYuleKzav5UO', 'spotify:artist:3s398TKZNahAURRacx7oIT'])
 ```
 
-**Adicional:**A
+**Adicional:**
 
 - ¿Cómo obtener los URIs? Se pueden obtener tanto para artistas, listas y
 canciones directamente de Spotify, ver [acá](https://community.spotify.com/t5/FAQs/What-s-a-Spotify-URI/ta-p/919201)
