@@ -14,8 +14,8 @@ continuación los sistemas de recomendación.
 
 Los sistemas de recomendación son una tecnología ampliamente usada en los servicios digitales, 
 desde el _e-commerce_ hasta las plataformas de _streaming_. Que mejor que al comprar tus zapatillas
-favoritas o al ver una buena pelicula, exista un un algoritmo mágico por atrás que te vaya 
-recomendando cosas parecidas a las que acabas de comprar o ver. 
+favoritas o al ver una buena pelicula, exista un algoritmo mágico que te vaya recomendando productos 
+parecidos a las que acabas de comprar o ver. 
 
 Como explicamos anteriormente, el entusiasmo e interés de empresas en perfeccionar esta tecnología 
 se puede palpar en diversas competencias y servicios que utilizamos diariamente, como la de 
@@ -35,7 +35,7 @@ tendrán desde una malaimpresión hasta la pérdida de sus usuarios; todo esto c
 la última línea del estado de resultados. Adicionalmente, hay mayor competencia en servicios donde 
 este tipo de tecnologias es particularmente relevante, y que antes gozaban la ventaja de haber sido
 los primero en mover, esto es evidente en la industria  de _streaming_, como es el caso para las 
-películas y series, antes donde estaba solo Netflix ahora podemos ver más de una decena de
+películas y series, al principio solo teníamos Netflix, en cambio ahora podemos ver más de una decena de
 [servicios similares (i.e. hbomax, paramount, disney+)](https://www.wired.com/gallery/best-streaming-services/).
 Recomendar a los usuarios contenido significativo para ellos ya no es un _nice to have_, sino un 
 requisito para seguir siendo relevantes en la industria.
@@ -58,8 +58,8 @@ mejorar la experiencia del consumidor a través de una experiencia más armonica
 Además, los usuarios podrán descubrir nuevas canciones, con el potencial de ir "reclutandolas" a sus listas, 
 y agregando a su radar nuevos artistas que puedan ser de su interes.
 
-Especificamente, la tarea del concurso es desarrollar el sistema descrito en los parrafos anteriores, 
-y se detalla el _input_ esperado y el _output_:
+Especificamente, la tarea del curso es desarrollar el sistema descrito en los parrafos anteriores, y se detalla 
+el _input_ esperado y el _output_:
 
 ```
 Input
