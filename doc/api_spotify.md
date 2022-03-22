@@ -6,7 +6,7 @@
 </a>
 
 
-**Requisitos previos a ejecutar el notebook:** _se debe tener crear una aplicación en
+**Requisitos previos a ejecutar el notebook:** _se debe crear una aplicación en
 la página de desarrolladores de Spotify para usar la API_, _ver_ [_acá_](https://developer.spotify.com/).
 
 
@@ -23,14 +23,14 @@ auth_manager = SpotifyClientCredentials(SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
 sp = spotipy.Spotify(auth_manager=auth_manager)
 ```
 
-2. Descargar features de canciones con las funciones:
+2. Descargar features de canciones con la función `sp.audio_features`:
 
 ```python
 # Multiple canciones pasando lista con URI de cada canción
 sp.audio_features(['spotify:track:4hdog9vyyqG9pcppG2Izek', 'spotify:track:5mc6EyF1OIEOhAkD0Gg9Lc'])
 ```
 
-3. Descargar información de artistas:
+3. Descargar información de artistas con `sp.artist` o `sp.artists`:
 
 ```python
 # Para un artista
