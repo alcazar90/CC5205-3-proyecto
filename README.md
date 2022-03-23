@@ -66,7 +66,8 @@ A list of 500 recommended candidate tracks, ordered by relevance in decreasing o
 
 Los datos utilizados en este proyecto...
 
-[Muestra al azar de 100.000 listas](https://drive.google.com/file/d/1pWUP8YJ4BryPhzprn24_VP-EZOv_4jLN/view?usp=sharing)
+[Muestra al azar de 100.000 listas](https://drive.google.com/file/d/1pWUP8YJ4BryPhzprn24_VP-EZOv_4jLN/view?usp=sharing) y
+[Tracks Feature](https://drive.google.com/file/d/1RDbXdqha6usjy_i2exrVFfQE1cXgGsSv/view?usp=sharing)
 
 Datos descargados a través de la [API de Spotify](https://developer.spotify.com)
 donde nos enfocamos en dos tipos de información, que resumiremos en las
