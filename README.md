@@ -30,9 +30,9 @@ requisito para seguir siendo relevantes en la industria.
 Dentro de este contexto se encuentra la competencia [_"The Spotify Million PlaylistDataset 
 Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge), cuyo 
 objetivo fue explorar (adivinen) 1 millón de _playlists_ con el próposito de investigar relaciones 
-entre playlists y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el 
+entre _playlists_ y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el 
 servicio conocido como _automatic playlist continuation_, el como bien dice su nombre, permite 
-continuar reproduciendo música una vez que la lista de canciones haya finalizado,recomendando canciones 
+continuar reproduciendo música una vez que la lista de canciones haya finalizado, recomendando canciones 
 similares, basadas en la lista, pero que estén fuera-de-ella.
 
 Los datos que se pueden ver en la sección _Datasets_, presenten una oportunidad para "descubrir" nuevos
