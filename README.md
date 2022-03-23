@@ -8,41 +8,28 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 Hoy en día, el boom tecnológico ha hecho que el mercado global sea cada vez más competitivo al 
 momento de captar clientes. Dentro de esta competitividad, han surgido nuevas estrategías y 
 algoritmos para poder lograr que la experiencia del consumidor sea la más grata y sencilla. 
-¿Cómo logra un nuevo servicio poscicionarse en el mercado? ¿Cómo logra mantener a sus usuarios 
-se queden con él?. Hoy existen varias metodologías para esto, particularmente hablaremos a 
-continuación los sistemas de recomendación.
+¿Cómo logra un nuevo servicio posicionarse en el mercado? ¿Cómo logra mantener a sus usuarios satisfechos?. Hoy existen varias metodologías para esto, particularmente hablaremos de los sistemas de recomendación.
 
-Los sistemas de recomendación son una tecnología ampliamente usada en los servicios digitales, 
-desde el _e-commerce_ hasta las plataformas de _streaming_. Que mejor que al comprar tus zapatillas
-favoritas o al ver una buena pelicula, exista un algoritmo mágico que te vaya recomendando productos 
-parecidos a las que acabas de comprar o ver. 
+Los sistemas de recomendación son una tecnología ampliamente usada en los servicios digitales, desde el _e-commerce_ hasta las plataformas de _streaming_. Que mejor que al comprar tus zapatillas favoritas o al ver una buena pelicula, exista un algoritmo mágico que te vaya recomendando productos o experiencias similares a las que acabas de comprar o ver. 
 
-Como explicamos anteriormente, el entusiasmo e interés de empresas en perfeccionar esta tecnología 
-se puede palpar en diversas competencias y servicios que utilizamos diariamente, como la de 
-[Netflix](https://en.wikipedia.org/wiki/Netflix_Prize) y 
-[Spotify](hhttps://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge).
+Como explicamos anteriormente, el entusiasmo e interés de empresas en perfeccionar esta tecnología se puede palpar en diversas competencias y servicios que utilizamos diariamente, como la de [Netflix](https://en.wikipedia.org/wiki/Netflix_Prize) y [Spotify](hhttps://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge).
 
-La idea principal es acercar la oferta lo máximo posible a los intereses de los usuariosy/o 
-consumidores. Por un lado, los usuarios ahorran tiempo y frustración evitando el bombardeo de 
-opciones irrelevantes, y en el mejor de los casos, pueden llegar a encontrar su próxima pareja, 
-su nueva canción favorita, o la siguiente serie o película que comentaran en su próxima reunión de 
-amigos.
+La idea principal es acercar la oferta lo máximo posible a los intereses de los usuarios y/o consumidores. Por un lado, los usuarios ahorran tiempo y frustración evitando el bombardeo de opciones irrelevantes, y en el mejor de los casos, pueden llegar a encontrar su próxima pareja, su nueva canción favorita, o la siguiente serie o película que comentaran en su próxima reunión de amigos.
 
 Desde el lado comercial el desafio es grande. Los consumidores se encuentran cada vez más expuestos 
 a una cantidad abismante de información, el ruído en la atención de los consumidores es extremo, 
-y su tiempo escazo. Los servicios que no logren orquestar sus catalogos de servicios y productos 
-tendrán desde una malaimpresión hasta la pérdida de sus usuarios; todo esto con impacto directo en 
-la última línea del estado de resultados. Adicionalmente, hay mayor competencia en servicios donde 
-este tipo de tecnologias es particularmente relevante, y que antes gozaban la ventaja de haber sido
-los primero en mover, esto es evidente en la industria  de _streaming_, como es el caso para las 
-películas y series, al principio solo teníamos Netflix, en cambio ahora podemos ver más de una decena de
-[servicios similares (i.e. hbomax, paramount, disney+)](https://www.wired.com/gallery/best-streaming-services/).
+y su tiempo escazo. Las empresas que no logren orquestar sus catalogos de servicios o productos 
+tendrán en el mejor de los casos un reclamo, y en el peor, la fuga de sus los usuarios y clientes; todo esto con impacto directo en 
+la última línea del estado de resultados. Además, hay cada vez mayor competencia en servicios donde 
+este tipo de tecnologias es particularmente relevante, y que antes compañia gozaban de la ventaja de haber sido los primeros en jugar, esto es evidente en la industria  de _streaming_, como es el caso para las 
+películas y series. Al principio solo teníamos Netflix, en cambio ahora podemos ver más de una decena de
+[servicios similares (i.e. Hbomax, Hulu, Paramount, Disney+)](https://www.wired.com/gallery/best-streaming-services/).
 Recomendar a los usuarios contenido significativo para ellos ya no es un _nice to have_, sino un 
 requisito para seguir siendo relevantes en la industria.
 
 Dentro de este contexto se encuentra la competencia [_"The Spotify Million PlaylistDataset 
-Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge),cuyo 
-objetivo fue explorar (adivinen) 1 millón de _playlists_ con el próposito de investigarrelaciones 
+Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge), cuyo 
+objetivo fue explorar (adivinen) 1 millón de _playlists_ con el próposito de investigar relaciones 
 entre playlists y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el 
 servicio conocido como _automatic playlist continuation_, el como bien dice su nombre, permite 
 continuar reproduciendo música una vez que la lista de canciones haya finalizado,recomendando canciones 
