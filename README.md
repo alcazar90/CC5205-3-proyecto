@@ -74,7 +74,24 @@ donde nos enfocamos en dos tipos de información, que resumiremos en las
 siguientes tres tablas:
 
 ### Tabla artistas
-
+| Feature  | Tipo de variable | Descripción  |
+|----------|------------------|---------------|
+| external_urls | object | URL externas conocidas para este artista. |
+| external_ursl.spotify | string | Variable que contiene la URL que redirecciona al perfil del artista. |
+| followers | object | Contiene información acerca del artista. |
+| followers.href | string | Esto siempre se establecerá en nulo, ya que la API web no lo admite en este momento. |
+| followers.total | int | Número total de seguidores. |
+| genres | list of strings | Lista de los géneros a los que está asociado el artista. Si aún no se ha clasificado, la lista estará vacía. |
+| href | string | Link que proporciona los detalles del artista (que son estos mismos datos).
+| id | string | El Spotify ID del artista. |
+| images | list of objects | El objeto contiene imágenes del artista en varios tamaños. |
+| images.url | string | La URL de la imagen. |
+| images.height | int | La altura de la imagen en píxeles. |
+| images.width | int | El ancho de la imagen en píxeles. |
+| name | string | El nombre del artista. |
+| popularity | int | Es la popularidad del artista representada como número. El valor estará entre 0 y 100, siendo 100 el más popular. La popularidad del artista se calcula a partir de la popularidad de todas las pistas del artista. |
+| type | string | El tipo de objeto (por defecto será 'artist'). |
+| uri | string | El [URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) de Spotify. |
 
 ### Tabla canciones
 
