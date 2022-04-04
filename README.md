@@ -35,7 +35,7 @@ películas y series. Al principio, solo teníamos Netflix, en cambio ahora podem
 Recomendar a los usuarios contenido significativo para ellos ya no es un _nice to have_, sino un 
 requisito para seguir siendo relevantes en la industria.
 
-Dentro de este contexto, se encuentra la competencia [_"The Spotify Million PlaylistDataset 
+Dentro de este contexto, se encuentra la competencia [_"The Spotify Million Playlist Dataset 
 Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge), cuyo 
 objetivo fue explorar (adivinen) 1 millón de _playlists_ con el próposito de investigar relaciones 
 entre _playlists_ y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el 
@@ -79,14 +79,27 @@ A list of 500 recommended candidate tracks, ordered by relevance in decreasing o
 
 ## Dataset
 
-Los datos utilizados en este proyecto...
+El _dataset_ utilizado en este proyecto es de carácter público y proviene de dos fuentes:
 
-[Muestra al azar de 100.000 listas](https://drive.google.com/file/d/1pWUP8YJ4BryPhzprn24_VP-EZOv_4jLN/view?usp=sharing) y
-[Tracks Feature](https://drive.google.com/file/d/1RDbXdqha6usjy_i2exrVFfQE1cXgGsSv/view?usp=sharing)
+1. El _dataset_ del millón de _playlist_ de Spotify cuya curatoría de datos
+se encuentra disponible en las plataformas competitivas de [Aircrowd](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge) comy [Kaggle](https://www.kaggle.com/datasets/adityak80/spotify-millions-playlist). Esta información fue liberada por Spotify para fines del concurso y no es posible recopilarla directamente a través de su API.
+1. Informción sobre artistas y canciones que descargamos desde la [API de Spotify](https://developer.spotify.com) para desarrolladores con el propósito de complementar y enriquecer los datos del punto anterior.
 
-Datos descargados a través de la [API de Spotify](https://developer.spotify.com)
-donde nos enfocamos en dos tipos de información, que resumiremos en las
-siguientes tres tablas:
+
+Adicionalmente, el directorio [`/data`](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/data) de este repositorio, se encuentran
+versiones de las tablas de información para 20.000 _playlists_, con la información necesaria para complementar los artistas y canciones de estas. El 
+objetivo de esta muestra es realizar pruebas y experimentaciones de manera
+más rápida previo a escalar los análisis deseados.
+
+* [Muestra al azar de 100.000 listas](https://drive.google.com/file/d/1pWUP8YJ4BryPhzprn24_VP-EZOv_4jLN/view?usp=sharing)
+* [Tracks Feature](https://drive.google.com/file/d/1RDbXdqha6usjy_i2exrVFfQE1cXgGsSv/view?usp=sharing)
+
+En las siguientes subsecciones se encuentra el _codebook_ para las 3 tablas de información que conforman el dataset.
+
+
+### Tabla playlists
+
+Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist)
 
 ### Tabla artistas
 | Feature  | Tipo de variable | Descripción  |
@@ -129,10 +142,6 @@ documentados [acá](https://developer.spotify.com/documentation/web-api/referenc
 | valence | float  | Una medida que va del 0.0 al 1.0 y describe la "positiividad" musical de una canción. Canciones con alto `valence` suenan más positivas (e.g. feliz, alegre, euforico), mientras que canciones con poco `valence` suenan más negativas (e.g. triste, depresivo, furioso).  |
 |   |   |   |
 
-
-### Tabla playlists
-
-Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist)
 
 
 ## Integrantes
