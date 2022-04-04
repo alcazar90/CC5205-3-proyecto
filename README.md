@@ -5,6 +5,15 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 Índice con la documentación del proyecto [acá](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/doc)📚.
 
 
+**Tabla de contenidos**
+
+- [Motivación](#motivación)
+- [Análisis Exploratorio](#analisis-exploratorio)
+	- [Preguntas & Problemas](#preguntas-&-problemas)
+- [Dataset](#dataset)
+
+## Motivación
+
 Hoy en día, el boom tecnológico ha hecho que el mercado global sea cada vez más competitivo al 
 momento de captar clientes. Dentro de esta competitividad, han surgido nuevas estrategías y 
 algoritmos para poder lograr que la experiencia del consumidor sea la más grata y sencilla. 
@@ -61,8 +70,15 @@ A list of 500 recommended candidate tracks, ordered by relevance in decreasing o
 
 ```
 
+## Análisis Exploratorio
 
-## Datasets
+
+
+### Preguntas & Problemas
+
+
+
+## Dataset
 
 Los datos utilizados en este proyecto...
 
