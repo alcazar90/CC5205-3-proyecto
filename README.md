@@ -81,15 +81,15 @@ A list of 500 recommended candidate tracks, ordered by relevance in decreasing o
 
 El _dataset_ utilizado en este proyecto es de carácter público y proviene de dos fuentes:
 
-1. El _dataset_ del millón de _playlist_ de Spotify cuya curatoría de datos
-se encuentra disponible en las plataformas competitivas de [Aircrowd](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge) comy [Kaggle](https://www.kaggle.com/datasets/adityak80/spotify-millions-playlist). Esta información fue liberada por Spotify para fines del concurso y no es posible recopilarla directamente a través de su API.
-1. Informción sobre artistas y canciones que descargamos desde la [API de Spotify](https://developer.spotify.com) para desarrolladores con el propósito de complementar y enriquecer los datos del punto anterior.
+1. El _dataset_ del millón de _playlists_ de Spotify cuya curatoría de datos
+se encuentra disponible para descargar en las plataformas competitivas de [Aircrowd](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge) y [Kaggle](https://www.kaggle.com/datasets/adityak80/spotify-millions-playlist). Esta información fue liberada por Spotify para fines del concurso y no es posible recopilarla directamente a través de su API.
+1. Información sobre artistas y canciones que descargamos desde la [API de Spotify](https://developer.spotify.com) para desarrolladores con el propósito de complementar y enriquecer los datos del punto anterior.
 
 
-Adicionalmente, el directorio [`/data`](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/data) de este repositorio, se encuentran
+Adicionalmente, en el directorio [`/data`](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/data) de este repositorio se encuentran
 versiones de las tablas de información para 20.000 _playlists_, con la información necesaria para complementar los artistas y canciones de estas. El 
 objetivo de esta muestra es realizar pruebas y experimentaciones de manera
-más rápida previo a escalar los análisis deseados.
+rápida previo a escalar los análisis al _dataset_ completo.
 
 * [Muestra al azar de 100.000 listas](https://drive.google.com/file/d/1pWUP8YJ4BryPhzprn24_VP-EZOv_4jLN/view?usp=sharing)
 * [Tracks Feature](https://drive.google.com/file/d/1RDbXdqha6usjy_i2exrVFfQE1cXgGsSv/view?usp=sharing)
