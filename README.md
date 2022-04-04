@@ -8,8 +8,8 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 **Tabla de contenidos**
 
 - [Motivación](#motivación)
-- [Análisis Exploratorio](#analisis-exploratorio)
-	- [Preguntas & Problemas](#preguntas-&-problemas)
+- [Análisis Exploratorio](#análisis-exploratorio)
+	- [Preguntas & Problemas](#preguntas-y-problemas)
 - [Dataset](#dataset)
 
 ## Motivación
@@ -74,7 +74,7 @@ A list of 500 recommended candidate tracks, ordered by relevance in decreasing o
 
 
 
-### Preguntas & Problemas
+### Preguntas y Problemas
 
 
 
