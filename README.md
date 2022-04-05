@@ -149,7 +149,7 @@ documentados [acá](https://developer.spotify.com/documentation/web-api/referenc
 
 Para agregar imagenes en esta parte, solo se debe agregar:
 
-> ![](fig/nombre_foto.png)
+> #![](fig/nombre_foto.png)
 
 El siguiente es un template de como podríamos ir agregando los insights.
 
