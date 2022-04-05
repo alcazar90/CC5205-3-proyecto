@@ -93,13 +93,28 @@ En las siguientes subsecciones se encuentra el _codebook_ para las 3 tablas de i
 
 Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist)
 
+Tabla desagregada por canciones de la playlist
+
 | Feature  | Tipo de variable | Descripción  |
 |----------|------------------|---------------|
 | name | object | Nombre de la playlist |
 | colabborative | boolean | Si es una lista colaborativa o no |
 | pid | int | Identificador de la lista |
-
-# TODO: name	collaborative	pid	modified_at	num_tracks	num_albums	num_followers	tracks	num_edits	duration_ms	num_artists	description	pos	artist_name	track_uri	artist_uri	track_name	album_uri	album_name
+| modified_at | datetime | Fecha de modificación de la lista |
+| num_tracks | int | Cantidad de canciones en la lista |
+| num_albums | int | Cantidad de álbumes en la lista |
+| num_followers | int | Cantidad de álbumes en la lista |
+| num_edits | int | Cantidad de ediciones a la lista |
+| duration_ms | int | Duración de cada canción en milisegundos |
+| num_artists | int | Cantidad de artistas en la lista |
+| description | string | Descripción de la lista |
+| pos | int | Posición de la canción en la lista |
+| artist_name | string | Nombre del artista de la canción |
+| track_uri | string | URL para obtener información de la canción |
+| artist_uri | string | URL para obtener información del artista la canción |
+| track_name | string | Nombre del track |
+| album_uri | string | URL para obtener información del álbum de la canción |
+| album_uri | string | Nombre del álbum de la canción |
 
 ### Tabla artistas
 | Feature  | Tipo de variable | Descripción  |
