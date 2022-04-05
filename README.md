@@ -145,7 +145,21 @@ documentados [acá](https://developer.spotify.com/documentation/web-api/referenc
 
 ## Análisis Exploratorio
 
+**TODO:** Las figuras see encuentran almacenadas en subdirectorio [`fig/`](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/fig).
+
+Para agregar imagenes en esta parte, solo se debe agregar:
+
+> ![](fig/nombre_foto.png)
+
+El siguiente es un template de como podríamos ir agregando los insights.
+
+
+**Objetivo del análisis:** Forma de visualizar las canciones por playlist según atributo músical.
+
 ![](fig/heatmap_loudness.png)
+
+Preguntas y problemas: podríamos agregar directamente los posibles problemas y preguntas. La desventaja de esto sería que es atómico y no mezcla los distintos tipos de análisis.
+
 
 ### Preguntas y Problemas
 
