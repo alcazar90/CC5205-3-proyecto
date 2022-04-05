@@ -145,6 +145,8 @@ documentados [acá](https://developer.spotify.com/documentation/web-api/referenc
 
 ## Análisis Exploratorio
 
+![](fig/heatmap_loudness.png)
+
 ### Preguntas y Problemas
 
 
