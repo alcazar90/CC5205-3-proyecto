@@ -93,6 +93,14 @@ En las siguientes subsecciones se encuentra el _codebook_ para las 3 tablas de i
 
 Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist)
 
+| Feature  | Tipo de variable | Descripción  |
+|----------|------------------|---------------|
+| name | object | Nombre de la playlist |
+| colabborative | boolean | Si es una lista colaborativa o no |
+| pid | int | Identificador de la lista |
+
+# TODO: name	collaborative	pid	modified_at	num_tracks	num_albums	num_followers	tracks	num_edits	duration_ms	num_artists	description	pos	artist_name	track_uri	artist_uri	track_name	album_uri	album_name
+
 ### Tabla artistas
 | Feature  | Tipo de variable | Descripción  |
 |----------|------------------|---------------|
