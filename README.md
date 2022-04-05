@@ -7,9 +7,9 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 **Tabla de contenidos**
 
 - [Motivación](#motivación)
+- [Dataset](#dataset)
 - [Análisis Exploratorio](#análisis-exploratorio)
 	- [Preguntas & Problemas](#preguntas-y-problemas)
-- [Dataset](#dataset)
 
 ## Motivación
 
@@ -68,14 +68,6 @@ Output
 A list of 500 recommended candidate tracks, ordered by relevance in decreasing order.
 
 ```
-
-## Análisis Exploratorio
-
-
-
-### Preguntas y Problemas
-
-
 
 ## Dataset
 
@@ -142,6 +134,10 @@ documentados [acá](https://developer.spotify.com/documentation/web-api/referenc
 | valence | float  | Una medida que va del 0.0 al 1.0 y describe la "positiividad" musical de una canción. Canciones con alto `valence` suenan más positivas (e.g. feliz, alegre, euforico), mientras que canciones con poco `valence` suenan más negativas (e.g. triste, depresivo, furioso).  |
 |   |   |   |
 
+
+## Análisis Exploratorio
+
+### Preguntas y Problemas
 
 
 ## Integrantes
