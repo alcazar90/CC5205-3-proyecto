@@ -75,34 +75,6 @@ En el se [Anexo-1](#anexo-1-diccionarios-de-datos) encuentra el _codebook_ para 
 
 ## Análisis Exploratorio
 
-============== COMENTARIOS INTEGRANTES =============
-
-**TODO:** Las figuras see encuentran almacenadas en subdirectorio [`fig/`](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/fig).
-
-Para agregar imagenes en esta parte, solo se debe agregar:
-
-> #![](fig/nombre_foto.png)
-
-El siguiente es un template de como podríamos ir agregando los insights.
-
-**COMENTARIO GIANI**: En mi caso hice la grilla directamente con tabla de html en el markdown en lugar de pelear con subplots en el notebook, creo que con el ># quedaria rarito
-
-
-**Objetivo del análisis:** Forma de visualizar las canciones por playlist según atributo músical.
-
-![](fig/heatmap_loudness.png)
-
-Preguntas y problemas: podríamos agregar directamente los posibles problemas y preguntas. La desventaja de esto sería que es atómico y no mezcla los distintos tipos de análisis.
-
-**COMENTARIO GIANI**: En mi caso coloqué en esta sección los "insights" e interrogantes, pero planteadas como frases en condicional, y las "preguntas" (con formato de pregunta) las dejé al final, como dices tu integrando cosas.
-
-**OLI: Propongo que el EDA lo escribamos con la siguiente estructura. Yo (Diego) hice más de la parte de features así que me voy a enfocar en esa, pero puedo ayudar también en las otras secciones. Según tengo entendido, Gianina analizó Playlists y Cristóbal analizó Playlists y Features, y Felipe con Christopher analizaron Artists. Podríamos repartirnos así las secciones para no chocar tanto. Igual me ofrezco para ayudar donde se necesite.**
-
-**COMENTARIO GIANI**: Concuerdo con Diego!, **Cristóbal** lo que hiciste de playlists creo que también sería univariado no? iría dentro de la sección que ya agregué. Aunque viendo los heatmap me parece que más tienen que ver con la tabla de features.
-
-
-============= ACÁ COMIENZA EL ENTREGABLE =================
-
 El análisis exploratorio de los datos lo realizamos por separado para las distintas tablas del dataset para poder entender mejor como están distribuidas las distintas variables, ya que cada tabla posee distintas estructuras.
 
 ### Tabla Playlists
@@ -206,13 +178,9 @@ Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado c
 
 ### Preguntas y Problemas
 
-**APORTES GIANI**
-
 ¿Es posible categorizar una playlists en base a las características de sus canciones y artistas, con el fin de luego recomendar canciones similares?
 
 ¿Se debe recomendar una canción en base a su popularidad (ej, gran presencia en muchas listas), o en base a las características de la misma que sean similares a las del gusto del usuario?
-
-**FIN GIANI**
 
 ## Anexo 1: Diccionarios de datos
 
