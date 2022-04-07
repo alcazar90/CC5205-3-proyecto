@@ -182,7 +182,7 @@ Por otro lado, en el caso del número de seguidores, se debió aplicar escalamie
 
 Se exploró las correlaciones de atributos numéricos de las listas, con el fin de observar si la cantidad de seguidores de una playlist (lo cual podría ser consecuencia de una recomendación automatizada) se correlaciona con su cantidad de artistas, canciones, álbumes, o duración.
 
-> #![](fig/playlists_correlaciones.png)
+> #![](fig/playlists_correlation.png)
 
 En este caso, se ve que prácticamente no existe correlación entre estos atributos y la cantidad de seguidores. Por tanto, la cantidad de seguidores debe relacionarse con otras características, posiblemente intrínsecas a las canciones y/o artistas, que no se observan en este set de datos. El resto de los atributos sí presenta correlación alta, como era de esperarse.
 
