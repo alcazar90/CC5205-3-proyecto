@@ -114,7 +114,7 @@ El análisis se realizó sobre la muestra aleatoria de 500.000 playlists.
 <table style="border:none;">
   <tr>
     <td><img src="fig/nulos_playlist.png" /></td>
-    <td style="width: 350px;">
+    <td style="max-width: 350px;">
       El único atributo con gran cantidad de nulos (cercano al 100% de los registros) es el atributo description. Omitiendo éste, existen 21 registros con datos nulos. Por tanto, se decide excluir este atributo del análisis, y luego omitir los registros restantes que presenten algún dato nulo. 
       De esta forma, se cuenta con <strong>6.626.859 filas</strong> y <strong>17 columnas</strong>, de las cuales se mostrará los resultados de las más relevantes.
     </td>
