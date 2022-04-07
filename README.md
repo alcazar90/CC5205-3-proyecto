@@ -55,22 +55,6 @@ mejorar la experiencia del consumidor a través de una experiencia más armonica
 Además, los usuarios podrán descubrir nuevas canciones, con el potencial de ir "reclutándolas" a sus listas, 
 y agregando a su radar nuevos artistas que puedan ser de su interes.
 
-Específicamente, la tarea del curso es desarrollar el sistema descrito en los parrafos anteriores, y se detalla 
-el _input_ esperado y el _output_:
-
-```
-Input
-
-A user-created playlist, represented by:
-Playlist metadata (see the dataset README)
-K seed tracks: a list of K tracks in the playlist, where K can equal 0, 1, 5, 10, 25, or 100.
-
-Output
-
-A list of 500 recommended candidate tracks, ordered by relevance in decreasing order.
-
-```
-
 ## Dataset
 
 El _dataset_ utilizado en este proyecto es de carácter público y proviene de dos fuentes:
