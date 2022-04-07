@@ -205,13 +205,25 @@ Otras variables tienen distribuciones muy cargadas hacia ciertos valores, partic
 
 > #![](fig/features_c_uneven.png)
 
-Finalmente, las variables mode, time_signature y key toman una cantidad limitada de valores. Mode al tomar sólo 2 valores debería probablemente ser considerado como variable categórica. Podemos notar que la mayoría de las canciones está en tonalidad mayor. Key está uniformemente repartida por lo que podría ser útil en la clasificación, y al tomar múltiples valores no sería necesario considerarla variable categórica. Time signature es un caso especial. Notamos que hay outliers correspondientes posiblemente a datos erroneos (No existen compás 0/4 o 1/4). También sería necesario transformarla, ya que no hace sentido considerarla una cantidad.
+Finalmente, las variables mode, time_signature y key toman una cantidad limitada de valores. Mode al tomar sólo 2 valores debería probablemente ser considerado como variable categórica. Podemos notar que la mayoría de las canciones está en tonalidad mayor. Key está uniformemente repartida por lo que podría ser útil en la clasificación, y al tomar múltiples valores no sería necesario considerarla variable categórica. Time signature es un caso especial. Notamos que hay outliers correspondientes posiblemente a datos erroneos (No existen compás 0/4). También sería necesario transformarla, ya que no hace sentido considerarla una cantidad.
 
 > #![](fig/features_c_categoric.png)
 
 #### Análisis multivariado
 
+Para entender como estas variables se relacionan entre sí, realizamos análisis de correlación múltiple entre todas estas variables, incluyendo información proveniente de la tabla de playlist. Notamos que primordialmente no existen correlaciones importantes entre las variables de playlist y song features, salvo por duration que es un atributo de ambas tablas. 
 
+> #![](fig/matriz_correlacion.png)
+
+Las correlaciones entre las variables de la tabla "Song Features" pueden ser mostradas de forma más claras mediante vectores. Estos si bien se obtienen de un análisis de PCA que es usado principalmente para reducir dimensionalidad y permitir otros análisis posteriores como clasificación, también puede ser usado para ilustrar de forma más resumida las correlaciones entre las distintas variables. Vectores que apuntan en la misma dirección indica correlación positiva, direcciones opuestas indica correlación negativa y perpendicularidad indica no correlación. Adicionalmente, la magnitud del vector es proporcional a la magnitud de sus correlaciones, de forma que  vectores pequeños indican datos ruidosos mientras vectores grandes indican datos que aportan información útil.
+
+> #![](fig/pca_loadings.png)
+
+Observamos que energy y loudness están altamente correlacionados entre sí, por lo que una canción es energética probablemente cuando su volúmen es alto. Estas dos variables entonces entregan información similar. Acousticness por el contrario estaría fuertemente vinculada a canciones con volumenes bajos. Sorprendentemente, tempo y liveness también se comportan de forma similar. Valence y danceability y en menor medida speechness tambien correlacionan positivamente, indicando que las canciones bailables tienden a ser más alegres y vocales. Sin embargo, valores como key son mayoritariamente ruidosos. Esto hace sentido ya que teóricamente la nota en la que la escala está basada no hace ninguna diferencia en la percepción musical. Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado con cada característica.
+
+> #![](fig/pca_todos.png)
+
+Notamos que se confirma la característica ruidosa de key. Observamos también que la gran mayoría de las canciones se ubica en dirección a "Energy", por lo que este tipo de canciones correspondería a la moda. En cambio, en la dirección opuesta existe una "nube" de canciones con características más diversas y menor densidad, posiblemente más relacionado a música alternativa. Con time_signature se confirma no tiene sentido analizar variable de esta forma, ya que hacia energy/danceability priman los tiempos en 4/4 (verdes) mientras que en la dirección opuesta abundan los tiempos más irregulares basados en 3/4 o 5/4. Como 3>4>5 los análisis de correlación no detectan ninguna tendencia, por lo que sería conveniente transformar esta variable en "regularidad". En conjunto, se observa que la "nube" de canciones con características diversas presenta mayor abundancia de canciones instrumentales, acústicas, valencia negativa, son poco bailables y energéticas, y tienen duración más larga y tiempos irregulares.
 
 ### Preguntas y Problemas
 
