@@ -65,9 +65,7 @@ se encuentra disponible para descargar en las plataformas competitivas de [Aircr
 
 
 Adicionalmente, en el directorio [`/data`](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/data) de este repositorio se encuentran
-versiones de las tablas de información para 20.000 _playlists_, con la información necesaria para complementar los artistas y canciones de estas. El 
-objetivo de esta muestra es realizar pruebas y experimentaciones de manera
-rápida previo a escalar los análisis al _dataset_ completo.
+versiones de las tablas de información para 20.000 _playlists_ (muestra aleatoria), con la información necesaria para complementar los artistas y canciones de estas. El objetivo de esta muestra es realizar pruebas y experimentaciones de manera rápida previo a escalar los análisis al _dataset_ de trabajo (consistente en una muestra aleatoria de 500.000 muestras).
 
 * [Muestra al azar de 100.000 listas](https://drive.google.com/file/d/1pWUP8YJ4BryPhzprn24_VP-EZOv_4jLN/view?usp=sharing)
 * [Tracks Feature](https://drive.google.com/file/d/1RDbXdqha6usjy_i2exrVFfQE1cXgGsSv/view?usp=sharing)
@@ -108,6 +106,8 @@ Preguntas y problemas: podríamos agregar directamente los posibles problemas y 
 El análisis exploratorio de los datos lo realizamos por separado para las distintas tablas del dataset para poder entender mejor como están distribuidas las distintas variables, ya que cada tabla posee distintas estructuras.
 
 ### Tabla Playlists
+
+El análisis se realizó sobre la muestra aleatoria de 500.000 playlists.
 
 #### Exploración de nulos
 
