@@ -177,11 +177,11 @@ Preguntas y problemas: podríamos agregar directamente los posibles problemas y 
 
 El análisis exploratorio de los datos lo realizamos por separado para las distintas tablas del dataset para poder entender mejor como están distribuidas las distintas variables, ya que cada tabla posee distintas estructuras.
 
-# Tabla Playlists
+#### Tabla Playlists
 
-# Tabla Artistas
+#### Tabla Artistas
 
-# Tabla Features
+#### Tabla Features
 
 
 
