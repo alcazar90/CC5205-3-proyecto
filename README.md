@@ -138,7 +138,7 @@ En general, se destaca que todas las frecuencias son muy bajas, lo que indica qu
 
 <table style="border:none;">
   <tr>
-    <td style="width: 50%">
+    <td style="width: 300px;">
       Se exploró también las **palabras más frecuentes** para los nombres de las listas y los nombres de las canciones.
       En el primer caso, se destaca que al parecer sí existe una cantidad importante de listas en cuyo título hacen alusión a un género o categoría musical (omitiendo la gran presencia de la palabra "music"). En cuanto a los nombres de canciones, destaca la presencia de la palabra "Love", la cual quizá podría no ser un buen discriminante por al parecer estar presente en diversidad de canciones. Destaca también la gran presencia de palabras como "remix", "feat", "version" y "remastered" aludiendo a que probablemente muchas de las canciones constituyen versiones alternativas y/o colaborativas con otros artistas.
     </td>
