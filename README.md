@@ -10,6 +10,8 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 - [Dataset](#dataset)
 - [Análisis Exploratorio](#análisis-exploratorio)
 	- [Preguntas & Problemas](#preguntas-y-problemas)
+- [Anexos](#anexos)
+	- [Anexo 1: Diccionarios de Datos](#anexo-1-diccionarios-de-datos)
 
 ## Motivación
 
@@ -86,74 +88,7 @@ rápida previo a escalar los análisis al _dataset_ completo.
 * [Muestra al azar de 100.000 listas](https://drive.google.com/file/d/1pWUP8YJ4BryPhzprn24_VP-EZOv_4jLN/view?usp=sharing)
 * [Tracks Feature](https://drive.google.com/file/d/1RDbXdqha6usjy_i2exrVFfQE1cXgGsSv/view?usp=sharing)
 
-En las siguientes subsecciones se encuentra el _codebook_ para las 3 tablas de información que conforman el dataset.
-
-
-### Tabla playlists
-
-Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist). Esta tabla continee en forma desagregada detalle de las canciones y las playlists a las que pertenecen. 
-
-| Feature  | Tipo de variable | Descripción  |
-|----------|------------------|---------------|
-| name | object | Nombre de la playlist |
-| colabborative | boolean | Si es una lista colaborativa o no |
-| pid | int | Identificador de la lista |
-| modified_at | datetime | Fecha de modificación de la lista |
-| num_tracks | int | Cantidad de canciones en la lista |
-| num_albums | int | Cantidad de álbumes en la lista |
-| num_followers | int | Cantidad de álbumes en la lista |
-| num_edits | int | Cantidad de ediciones a la lista |
-| duration_ms | int | Duración de cada canción en milisegundos |
-| num_artists | int | Cantidad de artistas en la lista |
-| description | string | Descripción de la lista |
-| pos | int | Posición de la canción en la lista |
-| artist_name | string | Nombre del artista de la canción |
-| track_uri | string | URL para obtener información de la canción |
-| artist_uri | string | URL para obtener información del artista la canción |
-| track_name | string | Nombre del track |
-| album_uri | string | URL para obtener información del álbum de la canción |
-| album_uri | string | Nombre del álbum de la canción |
-
-### Tabla artistas
-| Feature  | Tipo de variable | Descripción  |
-|----------|------------------|---------------|
-| external_urls | object | URL externas conocidas para este artista. |
-| external_ursl.spotify | string | Variable que contiene la URL que redirecciona al perfil del artista. |
-| followers | object | Contiene información acerca del artista. |
-| followers.href | string | Esto siempre se establecerá en nulo, ya que la API web no lo admite en este momento. |
-| followers.total | int | Número total de seguidores. |
-| genres | list of strings | Lista de los géneros a los que está asociado el artista. Si aún no se ha clasificado, la lista estará vacía. |
-| href | string | Link que proporciona los detalles del artista (que son estos mismos datos).
-| id | string | El Spotify ID del artista. |
-| images | list of objects | El objeto contiene imágenes del artista en varios tamaños. |
-| images.url | string | La URL de la imagen. |
-| images.height | int | La altura de la imagen en píxeles. |
-| images.width | int | El ancho de la imagen en píxeles. |
-| name | string | El nombre del artista. |
-| popularity | int | Es la popularidad del artista representada como número. El valor estará entre 0 y 100, siendo 100 el más popular. La popularidad del artista se calcula a partir de la popularidad de todas las pistas del artista. |
-| type | string | El tipo de objeto (por defecto será 'artist'). |
-| uri | string | El [URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) de Spotify. |
-
-### Tabla canciones
-
-Es posible extraer para cada canción los _audio features_ que se encuentran
-documentados [acá](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-several-audio-features).
-
-| Feature  | Tipo de variable | Descripcción  |
-|----------|------------------|---------------|
-| acousticness   | float  | Medida de confianza de 0.0 a 1.0 si la canción es acustica. El valor 1.0 representa una alta confianza de que la canción sea acustica. |
-| danceability  | float   | Medida que describe que tan bailable es una canción en base a una combinación de elementos musicales como el tempo, estabilidad de ritmo, entre otros. Un valor de 0.0 significa poco bailable y 1.0 muy bailable.  |
-| duration_ms  | integer  | Duración de la canción registrada en milisegundos.  |
-| energy  | float  | La energía es una medida de 0.0 a 1.0 y representa una medida de percepcción de intensidad y actividad. Generalmente, las canciones energeticas se siente rápidas, fuertes y ruidosas. Ejemplo, el _death metal_ tiene alta energía, mientras que un preludio de Bach tiene un medición baja en la escala.   |
-| instrumentalness  | float  | Predice si una canción no contiene vocales. "Ooh" and "Aah" son tratados como instrumentales en este contexto. El Rap o canciones con palabras habladas son claramente "vocales". Mientras más cercano es el valor de `instrumentalness` a 1.0, mayor es la probabilidad de que la canción no contenga vocales.|
-| liveness| float  | Detecta la presencia de audiencia/público en la grabación. Valores altos de `liveness` representan una mayor probabilidad de que la canción haya sido tocada en vivo. |
-| loudness  | float  | El volumen total de la canción registrado en decibeles (dB). El volumen es promediado a lo largo de toda la canción y es útil para comparar el volumen relativo entre canciones. Los valores en general se encuentran entre -60 y 0 db.|
-| mode  | integer  | Indica la modalidad (mayor o menor) de una canción. Mayor es representado por 1 y menor por 0.  |
-| speechiness  | float  | Detecta la presencia de vocales en una canción. Si la grabación tiene gran contenido de vocales (e.g. audiolibro, poesía, conversación), más cercano el atributo a 1.0. Valores sobre 0.66 describen canciones que probablemente esten hechas completas de palabras habladas. Valores entre 0.33 y 0.66 describen canciones que contienen música y letra, separadas o juntas, incluye casos como la música rap. Valores bajo 0.33 mayormente música y canciones sin vocales. |
-| tempo  | float   | `tempo` estimado total de una canción en _beats_ por mínutos (BPM). En términos musicales, el `tempo` es la velocidad, o fase de una pieza, y se deriva directamente del _beat_ promedio de duración. |
-| time_signature  | float  | Un estimado del compás. Es una convención que especifica cuantos _beats_ hay en cada línea (o medida). El compás tiene un rango desde el 3 al 7, indicando el compás de "3/4" al "7/4".|
-| valence | float  | Una medida que va del 0.0 al 1.0 y describe la "positiividad" musical de una canción. Canciones con alto `valence` suenan más positivas (e.g. feliz, alegre, euforico), mientras que canciones con poco `valence` suenan más negativas (e.g. triste, depresivo, furioso).  |
-| key  | integer  | Indica la nota fundamental de la escala musical en la que está la canción. A cada semitono se le asigna un valor distinto. Explícitamente, para canciones en Do (C), key=0, Do sostenido (C#), key=1, Re (D), key=2, y así sucesivamente. Por esto tiene 12 valores posibles  |
+En el se [Anexo-1](#anexo-1-diccionarios-de-datos) encuentra el _codebook_ para las 3 tablas de información que conforman el dataset.
 
 
 ## Análisis Exploratorio
@@ -319,6 +254,73 @@ Notamos que se confirma la característica ruidosa de key. Observamos también q
 
 **FIN GIANI**
 
+## Anexo 1: Diccionarios de datos
+
+### Tabla playlists
+
+Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist). Esta tabla continee en forma desagregada detalle de las canciones y las playlists a las que pertenecen. 
+
+| Feature  | Tipo de variable | Descripción  |
+|----------|------------------|---------------|
+| name | object | Nombre de la playlist |
+| colabborative | boolean | Si es una lista colaborativa o no |
+| pid | int | Identificador de la lista |
+| modified_at | datetime | Fecha de modificación de la lista |
+| num_tracks | int | Cantidad de canciones en la lista |
+| num_albums | int | Cantidad de álbumes en la lista |
+| num_followers | int | Cantidad de álbumes en la lista |
+| num_edits | int | Cantidad de ediciones a la lista |
+| duration_ms | int | Duración de cada canción en milisegundos |
+| num_artists | int | Cantidad de artistas en la lista |
+| description | string | Descripción de la lista |
+| pos | int | Posición de la canción en la lista |
+| artist_name | string | Nombre del artista de la canción |
+| track_uri | string | URL para obtener información de la canción |
+| artist_uri | string | URL para obtener información del artista la canción |
+| track_name | string | Nombre del track |
+| album_uri | string | URL para obtener información del álbum de la canción |
+| album_uri | string | Nombre del álbum de la canción |
+
+### Tabla artistas
+| Feature  | Tipo de variable | Descripción  |
+|----------|------------------|---------------|
+| external_urls | object | URL externas conocidas para este artista. |
+| external_ursl.spotify | string | Variable que contiene la URL que redirecciona al perfil del artista. |
+| followers | object | Contiene información acerca del artista. |
+| followers.href | string | Esto siempre se establecerá en nulo, ya que la API web no lo admite en este momento. |
+| followers.total | int | Número total de seguidores. |
+| genres | list of strings | Lista de los géneros a los que está asociado el artista. Si aún no se ha clasificado, la lista estará vacía. |
+| href | string | Link que proporciona los detalles del artista (que son estos mismos datos).
+| id | string | El Spotify ID del artista. |
+| images | list of objects | El objeto contiene imágenes del artista en varios tamaños. |
+| images.url | string | La URL de la imagen. |
+| images.height | int | La altura de la imagen en píxeles. |
+| images.width | int | El ancho de la imagen en píxeles. |
+| name | string | El nombre del artista. |
+| popularity | int | Es la popularidad del artista representada como número. El valor estará entre 0 y 100, siendo 100 el más popular. La popularidad del artista se calcula a partir de la popularidad de todas las pistas del artista. |
+| type | string | El tipo de objeto (por defecto será 'artist'). |
+| uri | string | El [URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) de Spotify. |
+
+### Tabla canciones
+
+Es posible extraer para cada canción los _audio features_ que se encuentran
+documentados [acá](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-several-audio-features).
+
+| Feature  | Tipo de variable | Descripcción  |
+|----------|------------------|---------------|
+| acousticness   | float  | Medida de confianza de 0.0 a 1.0 si la canción es acustica. El valor 1.0 representa una alta confianza de que la canción sea acustica. |
+| danceability  | float   | Medida que describe que tan bailable es una canción en base a una combinación de elementos musicales como el tempo, estabilidad de ritmo, entre otros. Un valor de 0.0 significa poco bailable y 1.0 muy bailable.  |
+| duration_ms  | integer  | Duración de la canción registrada en milisegundos.  |
+| energy  | float  | La energía es una medida de 0.0 a 1.0 y representa una medida de percepcción de intensidad y actividad. Generalmente, las canciones energeticas se siente rápidas, fuertes y ruidosas. Ejemplo, el _death metal_ tiene alta energía, mientras que un preludio de Bach tiene un medición baja en la escala.   |
+| instrumentalness  | float  | Predice si una canción no contiene vocales. "Ooh" and "Aah" son tratados como instrumentales en este contexto. El Rap o canciones con palabras habladas son claramente "vocales". Mientras más cercano es el valor de `instrumentalness` a 1.0, mayor es la probabilidad de que la canción no contenga vocales.|
+| liveness| float  | Detecta la presencia de audiencia/público en la grabación. Valores altos de `liveness` representan una mayor probabilidad de que la canción haya sido tocada en vivo. |
+| loudness  | float  | El volumen total de la canción registrado en decibeles (dB). El volumen es promediado a lo largo de toda la canción y es útil para comparar el volumen relativo entre canciones. Los valores en general se encuentran entre -60 y 0 db.|
+| mode  | integer  | Indica la modalidad (mayor o menor) de una canción. Mayor es representado por 1 y menor por 0.  |
+| speechiness  | float  | Detecta la presencia de vocales en una canción. Si la grabación tiene gran contenido de vocales (e.g. audiolibro, poesía, conversación), más cercano el atributo a 1.0. Valores sobre 0.66 describen canciones que probablemente esten hechas completas de palabras habladas. Valores entre 0.33 y 0.66 describen canciones que contienen música y letra, separadas o juntas, incluye casos como la música rap. Valores bajo 0.33 mayormente música y canciones sin vocales. |
+| tempo  | float   | `tempo` estimado total de una canción en _beats_ por mínutos (BPM). En términos musicales, el `tempo` es la velocidad, o fase de una pieza, y se deriva directamente del _beat_ promedio de duración. |
+| time_signature  | float  | Un estimado del compás. Es una convención que especifica cuantos _beats_ hay en cada línea (o medida). El compás tiene un rango desde el 3 al 7, indicando el compás de "3/4" al "7/4".|
+| valence | float  | Una medida que va del 0.0 al 1.0 y describe la "positiividad" musical de una canción. Canciones con alto `valence` suenan más positivas (e.g. feliz, alegre, euforico), mientras que canciones con poco `valence` suenan más negativas (e.g. triste, depresivo, furioso).  |
+| key  | integer  | Indica la nota fundamental de la escala musical en la que está la canción. A cada semitono se le asigna un valor distinto. Explícitamente, para canciones en Do (C), key=0, Do sostenido (C#), key=1, Re (D), key=2, y así sucesivamente. Por esto tiene 12 valores posibles  |
 
 ## Integrantes
 
