@@ -91,9 +91,7 @@ En las siguientes subsecciones se encuentra el _codebook_ para las 3 tablas de i
 
 ### Tabla playlists
 
-Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist)
-
-Tabla desagregada por canciones de la playlist
+Obtener una playlist del usuario: [Get Playlist](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist). Esta tabla continee en forma desagregada detalle de las canciones y las playlists a las que pertenecen. 
 
 | Feature  | Tipo de variable | Descripción  |
 |----------|------------------|---------------|
@@ -160,6 +158,8 @@ documentados [acá](https://developer.spotify.com/documentation/web-api/referenc
 
 ## Análisis Exploratorio
 
+============== COMENTARIOS INTEGRANTES =============
+
 **TODO:** Las figuras see encuentran almacenadas en subdirectorio [`fig/`](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/fig).
 
 Para agregar imagenes en esta parte, solo se debe agregar:
@@ -168,6 +168,8 @@ Para agregar imagenes en esta parte, solo se debe agregar:
 
 El siguiente es un template de como podríamos ir agregando los insights.
 
+**COMENTARIO GIANI**: En mi caso hice la grilla directamente con tabla de html en el markdown en lugar de pelear con subplots en el notebook, creo que con el ># quedaria rarito
+
 
 **Objetivo del análisis:** Forma de visualizar las canciones por playlist según atributo músical.
 
@@ -175,13 +177,95 @@ El siguiente es un template de como podríamos ir agregando los insights.
 
 Preguntas y problemas: podríamos agregar directamente los posibles problemas y preguntas. La desventaja de esto sería que es atómico y no mezcla los distintos tipos de análisis.
 
+**COMENTARIO GIANI**: En mi caso coloqué en esta sección los "insights" e interrogantes, pero planteadas como frases en condicional, y las "preguntas" (con formato de pregunta) las dejé al final, como dices tu integrando cosas.
+
 **OLI: Propongo que el EDA lo escribamos con la siguiente estructura. Yo (Diego) hice más de la parte de features así que me voy a enfocar en esa, pero puedo ayudar también en las otras secciones. Según tengo entendido, Gianina analizó Playlists y Cristóbal analizó Playlists y Features, y Felipe con Christopher analizaron Artists. Podríamos repartirnos así las secciones para no chocar tanto. Igual me ofrezco para ayudar donde se necesite.**
+
+**COMENTARIO GIANI**: Concuerdo con Diego!, **Cristóbal** lo que hiciste de playlists creo que también sería univariado no? iría dentro de la sección que ya agregué. Aunque viendo los heatmap me parece que más tienen que ver con la tabla de features.
+
+
+============= ACÁ COMIENZA EL ENTREGABLE =================
 
 El análisis exploratorio de los datos lo realizamos por separado para las distintas tablas del dataset para poder entender mejor como están distribuidas las distintas variables, ya que cada tabla posee distintas estructuras.
 
 ### Tabla Playlists
 
-**TODO**
+#### Exploración de nulos
+
+El único atributo con gran cantidad de nulos (cercano al 100% de los registros) es el atributo `description`. Omitiendo éste, existen 21 registros con datos nulos. Por tanto, se decide excluir este atributo del análisis, y luego omitir los registros restantes que presenten algún dato nulo. 
+
+<center><img src="fig/nulos_playlist.png" /></center>
+
+De esta forma, se cuenta con **6.626.859 filas** y **17 columnas**, de las cuales se mostrará los resultados de las más relevantes.
+
+#### Análisis univariado
+
+Al explorar las **variables categóricas más relevantes**, se obtienen las siguientes frecuencias relativas
+
+
+<table style="border:none;">
+  <tr>
+    <td><img src="fig/frecuencia_artistas.png" /></td>
+    <td><img src="fig/frecuencia_canciones.png" /></td>
+    <td><img src="fig/frecuencia_albumes.png" /></td>
+  </tr>
+</table>
+
+En general, se destaca que todas las frecuencias son muy bajas, lo que indica que el set _cuenta con una gran variedad de artistas, canciones y álbumes_, siendo sus cantidades de valores únicos **108.155, 689.282 y 273.486 respectivamente**. De todos estos, el que presenta la frecuencia relativa más alta alcanza solo el 1.3%, correspondiente al artista _Drake_. En los álbumes destaca que los más frecuentes sean "x" y "%". Se tendrá esto en cuenta en caso de ser un atributo requerido en algún modelamiento, ya que estos podrían corresponder a valores nulos. Se exploró también la frecuencia del atributo `collaborative`, el cual es desbalanceado, siendo colaborativas solo el 5% de las listas.
+
+Se exploró también las **palabras más frecuentes** para los nombres de las listas y los nombres de las canciones.
+
+<table style="border:none;">
+  <tr>
+    <td><img src="fig/palabas_mas_frecuentes_nombre_lista.png" /></td>
+    <td><img src="fig/palabras_mas_frecuentes_nombre_camcion.png" /></td>
+  </tr>
+</table>
+
+En el primer caso, se destaca que al parecer sí existe una cantidad importante de listas en cuyo título hacen alusión a un género o categoría musical (omitiendo la gran presencia de la palabra "music"). En cuanto a los nombres de canciones, destaca la presencia de la palabra "Love", la cual quizá podría no ser un buen discriminante por al parecer estar presente en diversidad de canciones. Destaca también la gran presencia de palabras como "remix", "feat", "version" y "remastered" aludiendo a que probablemente muchas de las canciones constituyen versiones alternativas y/o colaborativas con otros artistas.
+
+Por último, se exploró la **distribución de los siguientes atributos numéricos**
+
+<table style="border:none;">
+  <tr>
+    <td><img src="fig/distribucion_cantidad_artistas_por_lista.png" /></td>
+    <td><img src="fig/distribucion_numero_canciones_por_lista.png" /></td>
+    <td><img src="fig/distribucion_numero_albumes_por_lista.png" /></td>
+  </tr>
+<tr>
+    <td><img src="fig/distribucion_duracion_canciones.png" /></td>
+    <td><img src="fig/distribucion_duracion_lista.png" /></td>
+    <td><img src="fig/distribucion_numero_seguidores_lista.png" /></td>
+  </tr>
+</table>
+
+En general, se aprecia que las distribuciones se encuentran sesgadas a la derecha, o con sesgo positivo, indicando que existen valores extremos muy altos alejados de los valores más frecuentes para estos datos. 
+
+El único atributo que presenta una distribución más cercana a la normal, es el de la duración de minutos por canción (se consideró todas las canciones sin eliminar duplicadas, para apreciar la distribución del tiempo). En el gráfico, se aplicó la función `clip` de pandas para que se considerara a todas las canciones con duración mayor a 15 minutos como que ésta fuera de 15 (esto corresponde a 3.302 canciones no únicas). Al explorar algunas de estas canciones, se puede ver que al parecer corresponden en su mayoría a remixes, álbumes completos, o postcasts. Este podría ser un criterio a considerar en caso de un futuro modelo, ya que podría querer recomendarse audios que efectivamente correspondan a canciones, tomando en cuenta su duración.
+
+| track_name | duration_min |
+|------------|--------------|
+| The Horror of New York City | 15.00 |
+| The Horror of New York City |	15.00 |
+| The Horror of New York City |	15.00 |
+| Knee Deep	| 15.00 |
+| Knee Deep	| 15.00 |
+| ... | ...	|
+| Sunset Beach House & Chill out Lounge 2013 Mix | 127.9820 |
+| Best of 2015 (Album Mix) | 152.636567 |
+| Best of 2015 (Album Mix) | 152.636567 |
+| Monstercat Podcast EP. 100 | 162.410167 |
+| Ibiza House Opening (Continuous Mix)	167.223967 |
+
+Por otro lado, en el caso del número de seguidores, se debió aplicar escalamiento logarítmico, ya que existen algunas listas con cantidades muy altas de seguidores respecto de la mayoría. Por ejemplo, la lista con más seguidores tiene 27.830 seguidores mientras que el promedio es de 2.6 seguidores. Esto podría indicar que quizás el algoritmo de recomendación tiende a favorecer más aquellas listas con muchos seguidores, haciendo de esta forma que su cantidad de seguidores siga creciendo cada vez más. Es algo que se podría tomar en cuenta al momento de recomendar una canción.
+
+#### Análisis multivariado
+
+Se exploró las correlaciones de atributos numéricos de las listas, con el fin de observar si la cantidad de seguidores de una playlist (lo cual podría ser consecuencia de una recomendación automatizada) se correlaciona con su cantidad de artistas, canciones, álbumes, o duración.
+
+> #![](fig/playlists_correlaciones.png)
+
+En este caso, se ve que prácticamente no existe correlación entre estos atributos y la cantidad de seguidores. Por tanto, la cantidad de seguidores debe relacionarse con otras características, posiblemente intrínsecas a las canciones y/o artistas, que no se observan en este set de datos. El resto de los atributos sí presenta correlación alta, como era de esperarse.
 
 ### Tabla Artistas
 
@@ -226,6 +310,14 @@ Observamos que energy y loudness están altamente correlacionados entre sí, por
 Notamos que se confirma la característica ruidosa de key. Observamos también que la gran mayoría de las canciones se ubica en dirección a "Energy", por lo que este tipo de canciones correspondería a la moda. En cambio, en la dirección opuesta existe una "nube" de canciones con características más diversas y menor densidad, posiblemente más relacionado a música alternativa. Con time_signature se confirma no tiene sentido analizar variable de esta forma, ya que hacia energy/danceability priman los tiempos en 4/4 (verdes) mientras que en la dirección opuesta abundan los tiempos más irregulares basados en 3/4 o 5/4. Como 3>4>5 los análisis de correlación no detectan ninguna tendencia, por lo que sería conveniente transformar esta variable en "regularidad". En conjunto, se observa que la "nube" de canciones con características diversas presenta mayor abundancia de canciones instrumentales, acústicas, valencia negativa, son poco bailables y energéticas, y tienen duración más larga y tiempos irregulares.
 
 ### Preguntas y Problemas
+
+**APORTES GIANI**
+
+¿Es posible categorizar una playlists en base a las características de sus canciones y artistas, con el fin de luego recomendar canciones similares?
+
+¿Se debe recomendar una canción en base a su popularidad (ej, gran presencia en muchas listas), o en base a las características de la misma que sean similares a las del gusto del usuario?
+
+**FIN GIANI**
 
 
 ## Integrantes
