@@ -114,7 +114,7 @@ El análisis se realizó sobre la muestra aleatoria de 500.000 playlists.
 <table style="border:none;">
   <tr>
     <td><img src="fig/nulos_playlist.png" /></td>
-    <td style="max-width: 350px;">
+    <td style="width: 50%">
       El único atributo con gran cantidad de nulos (cercano al 100% de los registros) es el atributo description. Omitiendo éste, existen 21 registros con datos nulos. Por tanto, se decide excluir este atributo del análisis, y luego omitir los registros restantes que presenten algún dato nulo. 
       De esta forma, se cuenta con <strong>6.626.859 filas</strong> y <strong>17 columnas</strong>, de las cuales se mostrará los resultados de las más relevantes.
     </td>
@@ -138,7 +138,7 @@ En general, se destaca que todas las frecuencias son muy bajas, lo que indica qu
 
 <table style="border:none;">
   <tr>
-    <td style="width: 300px;">
+    <td style="width: 50%">
       Se exploró también las **palabras más frecuentes** para los nombres de las listas y los nombres de las canciones.
       En el primer caso, se destaca que al parecer sí existe una cantidad importante de listas en cuyo título hacen alusión a un género o categoría musical (omitiendo la gran presencia de la palabra "music"). En cuanto a los nombres de canciones, destaca la presencia de la palabra "Love", la cual quizá podría no ser un buen discriminante por al parecer estar presente en diversidad de canciones. Destaca también la gran presencia de palabras como "remix", "feat", "version" y "remastered" aludiendo a que probablemente muchas de las canciones constituyen versiones alternativas y/o colaborativas con otros artistas.
     </td>
