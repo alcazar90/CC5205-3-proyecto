@@ -205,9 +205,9 @@ Para entender como estas variables se relacionan entre sí, realizamos análisis
 
 > #![](fig/features_correlation.png)
 
-Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado con cada característica. Notamos que se confirma la característica ruidosa de key. Observamos también que la gran mayoría de las canciones se ubica en dirección a "Energy", por lo que este tipo de canciones correspondería a la moda. En cambio, en la dirección opuesta existe una "nube" de canciones con características más diversas y menor densidad, posiblemente más relacionado a música alternativa. En time_signature prima 4/4 hacia energy/danceability mientras que en la dirección opuesta abundan los tiempos más irregulares basados en 3/4 o 5/4. Como 3>4>5 los análisis de correlación no detectan ninguna tendencia, por lo que sería conveniente transformar esta variable en "regularidad". En conjunto, se observa que la "nube" de canciones con características diversas presenta mayor abundancia de canciones instrumentales, acústicas, valencia negativa, son poco bailables y energéticas, y tienen duración más larga y tiempos irregulares.
+Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado con cada característica. Observamos que la gran mayoría de las canciones se ubica en dirección a "Energy", por lo que este tipo de canciones correspondería a la moda. En cambio, en la dirección opuesta existe una "nube" de canciones con características más diversas y menor densidad, posiblemente más relacionado a música alternativa. En time_signature prima 4/4 hacia energy/danceability mientras que en la dirección opuesta abundan los tiempos más irregulares basados en 3/4 o 5/4. Como 3>4>5 los análisis de correlación no detectan ninguna tendencia, por lo que sería conveniente transformar esta variable en "regularidad". En conjunto, se observa que la "nube" de canciones con características diversas presenta mayor abundancia de canciones instrumentales, acústicas, valencia negativa, son poco bailables y energéticas, y tienen duración más larga y tiempos irregulares.
 
-> #![](fig/pca_todos.png)
+> #![](fig/pca_3key.png)
 
 ### Preguntas y Problemas
 
