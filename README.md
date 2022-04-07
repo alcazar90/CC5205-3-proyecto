@@ -175,6 +175,15 @@ El siguiente es un template de como podríamos ir agregando los insights.
 
 Preguntas y problemas: podríamos agregar directamente los posibles problemas y preguntas. La desventaja de esto sería que es atómico y no mezcla los distintos tipos de análisis.
 
+El análisis exploratorio de los datos lo realizamos por separado para las distintas tablas del dataset para poder entender mejor como están distribuidas las distintas variables, ya que cada tabla posee distintas estructuras.
+
+# Tabla Playlists
+
+# Tabla Artistas
+
+# Tabla Features
+
+
 
 ### Preguntas y Problemas
 
