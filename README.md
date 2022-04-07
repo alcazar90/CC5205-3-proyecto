@@ -155,7 +155,7 @@ documentados [acá](https://developer.spotify.com/documentation/web-api/referenc
 | tempo  | float   | `tempo` estimado total de una canción en _beats_ por mínutos (BPM). En términos musicales, el `tempo` es la velocidad, o fase de una pieza, y se deriva directamente del _beat_ promedio de duración. |
 | time_signature  | float  | Un estimado del compás. Es una convención que especifica cuantos _beats_ hay en cada línea (o medida). El compás tiene un rango desde el 3 al 7, indicando el compás de "3/4" al "7/4".|
 | valence | float  | Una medida que va del 0.0 al 1.0 y describe la "positiividad" musical de una canción. Canciones con alto `valence` suenan más positivas (e.g. feliz, alegre, euforico), mientras que canciones con poco `valence` suenan más negativas (e.g. triste, depresivo, furioso).  |
-|   |   |   |
+| key  | integer  | Indica la nota fundamental de la escala musical en la que está la canción. A cada semitono se le asigna un valor distinto. Explícitamente, para canciones en Do (C), key=0, Do sostenido (C#), key=1, Re (D), key=2, y así sucesivamente. Por esto tiene 12 valores posibles  |
 
 
 ## Análisis Exploratorio
@@ -175,13 +175,41 @@ El siguiente es un template de como podríamos ir agregando los insights.
 
 Preguntas y problemas: podríamos agregar directamente los posibles problemas y preguntas. La desventaja de esto sería que es atómico y no mezcla los distintos tipos de análisis.
 
+**OLI: Propongo que el EDA lo escribamos con la siguiente estructura. Yo (Diego) hice más de la parte de features así que me voy a enfocar en esa, pero puedo ayudar también en las otras secciones. Según tengo entendido, Gianina analizó Playlists y Cristóbal analizó Playlists y Features, y Felipe con Christopher analizaron Artists. Podríamos repartirnos así las secciones para no chocar tanto. Igual me ofrezco para ayudar donde se necesite.**
+
 El análisis exploratorio de los datos lo realizamos por separado para las distintas tablas del dataset para poder entender mejor como están distribuidas las distintas variables, ya que cada tabla posee distintas estructuras.
 
-#### Tabla Playlists
+### Tabla Playlists
 
-#### Tabla Artistas
+**TODO**
 
-#### Tabla Features
+### Tabla Artistas
+
+**TODO**
+
+### Tabla Features
+
+#### Análisis univariado
+
+Esta última tabla contiene valores numéricos que describen características de las canciones que posiblemente nos serán útiles para clasificar o predecir preferencias por las canciones. Posiblemente estarán correlacionadas con los géneros musicales o con las playlists (Canciones con features similares se encuentren en las mismas playlists)
+
+Podemos notar que cuatro de las variables (energy, tempo, danceability y valence) tienen una distribución simétrica y equitativamente repartida en el rango (similar a una distribución normal). Probablemente estas variables nos serán útiles para clasificar las canciones y no se les debería realizar ninguna transformación.
+
+> #![](fig/features_c_nice.png)
+
+Dos de las variables (duration y loudness) parecen tener distribuciones equitativas pero presentan outliers que ensucian los datos. En particular, duration tiene outliers al existir canciones con duraciones muy superiores al promedio. En estas variables sería necesario eliminar outliers.
+
+> #![](fig/features_c_outliers.png)
+
+Otras variables tienen distribuciones muy cargadas hacia ciertos valores, particularmente valores bajos. En acousticness una minoría de las canciones posee entre 0.2 y 1.0 mientras la mayoría posee valores muy cercanos a cero. Algo similar sucede con speechiness y liveness y el caso es extremo en instrumentalness. Pareciese ser que estas características son pseudo binarias, donde si posee la característica tendrá valores entre ~0.2 y 1 con probabilidades similares. Podría ser necesario realizar alguna transformación matemática de estos datos o simplemente convertirlos a variables categóricas binarias.
+
+> #![](fig/features_c_uneven.png)
+
+Finalmente, las variables mode, time_signature y key toman una cantidad limitada de valores. Mode al tomar sólo 2 valores debería probablemente ser considerado como variable categórica. Podemos notar que la mayoría de las canciones está en tonalidad mayor. Key está uniformemente repartida por lo que podría ser útil en la clasificación, y al tomar múltiples valores no sería necesario considerarla variable categórica. Time signature es un caso especial. Notamos que hay outliers correspondientes posiblemente a datos erroneos (No existen compás 0/4 o 1/4). También sería necesario transformarla, ya que no hace sentido considerarla una cantidad.
+
+> #![](fig/features_c_categoric.png)
+
+#### Análisis multivariado
 
 
 
