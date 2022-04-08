@@ -2,6 +2,10 @@
 
 Proyecto curso CC5205-3, FCFM, Universidad de Chile
 
+<a href="https://colab.research.google.com/drive/1HAjICvI4BQDpqVcpMme1VEjEyHRt582t?usp=sharing" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>.
+
 Índice con la documentación del proyecto [acá](https://github.com/alcazar90/CC5205-3-proyecto/tree/main/doc)📚.
 
 **Tabla de contenidos**
