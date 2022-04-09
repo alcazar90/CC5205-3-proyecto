@@ -162,9 +162,9 @@ Por otro lado, en el caso del número de seguidores, se debió aplicar escalamie
   <tr>
     <td><img src="fig/heatmap_loudness.png" /></td>
     <td style="width: 50%">
-      El objetivo fue crear una visualización que nos permita inspeccionar un grupo de _playlists_ con sus respectivos _tracks_ y la dimensión de un atributo de estos (e.g. `loudness`).
-El propósito de esta visualización es de validación, y su tarea es, una vez que tengamos la capacidad de recomendar nuevos _tracks_ para cada lista, si este set de nuevos _tracks_ propuestos tienen un comportaamiento similar al _set_ de cancions ya en el _playlist_ según una dimensión descriptiva del _track_ (e.g. `danceability`).
-Otro aspecto interesante que nos permitiría ver esta visualización es sí hay algun patrón por atributo de _tracks_ en como los usuarios van creando las _playlists_ (i.e. _slow to fast_ o _quit to loud_).
+      El objetivo de este análisis fue crear una visualización que nos permita inspeccionar un grupo de playlists con sus respectivos tracks y la dimensión de un atributo de estos (e.g. loudness).
+El propósito de esta visualización es de validación, y su tarea es, una vez que tengamos la capacidad de recomendar nuevos tracks para cada lista, si este set de nuevos tracks propuestos tienen un comportamiento similar al set de cancions ya en el playlist según una dimensión descriptiva del track (e.g. danceability).
+Otro aspecto interesante que nos permitiría ver esta visualización es sí hay algun patrón por atributo de tracks en como los usuarios van creando las playlists (i.e. slow to fast o quit to loud).
     </td>
   </tr>
 </table>
