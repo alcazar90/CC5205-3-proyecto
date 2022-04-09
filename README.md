@@ -157,6 +157,19 @@ Por otro lado, en el caso del número de seguidores, se debió aplicar escalamie
   </tr>
 </table>
 
+
+<table style="border:none;">
+  <tr>
+    <td><img src="fig/heatmap_loudness.png" /></td>
+    <td style="width: 50%">
+      El objetivo fue crear una visualización que nos permita inspeccionar un grupo de _playlists_ con sus respectivos _tracks_ y la dimensión de un atributo de estos (e.g. `loudness`).
+El propósito de esta visualización es de validación, y su tarea es, una vez que tengamos la capacidad de recomendar nuevos _tracks_ para cada lista, si este set de nuevos _tracks_ propuestos tienen un comportaamiento similar al _set_ de cancions ya en el _playlist_ según una dimensión descriptiva del _track_ (e.g. `danceability`).
+Otro aspecto interesante que nos permitiría ver esta visualización es sí hay algun patrón por atributo de _tracks_ en como los usuarios van creando las _playlists_ (i.e. _slow to fast_ o _quit to loud_).
+    </td>
+  </tr>
+</table>
+
+
 ### Tabla Artistas
 
 Esta tabla tiene dos columnas numéricas que representan: 1) la cantidad de seguidores que tiene el artista y, 2) la popularidad del artista. Las otras columnas son de tipo texto-objeto, de las cuales resaltamos: 1) los géneros musicales del artista y, 2) el nombre del artista, las demás columnas no agregan valor al análisis. Por lo tanto, nos quedaremos con las columnas numéricas y variables de texto que posiblemente nos serán útiles a la hora de clasificar o predecir preferencias, dejándonos un total de 110.135 filas y 7 columnas.
@@ -204,6 +217,8 @@ Como se ve en la matriz, existe correlación positiva (0.67) entre el número de
     <td><img src="fig/matriz_correlacion_artista.png" /></td>
   </tr>
 </table>
+
+
 
 ### Tabla Features
 
