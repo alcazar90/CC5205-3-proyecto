@@ -242,9 +242,13 @@ Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado c
 ### Preguntas y Problemas
 
 Con el dataset descrito, procederemos a responder las siguientes preguntas:
+
 -¿Es posible categorizar las playlists o los géneros en base a las características de sus canciones y artistas, con el fin de luego recomendar canciones similares?
+
 -¿Existe alguna correlación entre las características de las canciones y la probabilidad de que estas se encuentren en la misma playlist o tengan el mismo género?
+
 -¿Se debe recomendar una canción en base a su popularidad (ej, gran presencia en muchas listas), o en base a las características de la mismas que sean similares a las del gusto del usuario?
+
 -¿Qué factores influencian en que una canción, artista o género sea más popular que los otros?
 
 ## Anexo 1: Diccionarios de datos
