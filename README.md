@@ -255,11 +255,11 @@ Con el dataset descrito, procederemos a responder las siguientes preguntas:
 
 Dadas las preguntas por responder, podríamos encontrarnos con los siguientes problemas: 
 
-- Falta de datos: Spotify utiliza más de 4 millones de listas para su algoritmo de recomendación. Debemos determinar con las metodologías pertinentes si la cantidad de datos que tenemos será suficiente para poder obtener un sistema de recomendación con buen rendimiento.
+-Falta de datos: Spotify utiliza más de 4 millones de listas para su algoritmo de recomendación. Debemos determinar con las metodologías pertinentes si la cantidad de datos que tenemos será suficiente para poder obtener un sistema de recomendación con buen rendimiento.
 
-- Cambio de preferencias: dado que las tendencias músicales cambian constantemente debido a nuevos hits de diferentes generos o incluso por cambios en los gustos musicales de cada individuo, es problable que un sistema de recomendación de canciones o listas tenga problemas de generalización.
+-Cambio de preferencias: dado que las tendencias músicales cambian constantemente debido a nuevos hits de diferentes generos o incluso por cambios en los gustos musicales de cada individuo, es problable que un sistema de recomendación de canciones o listas tenga problemas de generalización.
 
-- Casos bordes: Existen casos de usuarios con preferencias muy diversas e impredensibles, caso muy parecido que tiene Netflix con usuarios luego de que eligan ver películas excentricas. En este caso, existen problemas para poder recomendar a usuarios con una gran variedad de generos dentro de su listo o usuarios que escuchen música poco común como Crunkcore, Murga, entre otros.
+-Casos bordes: Existen casos de usuarios con preferencias muy diversas e impredensibles, caso muy parecido que tiene Netflix con usuarios luego de que eligan ver películas excentricas. En este caso, existen problemas para poder recomendar a usuarios con una gran variedad de generos dentro de su listo o usuarios que escuchen música poco común como Crunkcore, Murga, entre otros.
 
 ## Anexo 1: Diccionarios de datos
 
