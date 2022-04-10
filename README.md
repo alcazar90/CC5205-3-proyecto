@@ -164,7 +164,7 @@ Por otro lado, en el caso del número de seguidores, se debió aplicar escalamie
     <td style="width: 50%">
       El objetivo de este análisis fue crear una visualización que nos permita inspeccionar un grupo de playlists con sus respectivos tracks y la dimensión de un atributo de estos (e.g. loudness).
 El propósito de esta visualización es de validación, y su tarea es, una vez que tengamos la capacidad de recomendar nuevos tracks para cada lista, si este set de nuevos tracks propuestos tienen un comportamiento similar al set de cancions ya en el playlist según una dimensión descriptiva del track (e.g. danceability).
-Otro aspecto interesante que nos permitiría ver esta visualización es sí hay algun patrón por atributo de tracks en como los usuarios van creando las playlists (i.e. slow to fast o quit to loud).
+Otro aspecto interesante que nos permitiría ver esta visualización es sí hay algun patrón por atributo de tracks en como los usuarios van creando las playlists (i.e. slow to fast o quiet to loud).
     </td>
   </tr>
 </table>
