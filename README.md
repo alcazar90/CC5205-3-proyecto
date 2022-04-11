@@ -178,34 +178,14 @@ Esta tabla tiene dos columnas numéricas que representan: 1) la cantidad de segu
 
 Al explorar las variables numéricas tenemos los siguientes resultados:
 
-<table style="border:none;">
+<table style="border:none; text">
   <tr>
-    <td style="width: 50%">
-	    Dada a la gran diferencia de followers entre los artistas es que se debe aplicar escala logarítmica, debido a que el artista con mayor número de seguidores tiene 94.522.435 seguidores, mientras que los demás tienen, en promedio, 2.643 seguidores. Podemos notar que en esta escala la cantidad de followers distribuye sin grandes sesgos, casi normal se podria decir.
-    </td>
-    <td><img src="fig/distribucion_seguidores_artistas.png" /></td>
-  </tr>
-  <tr>
-    <td style="width: 50%">
-	    Por otra parte, podemos ver que la popularidad de los artistas se distribuye con sesgo positivo. Además, el boxplot nos indica de la existencia de los outliers que, en este caso, serían los artistas cuya popularidad es cercana al 100.
-    </td>
-    <td><img src="fig/distribucion_popularidad_artista.png" /></td>
+      <td><img src="fig/distribucion_seguidores_artistas.png" width="300" height="200"/></td>
+      <td><img src="fig/distribucion_popularidad_artista.png" width="300" height="200"/></td>
+      <td><img src="fig/generos_que_mas_se_repiten.png" width="300" height="200"/></td>
   </tr>
 </table>
- 
- Para seguir el análisis se hizo un `merge` entre la tabla playlist (que contiene las canciones y el id_artista) y artist, y se contabilizó la cantidad de géneros repetidos.
- 
- <table style="border:none;">
-  <tr>
-    <td style="width: 50%">
-	    **¿Cuáles son los géneros que más se repiten en el dataset?** \
-Como se ve en el gráfico, algunos de los géneros más repetidos en las playlist son: pop, dance pop, rap, pop rap, hip hop, etc. Cabe destacar que las canciones no tienen un género musical establecido, el género lo tienen los artistas.
-    </td>
-    <td><img src="fig/generos_que_mas_se_repiten.png" /></td>
-  </tr>
-</table>
-
-Como Spotify es el encargado de establecer los géneros de los artistas, muchos de ellos (exactamente 242581 artistas) simplemente no tienen un género musical.
+ Dada a la gran diferencia de followers entre los artistas (primer gráfico) es que se debe aplicar escala logarítmica, debido a que el artista con mayor número de seguidores tiene 94.522.435 seguidores, mientras que los demás tienen, en promedio, 2.643 seguidores. Podemos notar que en esta escala la cantidad de followers distribuye sin grandes sesgos, cuyos outliers representan a los artistas con millones de seguidores. Por otra parte, podemos ver que la popularidad de los artistas se distribuye con sesgo positivo (segundo gráfico). Además, el boxplot nos indica de la existencia de los outliers que, en este caso, serían los artistas cuya popularidad es cercana al 100. Finalmente, se hizo un 'merge' entre la tabla playlist y artist, cuya unión pretende responder a la siguiente pregunta: <strong>¿Cuáles son los géneros que más se repiten/escuchan en el dataset?</strong> Y como se ve en el tercer gráfico, algunos de los géneros más escuchados/repetidos en las playlist son: pop, dance pop, rap, pop rap, hip hop, etc. Cabe destacar que las canciones no tienen un género musical establecido, lo tienen los artistas, y muchos de ellos (exactamente 242.581 artistas) simplemente no tienen un género musical.
 
 #### Análisis multivariado
  <table style="border:none;">
