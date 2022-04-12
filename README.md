@@ -19,45 +19,15 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 
 ## Motivación
 
-Hoy en día, el boom tecnológico ha hecho que el mercado global sea cada vez más competitivo al 
-momento de captar clientes. Dentro de esta competitividad, han surgido nuevas estrategías y 
-algoritmos para poder lograr que la experiencia del consumidor sea la más grata y sencilla. 
-¿Cómo logra un nuevo servicio posicionarse en el mercado? ¿Cómo logra mantener a sus usuarios satisfechos?. Hoy existen varias metodologías para esto, particularmente hablaremos de los sistemas de recomendación.
+Los sistemas de recomendación son una tecnología ampliamente usada en los servicios digitales, desde el *e-commerce* hasta las plataformas de *streaming*. Qué mejor que, al comprar tus zapatillas favoritas, o al ver una buena pelicula, exista un algoritmo que te vaya recomendando productos o experiencias similares a las que acabas de ver.
 
-Los sistemas de recomendación son una tecnología ampliamente usada en los servicios digitales, desde el _e-commerce_ hasta las plataformas de _streaming_. Qué mejor que, al comprar tus zapatillas favoritas, o al ver una buena pelicula, exista un algoritmo que te vaya recomendando productos o experiencias similares a las que acabas de comprar o ver. 
+La idea principal es acercar la oferta lo máximo posible a los intereses de los usuarios y/o consumidores. Por un lado, los usuarios ahorran tiempo y frustración evitando el bombardeo de opciones irrelevantes, y en el mejor de los casos, pueden llegar a encontrar su próxima pareja o la siguiente serie o película que comentaran en su próxima reunión de amigos.
 
-Como explicamos anteriormente, el entusiasmo e interés de empresas en perfeccionar esta tecnología se puede palpar en diversas competencias y servicios que utilizamos diariamente, como el de [Netflix](https://en.wikipedia.org/wiki/Netflix_Prize) y [Spotify](hhttps://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge).
+Desde el lado comercial, el desafio es grande. Los consumidores se encuentran cada vez más expuestos a una cantidad abismante de información, el ruído en la atención de los consumidores es extremo, y su tiempo escazo. Las empresas que no logren orquestar sus catálogos de servicios o productos tendrán, en el mejor de los casos, un reclamo, y en el peor, la fuga de sus usuarios y clientes; Todo esto con impacto directo en la última línea del estado de resultados. Además, hay cada vez mayor competencia en servicios. Esto es evidente en la industria de *streaming*, como es el caso para las [películas y series](https://www.wired.com/gallery/best-streaming-services/). 
 
-La idea principal es acercar la oferta lo máximo posible a los intereses de los usuarios y/o consumidores. Por un lado, los usuarios ahorran tiempo y frustración evitando el bombardeo de opciones irrelevantes, y en el mejor de los casos, pueden llegar a encontrar su próxima pareja, su nueva canción favorita, o la siguiente serie o película que comentaran en su próxima reunión de amigos.
+Dentro de este contexto, se encuentra la competencia [*"The Spotify Million Playlist Dataset Challenge"*](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge), cuyo objetivo fue explorar 1 millón de *playlists* con el próposito de investigar relaciones entre *playlists* y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el servicio conocido como *automatic playlist continuation*, el cual permite continuar reproduciendo música una vez que la lista de canciones haya finalizado, recomendando canciones similares.
 
-Desde el lado comercial, el desafio es grande. Los consumidores se encuentran cada vez más expuestos 
-a una cantidad abismante de información, el ruído en la atención de los consumidores es extremo, 
-y su tiempo escazo. Las empresas que no logren orquestar sus catálogos de servicios o productos 
-tendrán, en el mejor de los casos, un reclamo, y en el peor, la fuga de sus usuarios y clientes; Todo esto con impacto directo en 
-la última línea del estado de resultados. Además, hay cada vez mayor competencia en servicios donde 
-este tipo de tecnologias es particularmente relevante, y que antes algunas compañías gozaban de la ventaja de haber sido _first movers_. Esto es evidente en la industria  de _streaming_, como es el caso para las 
-películas y series. Al principio, solo teníamos Netflix, en cambio ahora podemos ver más de una decena de
-[servicios similares (i.e. Hbomax, Hulu, Paramount, Disney+)](https://www.wired.com/gallery/best-streaming-services/).
-Recomendar a los usuarios contenido significativo para ellos ya no es un _nice to have_, sino un 
-requisito para seguir siendo relevantes en la industria.
-
-Dentro de este contexto, se encuentra la competencia [_"The Spotify Million Playlist Dataset 
-Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge), cuyo 
-objetivo fue explorar (adivinen) 1 millón de _playlists_ con el próposito de investigar relaciones 
-entre _playlists_ y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el 
-servicio conocido como _automatic playlist continuation_, el cual como bien dice su nombre, permite 
-continuar reproduciendo música una vez que la lista de canciones haya finalizado, recomendando canciones 
-similares basadas en la lista, pero que estén fuera-de-ella.
-
-Los datos que se pueden ver en la sección _Datasets_, presenten una oportunidad para "descubrir" nuevos
-artistas, y más allá del sistema de recomendación en sí, explorar cómo categorizar _playlists_ usando 
-otros atributos aparte del género musical. Finalmente, tendremos la oportunidad de construir un prototipo que pueda 
-recomendar canciones dado un _playlist_, aprendiendo a menor escala, un caso de uso relevante en la industria.
-
-El principal beneficio del servicio _automatic playlist continuation_ es el que busca toda empresa hoy en día,
-mejorar la experiencia del consumidor a través de una experiencia más armonica y completa al escuchar música. 
-Además, los usuarios podrán descubrir nuevas canciones, con el potencial de ir "reclutándolas" a sus listas, 
-y agregando a su radar nuevos artistas que puedan ser de su interes.
+Diseñar un sistema de recomendación es una forma de experimentar un caso práctico en la industria y entender como los usuarios de Spotify pueden tener una experiencia más armonica y completa al recibir canciones de su interes.
 
 ## Dataset
 
