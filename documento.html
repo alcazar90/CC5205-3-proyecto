@@ -24211,6 +24211,44 @@ all of MD as it is not optimized for dense, information rich UIs.
         <p>-Casos bordes: Existen casos de usuarios con preferencias diversas e impredensibles. En este caso, existen
           problemas para poder entregar buenas recomendaciones a usuarios con una gran variedad de géneros dentro de su
           listas o usuarios que escuchen música poco común como Crunkcore, Murga, entre otros.</p>
+
+        <h1>Modelamiento</h1>
+        Se hizo el entrenamiento considerando 2000 listas y todas sus canciones. Solo se consideró canciones (tracks) con duración menor a 15 minutos. La selección de las 2000 playlists
+        se realizó aleatoriamente, pero al momento de poner el modelo en producción esta selección sería a partir de ..
+        <h2>Primer Modelo</h2>
+        <h2>Segundo Modelo</h2>
+        <p>
+          Se realizó una regresión logística para clasificar "n" canciones (57552) en 2000 playlists (targets), utilizando librería LogisticRegression de Sklearn 
+          En nuestros datos una canción puede tener más de una playlist, por lo que se entrenó 2000 modelos, 1 por cada clase (cada playlist), y luego
+          se concatenó los vectores W para obtener un sólo clasificador multietiqueta. La Matriz W resultante (de dimensión 2000 X 14 listas, dimensiones)
+          se utilizó paracalcular la probabilidad de clase (playlist) de cada canción utilizando la función softmax. De esta manera, 
+          se obtiene la matriz de probabilidades (de dimensión "n" X 2000). De esta manera, se aumentó la dimensión de los datos a un vector que captura
+          aquellas características de la canción que la hacen agruparse con otras canciones en la misma playlist.
+
+          También se hizo la predicción de las playlists a la que pertenecería cada canción. Sólo se obtienen 459 playlists distintas de 2000.
+          Esto no es problema, ya que el objetivo del algoritmo no es predecir a que playlist pertenecería una canción, sino que obtener el vector de probabilidad.
+        </p>
+        <table style="border:none;">
+          <tr>
+            <td style="width: 50%">
+              Teniendo W y el vector de probabilidades, es posible realizar recomendaciones de canciones relacionadas a otra canción.
+              Para esto, se utiliza multiplicación matricial entre los atributos de una canción y "W", obteniendo el vector de probabilidades para esa canción.
+              Luego se encuentra las canciones con menor distancia euclidiana. Las canciones retornadas no son las más cercanas a la canción input en cuanto a sus atributos,
+              ni en cuanto a los componentes principales como se observa en el gráfico, ni pertenecen a la misma playlist, <strong>
+                sino que son... COMO QUE FALTA UNA CONCLUSION AQUI</strong>
+            </td>
+            <td><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recomendaciones_modelo_2.png" /></td>
+          </tr>
+          <table style="border:none;">
+            <tr>
+              <td>
+                Lista canciones input...
+              </td>
+              <td>
+                Lista canciones recomendadas...
+              </td>
+            </tr>
+        </table>
         <h2 id="Anexo-1:-Diccionarios-de-datos">Anexo 1: Diccionarios de datos<a class="anchor-link"
             href="#Anexo-1:-Diccionarios-de-datos">&#182;</a></h2>
         <h3 id="Tabla-playlists">Tabla playlists<a class="anchor-link" href="#Tabla-playlists">&#182;</a></h3>
