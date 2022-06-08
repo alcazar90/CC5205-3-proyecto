@@ -24216,6 +24216,28 @@ all of MD as it is not optimized for dense, information rich UIs.
         Se hizo el entrenamiento considerando 2000 listas y todas sus canciones. Solo se consideró canciones (tracks) con duración menor a 15 minutos. La selección de las 2000 playlists
         se realizó aleatoriamente, pero al momento de poner el modelo en producción esta selección sería a partir de ..
         <h2>Primer Modelo</h2>
+	<p>
+	Una forma directa de recomendar canciones respecto a una <i>playlist</i> es encontrar un conjunto
+	de canciones basadas en la Nth-<i>playlist</i> más cercanas.
+
+	<br>Pasos:</br>
+	<ol>
+	<li>El <i>set</i> de carácteristicas para recomendar esta basado en los atríbutos de las canciones que componen la lista</li>
+	<li>Computar las distancias según los vectores agregados entre todas las <i>playlists</i></li>
+	<li>Seleccionar para cada <i>set</i> de canciones sus N <i>playlists</i> más cercanas según
+		la métrica de distancia. El conjunto de canciones de las <i>playlists</i> más cercanas
+	es el conjunto de canciones candidas a recomendar</li> 
+	<li>Se aplica una capa de filtro sobre el <i>set</i> de canciones candidatas como eliminar
+		las toda canción que se encuentre en el grupo de canciones del <i>input</i></li>
+	<li>Finalmente aplicar un ranking al conjunto filtrado de canciones candidatas para
+		entregar según se requieran (e.g. ranking por popularidad de artista)</li>
+	</ol>
+
+	Lalal
+	</p>
+
+
+
         <h2>Segundo Modelo</h2>
         <p>
           Se realizó una regresión logística para clasificar "n" canciones (57552) en 2000 playlists (targets), utilizando librería LogisticRegression de Sklearn 
