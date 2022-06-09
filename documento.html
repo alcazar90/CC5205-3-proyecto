@@ -23919,7 +23919,7 @@ all of MD as it is not optimized for dense, information rich UIs.
               Gianina Salomó: Pre procesamiento, análisis univariado playlists, redacción documento, exploración clustering
             </li>
             <li>
-              Christopher Stears: Extracción datos API, análisis descriptivo artistas y playlists, rankind
+              Christopher Stears: Extracción datos API, análisis descriptivo artistas y playlists, modelo propuesto 3
             </li>
               Diego Cortez: Análisis descriptivo de track features, producción, modelo propuesto 2
             <li>
@@ -24216,7 +24216,8 @@ all of MD as it is not optimized for dense, information rich UIs.
         Se hizo el entrenamiento considerando 2000 listas y todas sus canciones. Solo se consideró canciones (tracks) con duración menor a 15 minutos. La selección de las 2000 playlists
         se realizó aleatoriamente, pero al momento de poner el modelo en producción esta selección sería a partir de un criterio a determinar (Ejemplo: Al azar, las más populares, las más nuevas, etc).
 
-        Las pruebas de predicciones en ambos modelos se realizó a partir del siguiente input de lista de canciones, pertenecientes a una lista "miscelánea" (distintos tipos de canciones):
+        Las pruebas de predicciones en ambos modelos se realizó a partir del siguiente input de lista de canciones, pertenecientes a una lista "miscelánea" (distintos tipos de canciones)
+        , algunas de las cuales no estaban entre las canciones utilizadas para modelamiento:
         <table>
           <tr>
             <th>Artista</th>
@@ -24263,8 +24264,18 @@ all of MD as it is not optimized for dense, information rich UIs.
             <td>King Without a Crown</td>
           </tr>
         </table>
+
+        <p>Los resultados de recomendaciones de cada modelo, a partir de esta playlist de prueba, se encuentran disponibles en el Anexo 2</p>
+        <p>También se puede acceder a cada lista en spotify en los siguientes enlaces</p>
+        <ul>
+          <li><a href="https://open.spotify.com/playlist/26yzND6oUHELcvv0HQKl3B?si=6980d4415f594140">Lista input de prueba</a></li>
+          <li><a href="https://open.spotify.com/playlist/4jPtH1wE8Mc97yXcfSSef2?si=351f6b0db8324906">Recomendaciones Modelo 1</a></li>
+          <li><a href="https://open.spotify.com/playlist/1Hy6jgdkBMyS7ksy6ioUtP?si=e01332afd5104e40">Recomendaciones Modelo 2</a></li>
+          <li><a href="https://open.spotify.com/playlist/4fn8CmZrkajgd3wXTczG3q?si=ad00ba921de247e3">Recomendaciones Modelo 3</a></li>
+        </ul>
+
         <h2>Primer Modelo</h2>
-        <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/modelo_1_cristobal.ipynb">Código</a>
+        <a href="https://github.com/alcazar90/CC5205-3-proyecto/commit/203ff055a2a6a6e31da4cf1d7d3122800bf249ca">Código</a>
 	<p>
 	  Una forma directa de recomendar canciones respecto a una <i>playlist</i> es encontrar un conjunto
     de canciones basadas en la Nth-<i>playlist</i> más cercanas.
@@ -24280,8 +24291,8 @@ all of MD as it is not optimized for dense, information rich UIs.
         <li>Seleccionar para cada <i>set</i> de canciones sus N <i>playlists</i> más cercanas según
           la métrica de distancia. El conjunto de canciones de las <i>playlists</i> más cercanas
         es el conjunto de canciones candidas a recomendar</li> 
-        <li>Se aplica una capa de filtro sobre el <i>set</i> de canciones candidatas como eliminar
-          las toda canción que se encuentre en el grupo de canciones del <i>input</i>. Este paso puede extenderse y agregar preferencias
+        <li>Se aplica una capa de filtro sobre el <i>set</i> de canciones candidatas para eliminar
+          las canciones que ya se encontrasen <i>input</i>. Este paso puede extenderse y agregar preferencias
 	del usuario para descartar generos, entre otros.</li>
         <li>Finalmente se aplica un ranking al conjunto filtrado de canciones candidatas para
           entregar según se requieran las canciones (e.g. ranking por popularidad de artista)</li>
@@ -24289,61 +24300,11 @@ all of MD as it is not optimized for dense, information rich UIs.
       </td>
       <td>
         <img
-            src="https://github.com/alcazar90/CC5205-3-proyecto/raw/main/fig/RecommendNearest20Songs.png"
-            alt="Resultados modelo 1 para playlist benchmark"/>
+            src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recsys_diagram_spotify.svg"
+            alt="RecSys playlist-song recommendation"/>
         </td>
     </tr>
-
-            A continuación se detalla 10 canciones de la lista de canciones recomendadas al utilizar como input la lista de prueba, que corresponden a las canciones recomendadas destacadas en el gráfico anterior
-
   </table>
-
-        <table>
-          <tr>
-            <th>Artista</th>
-            <th>Canción</th>
-          </tr>
-          <tr>
-            <td>Evanescence</td>
-            <td>My Inmortal</td>
-          </tr>
-          <tr>
-            <td>Trey Songsz</td>
-            <td>Bottoms Up - Feat. Nicki Minaj</td>
-          </tr>
-          <tr>
-            <td>Lil Bibby</td>
-            <td>You Ain't Gang</td>
-          </tr>
-          <tr>
-            <td>Kstylis</td>
-            <td>Booty Me Down</td>
-          </tr>
-          <tr>
-            <td>Fifth Harmony</td>
-            <td>Miss Movin' On</td>
-          </tr>
-          <tr>
-            <td>Brad Paisley</td>
-            <td>Whiskey Lubally</td>
-          </tr>
-          <tr>
-            <td>Brantley Gilbert</td>
-            <td>You Don't Know Her Like I Do</td>
-          </tr>
-          <tr>
-            <td>Craig Morgan</td>
-            <td>Wake up Lovin' You</td>
-          </tr>
-          <tr>
-            <td>KYLEe</td>
-            <td>iSpy (feat. Lil Yachty</td>
-          </tr>
-          <tr>
-            <td>MadeinTYO</td>
-            <td>Skateboard P (feat. Big Sean)</td>
-          </tr>
-        </table>
 
         <h2>Segundo Modelo</h2>
         <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/modelo_2_diego.ipynb">Código</a>
@@ -24384,56 +24345,9 @@ all of MD as it is not optimized for dense, information rich UIs.
             <td><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recomendaciones_modelo_2_listarandom.png" /></td>
           </tr>
         </table>
-          <p>
-            A continuación se detalla 10 canciones de la lista de canciones recomendadas al utilizar como input la lista de prueba, que corresponden a las canciones recomendadas destacadas en el gráfico anterior
-          </p>
 
-          <table>
-            <tr>
-              <th>Artista</th>
-              <th>Canción</th>
-            </tr>
-            <tr>
-              <td>fun.</td>
-              <td>Take Your Time - Acoustic</td>
-            </tr>
-            <tr>
-              <td>Pat Green</td>
-              <td>Girls From Texas (feat. Lyle Lovett)</td>
-            </tr>
-            <tr>
-              <td>Gob</td>
-              <td>I Hear You Calling</td>
-            </tr>
-            <tr>
-              <td>The Kinks</td>
-              <td>Better Things - Stereo Mix</td>
-            </tr>
-            <tr>
-              <td>The Civil Wars</td>
-              <td>I've Got This Friend</td>
-            </tr>
-            <tr>
-              <td>Jake Owen</td>
-              <td>Pass A Beer</td>
-            </tr>
-            <tr>
-              <td>Filmore</td>
-              <td>I Got It</td>
-            </tr>
-            <tr>
-              <td>Brian Fallon</td>
-              <td>Open All Night</td>
-            </tr>
-            <tr>
-              <td>Kelly Clarkson</td>
-              <td>Underneath the Tree</td>
-            </tr>
-            <tr>
-              <td>Death Cab for Cutie</td>
-              <td>Long Division</td>
-            </tr>
-          </table>
+        <h3>Tercer modelo</h3>
+
         <h2 id="Anexo-1:-Diccionarios-de-datos">Anexo 1: Diccionarios de datos<a class="anchor-link"
             href="#Anexo-1:-Diccionarios-de-datos">&#182;</a></h2>
         <h3 id="Tabla-playlists">Tabla playlists<a class="anchor-link" href="#Tabla-playlists">&#182;</a></h3>
@@ -24743,31 +24657,232 @@ all of MD as it is not optimized for dense, information rich UIs.
             </tr>
           </tbody>
         </table>
-    </div>
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span> 
-</pre>
-            </div>
+        <h2 id="Anexo-2:Resultados-recomendaciones">Anexo 2: Resultados recomendaciones<a class="anchor-link"
+          href="#Anexo-2:Resultados-recomendaciones">&#182;</a></h2>
+        <h3>Recomendaciones Modelo 1</h3>
+      </table>
 
-          </div>
-        </div>
-      </div>
+      <table>
+        <tr>
+          <th>Artista</th>
+          <th>Canción</th>
+        </tr>
+        <tr>
+          <td>Evanescence</td>
+          <td>My Inmortal</td>
+        </tr>
+        <tr>
+          <td>Trey Songsz</td>
+          <td>Bottoms Up - Feat. Nicki Minaj</td>
+        </tr>
+        <tr>
+          <td>Lil Bibby</td>
+          <td>You Ain't Gang</td>
+        </tr>
+        <tr>
+          <td>Kstylis</td>
+          <td>Booty Me Down</td>
+        </tr>
+        <tr>
+          <td>Fifth Harmony</td>
+          <td>Miss Movin' On</td>
+        </tr>
+        <tr>
+          <td>Brad Paisley</td>
+          <td>Whiskey Lubally</td>
+        </tr>
+        <tr>
+          <td>Brantley Gilbert</td>
+          <td>You Don't Know Her Like I Do</td>
+        </tr>
+        <tr>
+          <td>Craig Morgan</td>
+          <td>Wake up Lovin' You</td>
+        </tr>
+        <tr>
+          <td>KYLEe</td>
+          <td>iSpy (feat. Lil Yachty</td>
+        </tr>
+        <tr>
+          <td>MadeinTYO</td>
+          <td>Skateboard P (feat. Big Sean)</td>
+        </tr>
+      </table>
+        <h3>Recomendaciones Modelo 2</h3>
+        <table>
+          <tr>
+            <th>Artista</th>
+            <th>Canción</th>
+          </tr>
+          <tr>
+            <td>fun.</td>
+            <td>Take Your Time - Acoustic</td>
+          </tr>
+          <tr>
+            <td>Pat Green</td>
+            <td>Girls From Texas (feat. Lyle Lovett)</td>
+          </tr>
+          <tr>
+            <td>Gob</td>
+            <td>I Hear You Calling</td>
+          </tr>
+          <tr>
+            <td>The Kinks</td>
+            <td>Better Things - Stereo Mix</td>
+          </tr>
+          <tr>
+            <td>The Civil Wars</td>
+            <td>I've Got This Friend</td>
+          </tr>
+          <tr>
+            <td>Jake Owen</td>
+            <td>Pass A Beer</td>
+          </tr>
+          <tr>
+            <td>Filmore</td>
+            <td>I Got It</td>
+          </tr>
+          <tr>
+            <td>Brian Fallon</td>
+            <td>Open All Night</td>
+          </tr>
+          <tr>
+            <td>Kelly Clarkson</td>
+            <td>Underneath the Tree</td>
+          </tr>
+          <tr>
+            <td>Death Cab for Cutie</td>
+            <td>Long Division</td>
+          </tr>
+          <tr>
+            <td>Michael Bublé</td>
+            <td>Home</td>
+          </tr>
+          <tr>
+            <td>Plain White T's</td>
+            <td>Hey There Delilah</td>
+          </tr>
+          <tr>
+            <td>Jeffrey Martin</td>
+            <td>Thief and a Liar</td>
+          </tr>
+          <tr>
+            <td>Chris Young</td>
+            <td>Where I Go When I Drink</td>
+          </tr>
+          <tr>
+            <td>Panic! At The Disco</td>
+            <td>Mad As Rabbits</td>
+          </tr>
+          <tr>
+            <td>Ron Pope</td>
+            <td>Perfect for Me</td>
+          </tr>
+          <tr>
+            <td>Striking Matches</td>
+            <td>When The Right One Comes Along</td>
+          </tr>
+          <tr>
+            <td>The Paper Kites</td>
+            <td>Bloom - Bonus Track</td>
+          </tr>
+          <tr>
+            <td>Chase Rice</td>
+            <td>You Ain't Livin' Yet</td>
+          </tr>
+          <tr>
+            <td>Itasca</td>
+            <td>Angel</td>
+          </tr>
+        </table>
+        <h3>Recomendaciones Modelo 3</h3>
+        <table>
+          <tr>
+            <th>Artista</th>
+            <th>Canción</th>
+          </tr>
+          <tr>
+            <td>The Brains</td>
+            <td>Drunk Not Dead</td>
+          </tr>
+          <tr>
+            <td>Faux Paz</td>
+            <td>Where Are Ü Now</td>
+          </tr>
+          <tr>
+            <td>Hopeton Lewis</td>
+            <td>Rivers Of Babylon</td>
+          </tr>
+          <tr>
+            <td>Fatty Gets A Stylist</td>
+            <td>Are You Ready?</td>
+          </tr>
+          <tr>
+            <td>Ramones</td>
+            <td>I Don't Wanna Walk Around with You - 2016 Remaster</td>
+          </tr>
+          <tr>
+            <td>Jake Kaufman</td>
+            <td>Strike the Earth!</td>
+          </tr>
+          <tr>
+            <td>Theatre Under the Stars'</td>
+            <td>Paper Planes</td>
+          </tr>
+          <tr>
+            <td>Foy Vance</td>
+            <td>Doesn't Take a Whole Day</td>
+          </tr>
+          <tr>
+            <td>David Gray</td>
+            <td>Transformation</td>
+          </tr>
+          <tr>
+            <td>Willie Nelson</td>
+            <td>From Here to the Moon and Back (feat. Dolly Parton)</td>
+          </tr>
+          <tr>
+            <td>Mina</td>
+            <td>lo sono quel che sono</td>
+          </tr>
+          <tr>
+            <td>Angelica Vila</td>
+            <td>Talking About Us</td>
+          </tr>
+          <tr>
+            <td>Brennan Heart</td>
+            <td>Just As Easy</td>
+          </tr>
+          <tr>
+            <td>Apashe</td>
+            <td>Tank Girls feat. Zitaa</td>
+          </tr>
+          <tr>
+            <td>John Moreland</td>
+            <td>It Don't Suit Me (Like Before)</td>
+          </tr>
+          <tr>
+            <td>Dustin Lynch</td>
+            <td>Party Song</td>
+          </tr>
+          <tr>
+            <td>Clipse</td>
+            <td>Grindin'</td>
+          </tr>
+          <tr>
+            <td>Cryptic Wisdom</td>
+            <td>Soothe Your Pain (Produced By Sinima)</td>
+          </tr>
+          <tr>
+            <td>The Lonely Islande</td>
+            <td>Rocky</td>
+          </tr>
+          <tr>
+            <td>Kero One</td>
+            <td>We Stay Fly (feat. Othello & Dminor)</td>
+          </tr>
+        </table>
     </div>
-
   </div>
 </body>
-
-
-
-
-
-
-
 </html>
