@@ -24214,69 +24214,175 @@ all of MD as it is not optimized for dense, information rich UIs.
 
         <h1>Modelamiento</h1>
         Se hizo el entrenamiento considerando 2000 listas y todas sus canciones. Solo se consideró canciones (tracks) con duración menor a 15 minutos. La selección de las 2000 playlists
-        se realizó aleatoriamente, pero al momento de poner el modelo en producción esta selección sería a partir de ..
+        se realizó aleatoriamente, pero al momento de poner el modelo en producción esta selección sería a partir de un criterio a determinar (Ejemplo: Al azar, las más populares, las más nuevas, etc).
+
+        Las pruebas de predicciones en ambos modelos se realizó a partir del siguiente input de lista de canciones, pertenecientes a una lista "miscelánea" (distintos tipos de canciones):
+        <table>
+          <tr>
+            <th>Artista</th>
+            <th>Canción</th>
+          </tr>
+          <tr>
+            <td>Caramelos de Cianuro</td>
+            <td>2 Caras 2 Corazones</td>
+          </tr>
+          <tr>
+            <td>Sam Hunt</td>
+            <td>House Party</td>
+          </tr>
+          <tr>
+            <td>Nitro Fun</td>
+            <td>Final Boss</td>
+          </tr>
+          <tr>
+            <td>Plain White T's</td>
+            <td>Hey There Delilah</td>
+          </tr>
+          <tr>
+            <td>The Paper Kites</td>
+            <td>Bloom - Bonus Track</td>
+          </tr>
+          <tr>
+            <td>Styx</td>
+            <td>Blue Collar Man (Long Nights)</td>
+          </tr>
+          <tr>
+            <td>Kenny Chesney</td>
+            <td>Summertime</td>
+          </tr>
+          <tr>
+            <td>AC/DC</td>
+            <td>You Shook Me All Night Long</td>
+          </tr>
+          <tr>
+            <td>Tech N9ne</td>
+            <td>A Real 1</td>
+          </tr>
+          <tr>
+            <td>Matisyahu</td>
+            <td>King Without a Crown</td>
+          </tr>
+        </table>
         <h2>Primer Modelo</h2>
+
 	<p>
-	Una forma directa de recomendar canciones respecto a una <i>playlist</i> es encontrar un conjunto
-	de canciones basadas en la Nth-<i>playlist</i> más cercanas.
+	  Una forma directa de recomendar canciones respecto a una <i>playlist</i> es encontrar un conjunto
+    de canciones basadas en la Nth-<i>playlist</i> más cercanas.
+  </p>
 
-	<br>Pasos:</br>
-	<ol>
-	<li>El <i>set</i> de carácteristicas para recomendar esta basado en los atríbutos de las canciones que componen la lista</li>
-	<li>Computar las distancias según los vectores agregados entre todas las <i>playlists</i></li>
-	<li>Seleccionar para cada <i>set</i> de canciones sus N <i>playlists</i> más cercanas según
-		la métrica de distancia. El conjunto de canciones de las <i>playlists</i> más cercanas
-	es el conjunto de canciones candidas a recomendar</li> 
-	<li>Se aplica una capa de filtro sobre el <i>set</i> de canciones candidatas como eliminar
-		las toda canción que se encuentre en el grupo de canciones del <i>input</i></li>
-	<li>Finalmente aplicar un ranking al conjunto filtrado de canciones candidatas para
-		entregar según se requieran (e.g. ranking por popularidad de artista)</li>
-	</ol>
-
-	Lalal
-	</p>
-
-	<img
-    	src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recsys_diagram_spotify.svg"
-    	alt="RecSys playlist-song recommendation"
-    	height="87"
-    	width="100"/>
-
-
+  <table style="border:none;">
+    <tr>
+      <td style="width: 50%">
+        Pasos:</br>
+        <ol>
+        <li>El <i>set</i> de carácteristicas para recomendar esta basado en los atríbutos de las canciones que componen la lista</li>
+        <li>Computar las distancias según los vectores agregados entre todas las <i>playlists</i></li>
+        <li>Seleccionar para cada <i>set</i> de canciones sus N <i>playlists</i> más cercanas según
+          la métrica de distancia. El conjunto de canciones de las <i>playlists</i> más cercanas
+        es el conjunto de canciones candidas a recomendar</li> 
+        <li>Se aplica una capa de filtro sobre el <i>set</i> de canciones candidatas como eliminar
+          las toda canción que se encuentre en el grupo de canciones del <i>input</i></li>
+        <li>Finalmente aplicar un ranking al conjunto filtrado de canciones candidatas para
+          entregar según se requieran (e.g. ranking por popularidad de artista)</li>
+        </ol>
+      </td>
+      <td>
+        <img
+            src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recsys_diagram_spotify.svg"
+            alt="RecSys playlist-song recommendation"/>
+        </td>
+    </tr>
+  </table>
 
         <h2>Segundo Modelo</h2>
+        <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/modelo_2_diego.ipynb">Código</a>
         <p>
-          Se realizó una regresión logística para clasificar "n" canciones (57552) en 2000 playlists (targets), utilizando librería LogisticRegression de Sklearn 
-          En nuestros datos una canción puede tener más de una playlist, por lo que se entrenó 2000 modelos, 1 por cada clase (cada playlist), y luego
-          se concatenó los vectores W para obtener un sólo clasificador multietiqueta. La Matriz W resultante (de dimensión 2000 X 14 listas, dimensiones)
-          se utilizó paracalcular la probabilidad de clase (playlist) de cada canción utilizando la función softmax. De esta manera, 
-          se obtiene la matriz de probabilidades (de dimensión "n" X 2000). De esta manera, se aumentó la dimensión de los datos a un vector que captura
-          aquellas características de la canción que la hacen agruparse con otras canciones en la misma playlist.
-
-          También se hizo la predicción de las playlists a la que pertenecería cada canción. Sólo se obtienen 459 playlists distintas de 2000.
-          Esto no es problema, ya que el objetivo del algoritmo no es predecir a que playlist pertenecería una canción, sino que obtener el vector de probabilidad.
+          En un enfoque más supervisado, se pretende también utilizar las playlists como guía para encontrar patrones de agrupación.
+          La idea es que sólo en base a los atributos de una canción encontrar otras canciones que probablemente estarían en la misma lista. 
+          Para esto, en un dataset de prueba de 2000 listas se realizó regresión logística binaria con cada lista (label 1 si la canción está en la lista, 0 si no está) utilizando sklearn.
+          Esto, debido a que los algoritmos no permiten clasificación donde un dato puede tener más de una etiqueta (una canción puede estar en muchas playlist).
+          Luego se concatenaron los vectores W para obtener una sola matriz de clasificación multietiqueta,
+          que al multiplicarla por el vector de atributos de los datos y aplicar la función sofrmax se obtiene un vector de dimensión 2000 (número de listas)
+          con las probabilidades de pertenecer a cada playlist al que llamaremos P.  Si se predicen las playlist de cada canción, se obtienen sólo 459 de las 2000 playlists.
+          Esto no es problema, ya que se utilizará P directamente.
         </p>
         <table style="border:none;">
           <tr>
             <td style="width: 50%">
-              Teniendo W y el vector de probabilidades, es posible realizar recomendaciones de canciones relacionadas a otra canción.
-              Para esto, se utiliza multiplicación matricial entre los atributos de una canción y "W", obteniendo el vector de probabilidades para esa canción.
-              Luego se encuentra las canciones con menor distancia euclidiana. Las canciones retornadas no son las más cercanas a la canción input en cuanto a sus atributos,
-              ni en cuanto a los componentes principales como se observa en el gráfico, ni pertenecen a la misma playlist, <strong>
-                sino que son... COMO QUE FALTA UNA CONCLUSION AQUI</strong>
+              Se asumió que P refleja las características “de agrupación” de la canción de manera más fidedigna que los atributos crudos de las canciones,
+              aunque P es función de los atributos por lo que canciones muy similares deberían tener un P similar. Para encontrar las recomendaciones de una canción,
+              se calcularon las distancias euclidianas entre P de la canción input y el P de cada canción del dataset. Las X canciones con menor distancia son las recomendaciones,
+              con X según cuantas se quieran recomendar. Se visualizan las recomendaciones utilizando PCA de los atributos originales.
+              Se observa que al reportar las playlists a las que pertenecen las recomendaciones hay gran diversidad, aunque la playlist de la canción input tiende a repetirse.
+              Al reportar las distancias euclidianas en el vector de atributos se observa que no se están recomendando simplemente las canciones más similares a la canción input.
+              Se intuye por lo tanto que se están recomendando canciones según atributos más ocultos capturados por el vector P que se espera tengan relación con sus características de agrupación.
+              De todas maneras, existe correlación entre recomendaciones y similitud.
             </td>
-            <td><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recomendaciones_modelo_2.png" /></td>
+            <td><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recomendaciones_modelo_2_single.png" /></td>
           </tr>
-          <table style="border:none;">
-            <tr>
-              <td>
-                Lista canciones input...
-              </td>
-              <td>
-                Lista canciones recomendadas...
-              </td>
-            </tr>
+          <tr>
+            <td style="width: 50%">
+              En el caso de que el input sea una lista de canciones se realizó un proceso similar.
+              Para cada canción input, se ordenaron las canciones del dataset por la distancia en P y se calculó un score para cada una.
+              Este score es 1 para la canción más similar y decae exponencialmente para posiciones más altas.
+              Se sumaron los scores al realizar este proceso con cada input y se obtienen las X canciones con mejor score total.
+              Las recomendaciones varían según cuan “duro” sea el decaimiento exponencial. Para decaimientos más drásticos,
+              se obtienen recomendaciones con P más similar a cada canción input.
+              Para decaimientos más suaves se obtienen recomendaciones más cercanas a todos los inputs simultáneamente. Elegimos un punto medio. 
+            </td>
+            <td><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recomendaciones_modelo_2_listarandom.png" /></td>
+          </tr>
         </table>
+          <p>
+            A continuación se detalla 10 canciones de la lista de canciones recomendadas al utilizar como input la lista de prueba, que corresponden a las canciones recomendadas destacadas en el gráfico anterior
+          </p>
+
+          <table>
+            <tr>
+              <th>Artista</th>
+              <th>Canción</th>
+            </tr>
+            <tr>
+              <td>fun.</td>
+              <td>Take Your Time - Acoustic</td>
+            </tr>
+            <tr>
+              <td>Pat Green</td>
+              <td>Girls From Texas (feat. Lyle Lovett)</td>
+            </tr>
+            <tr>
+              <td>Gob</td>
+              <td>I Hear You Calling</td>
+            </tr>
+            <tr>
+              <td>The Kinks</td>
+              <td>Better Things - Stereo Mix</td>
+            </tr>
+            <tr>
+              <td>The Civil Wars</td>
+              <td>I've Got This Friend</td>
+            </tr>
+            <tr>
+              <td>Jake Owen</td>
+              <td>Pass A Beer</td>
+            </tr>
+            <tr>
+              <td>Filmore</td>
+              <td>I Got It</td>
+            </tr>
+            <tr>
+              <td>Brian Fallon</td>
+              <td>Open All Night</td>
+            </tr>
+            <tr>
+              <td>Kelly Clarkson</td>
+              <td>Underneath the Tree</td>
+            </tr>
+            <tr>
+              <td>Death Cab for Cutie</td>
+              <td>Long Division</td>
+            </tr>
+          </table>
         <h2 id="Anexo-1:-Diccionarios-de-datos">Anexo 1: Diccionarios de datos<a class="anchor-link"
             href="#Anexo-1:-Diccionarios-de-datos">&#182;</a></h2>
         <h3 id="Tabla-playlists">Tabla playlists<a class="anchor-link" href="#Tabla-playlists">&#182;</a></h3>
@@ -24284,107 +24390,108 @@ all of MD as it is not optimized for dense, information rich UIs.
             href="https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist">Get
             Playlist</a>. Esta tabla continee en forma desagregada detalle de las canciones y las playlists a las que
           pertenecen.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Tipo de variable</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>name</td>
-              <td>object</td>
-              <td>Nombre de la playlist</td>
-            </tr>
-            <tr>
-              <td>colabborative</td>
-              <td>boolean</td>
-              <td>Si es una lista colaborativa o no</td>
-            </tr>
-            <tr>
-              <td>pid</td>
-              <td>int</td>
-              <td>Identificador de la lista</td>
-            </tr>
-            <tr>
-              <td>modified_at</td>
-              <td>datetime</td>
-              <td>Fecha de modificación de la lista</td>
-            </tr>
-            <tr>
-              <td>num_tracks</td>
-              <td>int</td>
-              <td>Cantidad de canciones en la lista</td>
-            </tr>
-            <tr>
-              <td>num_albums</td>
-              <td>int</td>
-              <td>Cantidad de álbumes en la lista</td>
-            </tr>
-            <tr>
-              <td>num_followers</td>
-              <td>int</td>
-              <td>Cantidad de álbumes en la lista</td>
-            </tr>
-            <tr>
-              <td>num_edits</td>
-              <td>int</td>
-              <td>Cantidad de ediciones a la lista</td>
-            </tr>
-            <tr>
-              <td>duration_ms</td>
-              <td>int</td>
-              <td>Duración de cada canción en milisegundos</td>
-            </tr>
-            <tr>
-              <td>num_artists</td>
-              <td>int</td>
-              <td>Cantidad de artistas en la lista</td>
-            </tr>
-            <tr>
-              <td>description</td>
-              <td>string</td>
-              <td>Descripción de la lista</td>
-            </tr>
-            <tr>
-              <td>pos</td>
-              <td>int</td>
-              <td>Posición de la canción en la lista</td>
-            </tr>
-            <tr>
-              <td>artist_name</td>
-              <td>string</td>
-              <td>Nombre del artista de la canción</td>
-            </tr>
-            <tr>
-              <td>track_uri</td>
-              <td>string</td>
-              <td>URL para obtener información de la canción</td>
-            </tr>
-            <tr>
-              <td>artist_uri</td>
-              <td>string</td>
-              <td>URL para obtener información del artista la canción</td>
-            </tr>
-            <tr>
-              <td>track_name</td>
-              <td>string</td>
-              <td>Nombre del track</td>
-            </tr>
-            <tr>
-              <td>album_uri</td>
-              <td>string</td>
-              <td>URL para obtener información del álbum de la canción</td>
-            </tr>
-            <tr>
-              <td>album_uri</td>
-              <td>string</td>
-              <td>Nombre del álbum de la canción</td>
-            </tr>
-          </tbody>
-        </table>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Tipo de variable</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>name</td>
+                <td>object</td>
+                <td>Nombre de la playlist</td>
+              </tr>
+              <tr>
+                <td>colabborative</td>
+                <td>boolean</td>
+                <td>Si es una lista colaborativa o no</td>
+              </tr>
+              <tr>
+                <td>pid</td>
+                <td>int</td>
+                <td>Identificador de la lista</td>
+              </tr>
+              <tr>
+                <td>modified_at</td>
+                <td>datetime</td>
+                <td>Fecha de modificación de la lista</td>
+              </tr>
+              <tr>
+                <td>num_tracks</td>
+                <td>int</td>
+                <td>Cantidad de canciones en la lista</td>
+              </tr>
+              <tr>
+                <td>num_albums</td>
+                <td>int</td>
+                <td>Cantidad de álbumes en la lista</td>
+              </tr>
+              <tr>
+                <td>num_followers</td>
+                <td>int</td>
+                <td>Cantidad de álbumes en la lista</td>
+              </tr>
+              <tr>
+                <td>num_edits</td>
+                <td>int</td>
+                <td>Cantidad de ediciones a la lista</td>
+              </tr>
+              <tr>
+                <td>duration_ms</td>
+                <td>int</td>
+                <td>Duración de cada canción en milisegundos</td>
+              </tr>
+              <tr>
+                <td>num_artists</td>
+                <td>int</td>
+                <td>Cantidad de artistas en la lista</td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td>string</td>
+                <td>Descripción de la lista</td>
+              </tr>
+              <tr>
+                <td>pos</td>
+                <td>int</td>
+                <td>Posición de la canción en la lista</td>
+              </tr>
+              <tr>
+                <td>artist_name</td>
+                <td>string</td>
+                <td>Nombre del artista de la canción</td>
+              </tr>
+              <tr>
+                <td>track_uri</td>
+                <td>string</td>
+                <td>URL para obtener información de la canción</td>
+              </tr>
+              <tr>
+                <td>artist_uri</td>
+                <td>string</td>
+                <td>URL para obtener información del artista la canción</td>
+              </tr>
+              <tr>
+                <td>track_name</td>
+                <td>string</td>
+                <td>Nombre del track</td>
+              </tr>
+              <tr>
+                <td>album_uri</td>
+                <td>string</td>
+                <td>URL para obtener información del álbum de la canción</td>
+              </tr>
+              <tr>
+                <td>album_uri</td>
+                <td>string</td>
+                <td>Nombre del álbum de la canción</td>
+              </tr>
+            </tbody>
+          </table>
+
         <h3 id="Tabla-artistas">Tabla artistas<a class="anchor-link" href="#Tabla-artistas">&#182;</a></h3>
         <table>
           <thead>
