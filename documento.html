@@ -24273,7 +24273,7 @@ all of MD as it is not optimized for dense, information rich UIs.
   <table style="border:none;">
     <tr>
       <td style="width: 50%">
-        Pasos:</br>
+        Nuestro objetivo es crear una matriz de proximidad entre todas las listas y basada en los atribuos de las canciones que las componen:</br>
         <ol>
         <li>El <i>set</i> de carácteristicas para recomendar esta basado en los atríbutos de las canciones que componen la lista</li>
         <li>Computar las distancias según los vectores agregados entre todas las <i>playlists</i></li>
@@ -24281,24 +24281,11 @@ all of MD as it is not optimized for dense, information rich UIs.
           la métrica de distancia. El conjunto de canciones de las <i>playlists</i> más cercanas
         es el conjunto de canciones candidas a recomendar</li> 
         <li>Se aplica una capa de filtro sobre el <i>set</i> de canciones candidatas como eliminar
-          las toda canción que se encuentre en el grupo de canciones del <i>input</i></li>
-        <li>Finalmente aplicar un ranking al conjunto filtrado de canciones candidatas para
-          entregar según se requieran (e.g. ranking por popularidad de artista)</li>
+          las toda canción que se encuentre en el grupo de canciones del <i>input</i>. Este paso puede extenderse y agregar preferencias
+	del usuario para descartar generos, entre otros.</li>
+        <li>Finalmente se aplica un ranking al conjunto filtrado de canciones candidatas para
+          entregar según se requieran las canciones (e.g. ranking por popularidad de artista)</li>
         </ol>
-      </td>
-      <td>
-        <img
-            src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recsys_diagram_spotify.svg"
-            alt="RecSys playlist-song recommendation"/>
-        </td>
-    </tr>
-  </table>
-
-
-  <table style="border:none;">
-    <tr>
-      <td style="width: 50%">
-	      lalalalala
       </td>
       <td>
         <img
