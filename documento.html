@@ -24345,7 +24345,42 @@ all of MD as it is not optimized for dense, information rich UIs.
         </table>
 
         <h3>Tercer modelo</h3>
+        <a href="https://github.com/alcazar90/CC5205-3-proyecto/commit/d2f1c45e7c278108b743279ec11dce5fb641d78e">Código</a>
+        <p>
+          Otra forma de recomendar canciones respecto a una <i>playlist</i> o directamente desde una <i>canción</i> es basada en la cercanía que ésta tiene respecto a su entorno. En este modelo se utiliza otro enfoque utilizando Redes Neuronales, específicamente un AutoEncoder.<br>
 
+        </p>
+
+        <table style="border:none;">
+          <tr>
+            <td style="width: 50%">
+              En este caso se entrenó una red neuronal (específicamente un autoencoder) de manera no supervisada, con el objetivo de aprender la representación codificada de las features_tracks (espacio latente) para finalmente generar los datos de entrada (features_tracks) desde la representación codificada.<br>
+              <br>
+              La red se entrenó con todas las canciones del dataset, pasándole como input las features_tracks. Una vez entrenado el modelo, utilizamos el encoder para pasar de 11 features a solo 2 y así visualizar los distintos grupos en el espacio latente.<br>
+              <br>
+              Por lo tanto, a la hora de realizar una recomendación se realizan los siguientes pasos:<br>
+              <ol>
+                <li>Se reciben los features de una nueva canción o playlist
+                <li>El encoder recibe los datos y los lleva al espacio latente (reduce su dimensionalidad a 2 componentes)
+                <li>Se buscan las N canciones más cercanas y se retornan.
+              </ol>
+              </br>
+            </td>
+            <td>
+              <img
+                  src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/autoencoder.png"
+                  alt="Representacion grafica del modelo."/>
+              </td>
+          </tr>
+          <tr>
+            <td style="width: 50%">
+              Como se ve en la imagen, los puntos azules representan las canciones del dataset. En este caso es distintos a los otros 2 modelos, debido que el autoencoder aprendió su propia forma
+              de codificar-decodificar los datos. Los puntos rojos son las canciones o playlist que se le entrega al modelo. Finalmente se pueden visualizar puntos amarillos, que serían las canciones recomendadas por el modelo basadas en sus distancias euclidianas, por lo que se recomiendan las más cercanas a las canciones-playlist de entrada.
+            </td>
+            <td><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/modelo_3.png" /></td>
+          </tr>
+
+        </table>
         <h2 id="Anexo-1:-Diccionarios-de-datos">Anexo 1: Diccionarios de datos<a class="anchor-link"
             href="#Anexo-1:-Diccionarios-de-datos">&#182;</a></h2>
         <h3 id="Tabla-playlists">Tabla playlists<a class="anchor-link" href="#Tabla-playlists">&#182;</a></h3>
