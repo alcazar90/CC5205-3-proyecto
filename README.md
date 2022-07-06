@@ -19,45 +19,15 @@ Proyecto curso CC5205-3, FCFM, Universidad de Chile
 
 ## Motivación
 
-Hoy en día, el boom tecnológico ha hecho que el mercado global sea cada vez más competitivo al 
-momento de captar clientes. Dentro de esta competitividad, han surgido nuevas estrategías y 
-algoritmos para poder lograr que la experiencia del consumidor sea la más grata y sencilla. 
-¿Cómo logra un nuevo servicio posicionarse en el mercado? ¿Cómo logra mantener a sus usuarios satisfechos?. Hoy existen varias metodologías para esto, particularmente hablaremos de los sistemas de recomendación.
+Los sistemas de recomendación son una tecnología ampliamente usada en los servicios digitales, desde el *e-commerce* hasta las plataformas de *streaming*. Qué mejor que, al comprar tus zapatillas favoritas, o al ver una buena pelicula, exista un algoritmo que te vaya recomendando productos o experiencias similares a las que acabas de ver.
 
-Los sistemas de recomendación son una tecnología ampliamente usada en los servicios digitales, desde el _e-commerce_ hasta las plataformas de _streaming_. Qué mejor que, al comprar tus zapatillas favoritas, o al ver una buena pelicula, exista un algoritmo que te vaya recomendando productos o experiencias similares a las que acabas de comprar o ver. 
+La idea principal es acercar la oferta lo máximo posible a los intereses de los usuarios y/o consumidores. Por un lado, los usuarios ahorran tiempo y frustración evitando el bombardeo de opciones irrelevantes, y en el mejor de los casos, pueden llegar a encontrar su próxima pareja o la siguiente serie o película que comentaran en su próxima reunión de amigos.
 
-Como explicamos anteriormente, el entusiasmo e interés de empresas en perfeccionar esta tecnología se puede palpar en diversas competencias y servicios que utilizamos diariamente, como el de [Netflix](https://en.wikipedia.org/wiki/Netflix_Prize) y [Spotify](hhttps://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge).
+Desde el lado comercial, el desafio es grande. Los consumidores se encuentran cada vez más expuestos a una cantidad abismante de información, el ruído en la atención de los consumidores es extremo, y su tiempo escazo. Las empresas que no logren orquestar sus catálogos de servicios o productos tendrán, en el mejor de los casos, un reclamo, y en el peor, la fuga de sus usuarios y clientes; Todo esto con impacto directo en la última línea del estado de resultados. Además, hay cada vez mayor competencia en servicios. Esto es evidente en la industria de *streaming*, como es el caso para las [películas y series](https://www.wired.com/gallery/best-streaming-services/). 
 
-La idea principal es acercar la oferta lo máximo posible a los intereses de los usuarios y/o consumidores. Por un lado, los usuarios ahorran tiempo y frustración evitando el bombardeo de opciones irrelevantes, y en el mejor de los casos, pueden llegar a encontrar su próxima pareja, su nueva canción favorita, o la siguiente serie o película que comentaran en su próxima reunión de amigos.
+Dentro de este contexto, se encuentra la competencia [*"The Spotify Million Playlist Dataset Challenge"*](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge), cuyo objetivo fue explorar 1 millón de *playlists* con el próposito de investigar relaciones entre *playlists* y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el servicio conocido como *automatic playlist continuation*, el cual permite continuar reproduciendo música una vez que la lista de canciones haya finalizado, recomendando canciones similares.
 
-Desde el lado comercial, el desafio es grande. Los consumidores se encuentran cada vez más expuestos 
-a una cantidad abismante de información, el ruído en la atención de los consumidores es extremo, 
-y su tiempo escazo. Las empresas que no logren orquestar sus catálogos de servicios o productos 
-tendrán, en el mejor de los casos, un reclamo, y en el peor, la fuga de sus usuarios y clientes; Todo esto con impacto directo en 
-la última línea del estado de resultados. Además, hay cada vez mayor competencia en servicios donde 
-este tipo de tecnologias es particularmente relevante, y que antes algunas compañías gozaban de la ventaja de haber sido _first movers_. Esto es evidente en la industria  de _streaming_, como es el caso para las 
-películas y series. Al principio, solo teníamos Netflix, en cambio ahora podemos ver más de una decena de
-[servicios similares (i.e. Hbomax, Hulu, Paramount, Disney+)](https://www.wired.com/gallery/best-streaming-services/).
-Recomendar a los usuarios contenido significativo para ellos ya no es un _nice to have_, sino un 
-requisito para seguir siendo relevantes en la industria.
-
-Dentro de este contexto, se encuentra la competencia [_"The Spotify Million Playlist Dataset 
-Challenge"_](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge), cuyo 
-objetivo fue explorar (adivinen) 1 millón de _playlists_ con el próposito de investigar relaciones 
-entre _playlists_ y canciones. De esta manera, descubrir nuevas formas de entender y enriquecer el 
-servicio conocido como _automatic playlist continuation_, el cual como bien dice su nombre, permite 
-continuar reproduciendo música una vez que la lista de canciones haya finalizado, recomendando canciones 
-similares basadas en la lista, pero que estén fuera-de-ella.
-
-Los datos que se pueden ver en la sección _Datasets_, presenten una oportunidad para "descubrir" nuevos
-artistas, y más allá del sistema de recomendación en sí, explorar cómo categorizar _playlists_ usando 
-otros atributos aparte del género musical. Finalmente, tendremos la oportunidad de construir un prototipo que pueda 
-recomendar canciones dado un _playlist_, aprendiendo a menor escala, un caso de uso relevante en la industria.
-
-El principal beneficio del servicio _automatic playlist continuation_ es el que busca toda empresa hoy en día,
-mejorar la experiencia del consumidor a través de una experiencia más armonica y completa al escuchar música. 
-Además, los usuarios podrán descubrir nuevas canciones, con el potencial de ir "reclutándolas" a sus listas, 
-y agregando a su radar nuevos artistas que puedan ser de su interes.
+Diseñar un sistema de recomendación es una forma de experimentar un caso práctico en la industria y entender como los usuarios de Spotify pueden tener una experiencia más armonica y completa al recibir canciones de su interes.
 
 ## Dataset
 
@@ -110,13 +80,13 @@ Al explorar las **variables categóricas más relevantes**, se obtienen las sigu
   </tr>
 </table>
 
-En general, se destaca que todas las frecuencias son muy bajas, lo que indica que el set _cuenta con una gran variedad de artistas, canciones y álbumes_, siendo sus cantidades de valores únicos **108.155, 689.282 y 273.486 respectivamente**. De todos estos, el que presenta la frecuencia relativa más alta alcanza solo el 1.3%, correspondiente al artista _Drake_. En los álbumes destaca que los más frecuentes sean "x" y "%". Se tendrá esto en cuenta en caso de ser un atributo requerido en algún modelamiento, ya que estos podrían corresponder a valores nulos. Se exploró también la frecuencia del atributo `collaborative`, el cual es desbalanceado, siendo colaborativas solo el 5% de las listas.
+En general, se destaca que todas las frecuencias son muy bajas, lo que indica que el set _cuenta con una gran variedad de artistas, canciones y álbumes_, siendo sus cantidades de valores únicos **108.155, 689.282 y 273.486 respectivamente**. De todos estos, el que presenta la frecuencia relativa más alta alcanza solo el 1.3%, correspondiente al artista _Drake_. En los álbumes destaca que los más frecuentes sean "x" y "%" (posibles datos nulos).
 
 <table style="border:none;">
   <tr>
     <td style="width: 50%">
-      Se exploró también las **palabras más frecuentes** para los nombres de las listas y los nombres de las canciones.
-      En el primer caso, se destaca que al parecer sí existe una cantidad importante de listas en cuyo título hacen alusión a un género o categoría musical (omitiendo la gran presencia de la palabra "music"). En cuanto a los nombres de canciones, destaca la presencia de la palabra "Love", la cual quizá podría no ser un buen discriminante por al parecer estar presente en diversidad de canciones. Destaca también la gran presencia de palabras como "remix", "feat", "version" y "remastered" aludiendo a que probablemente muchas de las canciones constituyen versiones alternativas y/o colaborativas con otros artistas.
+	Se exploró también las <strong>palabras más frecuentes</strong> para los nombres de las listas y los nombres de las canciones.
+      En el primer caso, se destaca que al parecer sí existe una cantidad importante de listas en cuyo título hacen alusión a un género o categoría musical (omitiendo la gran presencia de la palabra "music"). Destaca también la gran presencia de palabras como "remix", "feat", "version" y "remastered" aludiendo a que probablemente muchas de las canciones constituyen versiones alternativas y/o colaborativas con otros artistas.
     </td>
     <td><img src="fig/palabas_mas_frecuentes_nombre_lista.png" /></td>
     <td><img src="fig/palabras_mas_frecuentes_nombre_camcion.png" /></td>
@@ -140,7 +110,7 @@ Por último, se exploró la **distribución de los siguientes atributos numéric
   </table>
 </center>
 
-En general, se aprecia que las distribuciones se encuentran sesgadas a la derecha, o con sesgo positivo, indicando que existen valores extremos muy altos alejados de los valores más frecuentes para estos datos. 
+En general, se aprecia que las distribuciones tienen sesgo positivo, indicando que existen valores extremos muy altos alejados de los valores más frecuentes para estos datos. 
 
 El único atributo que presenta una distribución más cercana a la normal, es el de la duración de minutos por canción (se consideró todas las canciones sin eliminar duplicadas, para apreciar la distribución del tiempo). En el gráfico, se aplicó la función `clip` de pandas para que se considerara a todas las canciones con duración mayor a 15 minutos como que ésta fuera de 15 (esto corresponde a 3.302 canciones no únicas). Al explorar algunas de estas canciones, se puede ver que al parecer corresponden en su mayoría a remixes, álbumes completos, o postcasts. Este podría ser un criterio a considerar en caso de un futuro modelo, ya que podría querer recomendarse audios que efectivamente correspondan a canciones, tomando en cuenta su duración.
 
@@ -158,17 +128,6 @@ Por otro lado, en el caso del número de seguidores, se debió aplicar escalamie
 </table>
 
 
-<table style="border:none;">
-  <tr>
-    <td><img src="fig/heatmap_loudness.png" /></td>
-    <td style="width: 50%">
-      El objetivo de este análisis fue crear una visualización que nos permita inspeccionar un grupo de playlists con sus respectivos tracks y la dimensión de un atributo de estos (e.g. loudness).
-El propósito de esta visualización es de validación, y su tarea es, una vez que tengamos la capacidad de recomendar nuevos tracks para cada lista, si este set de nuevos tracks propuestos tienen un comportamiento similar al set de cancions ya en el playlist según una dimensión descriptiva del track (e.g. danceability).
-Otro aspecto interesante que nos permitiría ver esta visualización es sí hay algun patrón por atributo de tracks en como los usuarios van creando las playlists (i.e. slow to fast o quit to loud).
-    </td>
-  </tr>
-</table>
-
 
 ### Tabla Artistas
 
@@ -178,34 +137,14 @@ Esta tabla tiene dos columnas numéricas que representan: 1) la cantidad de segu
 
 Al explorar las variables numéricas tenemos los siguientes resultados:
 
-<table style="border:none;">
+<table style="border:none; text">
   <tr>
-    <td style="width: 50%">
-	    Dada a la gran diferencia de followers entre los artistas es que se debe aplicar escala logarítmica, debido a que el artista con mayor número de seguidores tiene 94.522.435 seguidores, mientras que los demás tienen, en promedio, 2.643 seguidores. Podemos notar que en esta escala la cantidad de followers distribuye sin grandes sesgos, casi normal se podria decir.
-    </td>
-    <td><img src="fig/distribucion_seguidores_artistas.png" /></td>
-  </tr>
-  <tr>
-    <td style="width: 50%">
-	    Por otra parte, podemos ver que la popularidad de los artistas se distribuye con sesgo positivo. Además, el boxplot nos indica de la existencia de los outliers que, en este caso, serían los artistas cuya popularidad es cercana al 100.
-    </td>
-    <td><img src="fig/distribucion_popularidad_artista.png" /></td>
+      <td><img src="fig/distribucion_seguidores_artistas.png" width="300" height="200"/></td>
+      <td><img src="fig/distribucion_popularidad_artista.png" width="300" height="200"/></td>
+      <td><img src="fig/generos_que_mas_se_repiten.png" width="300" height="200"/></td>
   </tr>
 </table>
- 
- Para seguir el análisis se hizo un `merge` entre la tabla playlist (que contiene las canciones y el id_artista) y artist, y se contabilizó la cantidad de géneros repetidos.
- 
- <table style="border:none;">
-  <tr>
-    <td style="width: 50%">
-	    **¿Cuáles son los géneros que más se repiten en el dataset?** \
-Como se ve en el gráfico, algunos de los géneros más repetidos en las playlist son: pop, dance pop, rap, pop rap, hip hop, etc. Cabe destacar que las canciones no tienen un género musical establecido, el género lo tienen los artistas.
-    </td>
-    <td><img src="fig/generos_que_mas_se_repiten.png" /></td>
-  </tr>
-</table>
-
-Como Spotify es el encargado de establecer los géneros de los artistas, muchos de ellos (exactamente 242581 artistas) simplemente no tienen un género musical.
+ Dada a la gran diferencia de followers entre los artistas (primer gráfico) es que se debe aplicar escala logarítmica, debido a que el artista con mayor número de seguidores tiene 94.522.435 seguidores, mientras que los demás tienen, en promedio, 2.643 seguidores. Podemos notar que en esta escala la cantidad de followers distribuye sin grandes sesgos, cuyos outliers representan a los artistas con millones de seguidores. Por otra parte, podemos ver que la popularidad de los artistas se distribuye con sesgo positivo (segundo gráfico). Además, el boxplot nos indica de la existencia de los outliers que, en este caso, serían los artistas cuya popularidad es cercana al 100. Finalmente, se hizo un 'merge' entre la tabla playlist y artist, cuya unión pretende responder a la siguiente pregunta: <strong>¿Cuáles son los géneros que más se repiten/escuchan en el dataset?</strong> Y como se ve en el tercer gráfico, algunos de los géneros más escuchados/repetidos en las playlist son: pop, dance pop, rap, pop rap, hip hop, etc. Cabe destacar que las canciones no tienen un género musical establecido, lo tienen los artistas, y muchos de ellos (exactamente 242.581 artistas) simplemente no tienen un género musical.
 
 #### Análisis multivariado
  <table style="border:none;">
@@ -224,18 +163,17 @@ Como se ve en la matriz, existe correlación positiva (0.67) entre el número de
 
 #### Análisis univariado
 
-Esta última tabla contiene valores numéricos que describen características de las canciones que posiblemente nos serán útiles para clasificar o predecir preferencias. Podemos notar que cuatro de las variables (energy, tempo, danceability y valence, panel A) tienen una distribución simétrica y equitativamente repartida en el rango (similar a una distribución normal). Dos de las variables (duration y loudness, panel B) presentan outliers que ensucian los datos, por lo que sería necesario eliminarlos antes del análisis. Otras variables (acousticness, speechness, liveness e instrumentalness, panel B) tienen distribuciones muy cargadas hacia ciertos valores, particularmente valores bajos. Pareciesen comportarse como características pseudo binarias, donde si posee la característica tendrá valores entre ~0.2 y 1 con probabilidades similares, siendo el caso extremo instrumentalness. Podría ser necesario realizarles alguna transformación matemática o  convertirlos a variables categóricas. Finalmente, las variables mode, time_signature y key toman una cantidad limitada de valores. Mode al tomar sólo 2 valores debería ser considerado como variable categórica donde la mayoría de las canciones está en tonalidad mayor. Key está uniformemente repartida por lo que podría ser útil en la clasificación, y no sería necesario considerarla categórica. Time signature es un caso especial. Notamos que hay outliers correspondientes posiblemente a datos erroneos (No existen compás 0/4). También sería necesario transformarla, ya que no hace sentido considerarla una cantidad.
+Esta última tabla contiene valores que describen las canciones que serán útiles para clasificar o predecir preferencias. Podemos notar que energy, tempo, danceability y valence (A) tienen una distribución simétrica y equitativa. Acousticness, speechness, liveness e instrumentalness (B) tienen distribuciones muy cargadas hacia valores bajos. Se comportan como variables binarias con valor 0 o >0 uniforme si tiene o no una característica. Conviene transformarlas matemáticamente o pasarlas a variables categóricas. Duration y loudness (C) presentan outliers, por lo que será necesario eliminarlos. Mode, time_signature y key (D) toman una cantidad limitada de valores. Mode al tomar sólo 2 valores será considerado variable categórica. En time signature hay outliers que son posibles datos erroneos (No hay compás 0/4). También sería necesario transformarla, ya que no hace sentido considerarla una variable ordinal.
 
 > #![](fig/features_univ_all.png)
 
 #### Análisis multivariado
 
-Para entender como estas variables se relacionan entre sí, realizamos análisis de correlación múltiple entre todas estas variables (A). Las correlaciones pueden ser mostradas de forma más claras mediante vectores provenientes de PCA (B). Si bien esta técnica tiene otras aplicaciones, es útil para ilustrar cómo  las variables se relacionan entre ellas. Vectores que apuntan en la misma dirección indica correlación positiva, direcciones opuestas indica correlación negativa y perpendicularidad indica no correlación, que es proporcional al largo del vector. Así, los vectores pequeños indican datos ruidosos mientras vectores grandes indican datos que aportan información útil. Observamos que energy y loudness están altamente correlacionados entre sí, por lo que una canción es energética probablemente cuando su volúmen es alto. Al entregar información similar, podrían fusionarse en una sola variable. Acousticness por el contrario estaría fuertemente vinculada a canciones con volumenes bajos. Sorprendentemente, tempo y liveness también se comportan de forma similar. Valence y danceability y en menor medida speechness tambien correlacionan positivamente, indicando que las canciones bailables tienden a ser más alegres y vocales. Sin embargo, valores como key son mayoritariamente ruidosos. Esto hace sentido ya que teóricamente la nota en la que la escala está basada no hace ninguna diferencia en la percepción musical. 
-
+Para entender como estas variables se relacionan entre sí, realizamos una matriz de correlación (A). Las correlaciones pueden ser mostradas más claramente mediante vectores provenientes de PCA (B). Vectores que apuntan en la misma dirección indican correlación positiva, direcciones opuestas es correlación negativa y perpendiculares indica no correlación. Correlaciones son proporcionales al largo del vector. Vemos que energy y loudness están altamente correlacionados entre sí, indicando que cuando una canción es energética probablemente su volúmen es alto. Acousticness por el contrario está vinculada a volumenes bajos. Tempo y liveness también se comportan de forma similar. Valence y danceability y en menor medida speechness tambien correlacionan positivamente, indicando que las canciones bailables tienden a ser más alegres y vocales. Sin embargo, valores como key son mayoritariamente ruidosos. Esto hace sentido ya que la nota basal de una canción no influye en la percepción musical. 
 
 > #![](fig/features_correlation.png)
 
-Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado con cada característica. Observamos que la gran mayoría de las canciones se ubica en dirección a "Energy", por lo que este tipo de canciones correspondería a la moda. En cambio, en la dirección opuesta existe una "nube" de canciones con características más diversas y menor densidad, posiblemente más relacionado a música alternativa. En time_signature prima 4/4 hacia energy/danceability mientras que en la dirección opuesta abundan los tiempos más irregulares basados en 3/4 o 5/4. Como 3<4<5 los análisis de correlación no detectan ninguna tendencia, por lo que sería conveniente transformar esta variable en "regularidad". En conjunto, se observa que la "nube" de canciones con características diversas presenta mayor abundancia de canciones instrumentales, acústicas, valencia negativa, son poco bailables y energéticas, y tienen duración más larga y tiempos irregulares.
+Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado con cada característica. Observamos que la gran mayoría de las canciones se ubica en dirección a "Energy", por lo que este tipo de canciones correspondería a la moda. En la dirección opuesta existe una "nube" de canciones con características más diversas y menor densidad, posiblemente relacionadas a música alternativa. En time_signature prima 4/4 hacia energy/danceability mientras que en la dirección opuesta abundan los tiempos más irregulares basados en 3/4 o 5/4. Como 3<4<5 los análisis de correlación no detectan tendencia, por lo que sería conveniente transformar esta variable en "regularidad". En conjunto, se observa que la "nube" de canciones con características diversas presenta mayor abundancia de canciones instrumentales, acústicas, con valencia negativa, poco bailables y energéticas, con duración más larga y tiempos irregulares.
 
 > #![](fig/pca_3key_2.png)
 
