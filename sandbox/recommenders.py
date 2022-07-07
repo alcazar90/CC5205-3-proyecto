@@ -290,3 +290,40 @@ class Recommender3:
             recommendations.extend(result_cdist_sort)
             
         return self.processed_data_df.iloc[recommendations[1:number+1], 2]
+
+#Actualmente este promedio funciona alimentandolo con modelos ya entrenados y los puntajes obtenidos en validación
+class RecommenderMean:
+    def __init__(self, recommenders=[], scores=[]):
+        self.recommenders=recommenders
+        self.scores=scores
+        #if len(self.recommenders)==0: self.train()
+        #if len(self.scores)==0: self.validate()
+        self.probs=np.asarray(self.scores)/sum(self.scores)
+        
+    #Una vez terminados los recomendadores se podría implementar la función trein() para entrenar un modelo de cada tipo
+    def train(self, playlists_train, tracks_train):pass
+    
+    #También se podría implementar validate() para calcular automáticamente los scores
+    def validate(self, playlists_val, tracks_val): pass
+    
+    def recommend_list(self, canciones_df, number=100):
+        canciones_df["uri"]=canciones_df["uri"] if "uri" in canciones_df else canciones_df["track_uri"]
+        uri_origin=list(canciones_df["uri"])
+        self.uri_list=[list(rec.recommend_list(canciones_df, number=number+len(uri_origin))) for rec in self.recommenders]
+        indexes=[0]*len(self.recommenders)
+        self.output=[]
+        for i in range(number):
+            rec=np.random.choice(range(len(self.recommenders)), p=self.probs)
+            while self.uri_list[rec][indexes[rec]] in self.output + uri_origin: indexes[rec]+=1
+            self.output.append(self.uri_list[rec][indexes[rec]])
+        return self.output
+    
+    #lr podría ser 0.001 para reproducciones, 0.05 para "likes", etc.
+    def feedback(self, liked_uri, lr=0.001):
+        goal_probs=np.asarray([int(liked_uri in uri_list) for uri_list in self.uri_list])
+        if sum(goal_probs)>0:
+            goal_probs=goal_probs/sum(goal_probs)
+            self.probs=self.probs*(1-lr)+goal_probs*lr
+            print("Thanks for your feedback!")
+        else:
+            print("Song not in recommendations")

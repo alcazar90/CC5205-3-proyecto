@@ -24415,6 +24415,43 @@ all of MD as it is not optimized for dense, information rich UIs.
           sobre el 50% en algunas playlists. Por otro lado, el modelo Recommender1 obtuvo porcentajes más bajos, pero siendo en promedio más consistente, con una menor varianza a los 2 anteriors.
         </p>
 
+        <h2>Modelo promedio</h2>
+
+        <p>
+          Para generar un sólo recomendador, se propone ponderar los 3 sistemas generados en uno sólo. Para esto, el modelo final genera recomendaciones con cada uno de los 3 tipos de modelos y
+          luego mezcla estas recomendaciones eligiendo aleatoreamente según ciertas probabilidades asociadas a cada modelo.
+        </p>
+        <p>
+          Adicionalmente, se crea la función "Feedback" que actualiza las probabilidades asociadas a cada recomendador para ajustarse más a las preferencias del usuario.
+          De esta manera, si al usuario le gustan más las recomendaciones de un cierto modelo de recomendación, aumentará la probabilidad de que se elijan recomendaciones de ese modelo.
+        </p>
+        <p>
+          Se utilizó los porcentajes de eficiencia obtenidos en validación para obtener los pesos iniciales asociados a los modelos. De esta manera, el recomendador ponderado inicialmente
+          tiene más probabilidades de elegir recomendaciones de los modelos que mayor puntaje tuvieron en validación. Con el paso del tiempo, estos puntajes podrían cambiar si el usuario
+          tiene más preferencia por las recomendaciones de un mismo recomendador.
+        </p>
+
+        <h3>Resultados</h3>
+
+        <p>Se utilizó una nueva lista de 10 canciones al azar, obteniéndose las siguientes recomendaciones</p>
+
+        FALTA TABLA
+
+        <p>Se realizó además el mismo proceso del pipeline de validación, pero utilizando el modelo promedio, obteniéndose los siguientes porcentajes de canciones recomendadas correctamente</p>
+
+        FALTA GRAFICO
+
+        <p>Vemos que, en promedio, la eficiencia del recomendador ponderado es un punto intermedio entre las eficiencias de cada recomendador por separado.</p>
+
+        <h1>Conclusiones</h1>
+
+        <p>
+          Respecto de los resultados obtenidos, si bien los porcentjes obtenidos parecieran en principio no ser alentadores, se debe tener en cuenta que parte de la idea de una recomendación,
+          es sugerir al usuario canciones que probablemente no conoce, pero pueden ser de su gusto. Por tanto, el validar las recomendaciones con cancione que ya se encontraban dentro de una 
+          selección de un usuario específico, podría no ser lo más adecuado. Una posible evaluación de mejor confianza, sería consultar directamente al usuario si la recomendación entregada ha
+          sido de su agrado.
+        </p>
+
         <h2 id="Anexo-1:-Diccionarios-de-datos">Anexo 1: Diccionarios de datos<a class="anchor-link"
             href="#Anexo-1:-Diccionarios-de-datos">&#182;</a></h2>
         <h3 id="Tabla-playlists">Tabla playlists<a class="anchor-link" href="#Tabla-playlists">&#182;</a></h3>
