@@ -24381,6 +24381,40 @@ all of MD as it is not optimized for dense, information rich UIs.
           </tr>
 
         </table>
+
+        <h1>Evaluación de modelos</h1>
+
+        <h2>Pipeline de Validación</h2>
+
+        Para la evaluación de modelos, se realizó un Pipeline de Validación, consistente en tomar 20 canciones al azar de 50 playlists pre existentes (cada una originalmente tiene entre 210 y 375 canciones),
+        las cuales son entregadas a cada uno de los tres modelos.
+        Cada modelo realiza recomendaciones para los inputs entregados. Luego, se compara cuántas de esas canciones recomendadas estaban efectivamente dentro del resto de canciones en cada lista, que no fueron
+        entregadas como input al modelo. Para la comparación entre modelos entonces, se grafican histogramas con las frecuencias de porcentajes de coincidencia en cada modelo para las canciones recomendadas y
+        las canciones que efectivamente estuvieran dentro de la lista de donde se obtuvieron las canciones input. El código correspondiente al pipeline de validación se encuentra disponible en
+        <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/pipeline_validacion.ipynb">este enlace</a>.
+
+        <h3>Resultados</h3>
+
+        <table>
+          <tr>
+            <td>
+              <img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/validacion_modelo_1.png" />
+            </td>
+            <td>
+              <img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/validacion_modelo_2.png" />
+            </td>
+            <td>
+              <img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/validacion_modelo_3.png" />
+            </td>
+          </tr>
+        </table>
+
+        <p>
+          Se observa que, en promedio, para las 50 recomendaciones evaluadas, el modelo <strong>Recommender2</strong> es el que logra el mayor porcentaje de recomendaciones correctas, con un promedio de 
+          15.2% de recomendaciones correctas. El modelo Recommender3 logra valores similares, y destaca que en estos dos modelos se presentaron algunos casos atípicos con recomendaciones correctas 
+          sobre el 50% en algunas playlists. Por otro lado, el modelo Recommender1 obtuvo porcentajes más bajos, pero siendo en promedio más consistente, con una menor varianza a los 2 anteriors.
+        </p>
+
         <h2 id="Anexo-1:-Diccionarios-de-datos">Anexo 1: Diccionarios de datos<a class="anchor-link"
             href="#Anexo-1:-Diccionarios-de-datos">&#182;</a></h2>
         <h3 id="Tabla-playlists">Tabla playlists<a class="anchor-link" href="#Tabla-playlists">&#182;</a></h3>
