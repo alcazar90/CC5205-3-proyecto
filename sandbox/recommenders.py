@@ -26,7 +26,7 @@ plt.style.use("bmh")
 np.random.seed(1991)
 
 def validar_lista(validation_playlists, validation_tracks, input_pid, input_track_uris, recomendador, n=20):
-    input_df=validation_tracks.set_index("uri").loc[np.random.choice(input_track_uris, n)]
+    input_df=validation_tracks.set_index("uri").loc[np.random.choice(input_track_uris, n)].reset_index()
     output_uris= recomendador.recommend_list(input_df, number=len(input_track_uris)-n)
     output_pid= validation_playlists.set_index("track_uri").loc[output_uris]["pid"]
     return sum(output_pid==input_pid)*100.0/(len(input_track_uris)-n)
