@@ -24175,6 +24175,8 @@ all of MD as it is not optimized for dense, information rich UIs.
         <blockquote>
           <h1><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/features_correlation.png" alt=""></h1>
         </blockquote>
+        <br />
+        <br />
         <p>Estas tendencias también pueden visualizarse con el gráfico de PCA coloreado con cada característica.
           Observamos que la gran mayoría de las canciones se ubica en dirección a "Energy", por lo que este tipo de
           canciones correspondería a la moda. En la dirección opuesta existe una "nube" de canciones con características
@@ -24187,31 +24189,53 @@ all of MD as it is not optimized for dense, information rich UIs.
         <blockquote>
           <h1><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/pca_3key_2.png" alt=""></h1>
         </blockquote>
-        <h3 id="Preguntas-y-Problemas">Preguntas y Problemas<a class="anchor-link"
-            href="#Preguntas-y-Problemas">&#182;</a></h3>
+        <br /><br />
+        <h1 id="Preguntas-y-Problemas">Preguntas y Problemas<a class="anchor-link"
+            href="#Preguntas-y-Problemas">&#182;</a></h1>
         <p>Con el dataset descrito, procederemos a responder las siguientes preguntas:</p>
-        <p>-¿Es posible categorizar las playlists o los géneros en base a las características de sus canciones y
-          artistas, con el fin de luego recomendar canciones similares?</p>
-        <p>-¿Existe alguna correlación entre las características de las canciones y la probabilidad de que estas se
-          encuentren en la misma playlist o tengan el mismo género?</p>
-        <p>-¿Se debe recomendar una canción en base a su popularidad (ej, gran presencia en muchas listas), o en base a
-          las características de la mismas que sean similares a las del gusto del usuario?</p>
-        <p>-¿Qué factores influencian en que una canción, artista o género sea más popular que los otros?</p>
-        <p>-¿Es posible realizar una recomendación en base a las características de las canciones que esta escuchando en
-          el momento y no en base a su histórico? (ej, siempre escucha canciones "felices" y en ese momento esta
-          escuchando musica "triste", ¿qué se prioriza?)</p>
+        <ul>
+          <li>
+            ¿Es posible categorizar las playlists o los géneros en base a las características de sus canciones y
+            artistas, con el fin de luego recomendar canciones similares?
+          </li>
+          <li>
+            ¿Existe alguna correlación entre las características de las canciones y la probabilidad de que estas se
+            encuentren en la misma playlist o tengan el mismo género?
+          </li>
+          <li>
+            ¿Se debe recomendar una canción en base a su popularidad (ej, gran presencia en muchas listas), o en base a
+            las características de la mismas que sean similares a las del gusto del usuario?
+          </li>
+          <li>
+            ¿Qué factores influencian en que una canción, artista o género sea más popular que los otros?
+          </li>
+          <li>
+            ¿Es posible realizar una recomendación en base a las características de las canciones que esta escuchando en
+            el momento y no en base a su histórico? (ej, siempre escucha canciones "felices" y en ese momento esta
+            escuchando musica "triste", ¿qué se prioriza?)
+          </li>
+        </ul>
           <br/>
         <p>Dadas las preguntas por responder, podríamos encontrarnos con los siguientes problemas:</p>
-        <p>-Falta de datos: Spotify utiliza más de 4 millones de listas para su algoritmo de recomendación. Debemos
-          determinar con las metodologías pertinentes si la cantidad de datos que tenemos será suficiente para poder
-          obtener un sistema de recomendación con buen rendimiento.</p>
-        <p>-Cambio de preferencias: dado que las tendencias músicales cambian constantemente debido a nuevos hits de
-          diferentes generos o incluso por cambios en los gustos musicales de cada individuo, es problable que un
-          sistema de recomendación de canciones o listas tenga problemas de generalización.</p>
-        <p>-Casos bordes: Existen casos de usuarios con preferencias diversas e impredensibles. En este caso, existen
-          problemas para poder entregar buenas recomendaciones a usuarios con una gran variedad de géneros dentro de su
-          listas o usuarios que escuchen música poco común como Crunkcore, Murga, entre otros.</p>
+        <ul>
+          <li>
+            <strong>Falta de datos</strong>: Spotify utiliza más de 4 millones de listas para su algoritmo de recomendación. Debemos
+            determinar con las metodologías pertinentes si la cantidad de datos que tenemos será suficiente para poder
+            obtener un sistema de recomendación con buen rendimiento.
+          </li>
+          <li>
+            <strong>Cambio de preferencias</strong>: dado que las tendencias músicales cambian constantemente debido a nuevos hits de
+            diferentes generos o incluso por cambios en los gustos musicales de cada individuo, es problable que un
+            sistema de recomendación de canciones o listas tenga problemas de generalización.<
+          </li>
+          <li>
+            <strong>Casos bordes</strong>: Existen casos de usuarios con preferencias diversas e impredensibles. En este caso, existen
+            problemas para poder entregar buenas recomendaciones a usuarios con una gran variedad de géneros dentro de su
+            listas o usuarios que escuchen música poco común como Crunkcore, Murga, entre otros.
+          </li>
+        </ul>
 
+        <br />
         <h1>Modelamiento</h1>
         Se hizo el entrenamiento considerando 2000 listas y todas sus canciones. Solo se consideró canciones (tracks) con duración menor a 15 minutos. La selección de las 2000 playlists
         se realizó aleatoriamente, pero al momento de poner el modelo en producción esta selección sería a partir de un criterio a determinar (Ejemplo: Al azar, las más populares, las más nuevas, etc).
@@ -24276,6 +24300,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 
         <h2>Primer Modelo</h2>
         <a href="https://github.com/alcazar90/CC5205-3-proyecto/commit/203ff055a2a6a6e31da4cf1d7d3122800bf249ca">Código</a>
+        <br /><br />
 	<p>
 	  Una forma directa de recomendar canciones respecto a una <i>playlist</i> es encontrar un conjunto
     de canciones basadas en la Nth-<i>playlist</i> más cercanas.
@@ -24306,24 +24331,39 @@ all of MD as it is not optimized for dense, information rich UIs.
 
         <h2>Segundo Modelo</h2>
         <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/modelo_2_diego.ipynb">Código</a>
+        <br /><br />
         <p>
           En un enfoque más supervisado, se pretende también utilizar las playlists como guía para encontrar patrones de agrupación.
           La idea es que sólo en base a los atributos de una canción encontrar otras canciones que probablemente estarían en la misma lista. 
+        </p>
+        <br />
+        <p>
           Para esto, en un dataset de prueba de 2000 listas se realizó regresión logística binaria con cada lista (label 1 si la canción está en la lista, 0 si no está) utilizando sklearn.
           Esto, debido a que los algoritmos no permiten clasificación donde un dato puede tener más de una etiqueta (una canción puede estar en muchas playlist).
+        </p>
+        <br />
+        <p>
           Luego se concatenaron los vectores W para obtener una sola matriz de clasificación multietiqueta,
           que al multiplicarla por el vector de atributos de los datos y aplicar la función sofrmax se obtiene un vector de dimensión 2000 (número de listas)
           con las probabilidades de pertenecer a cada playlist al que llamaremos P.  Si se predicen las playlist de cada canción, se obtienen sólo 459 de las 2000 playlists.
           Esto no es problema, ya que se utilizará P directamente.
         </p>
+        <br />
+        <p>
+          Se asumió que P refleja las características “de agrupación” de la canción de manera más fidedigna que los atributos crudos de las canciones,
+          aunque P es función de los atributos por lo que canciones muy similares deberían tener un P similar. Para encontrar las recomendaciones de una canción,
+          se calcularon las distancias euclidianas entre P de la canción input y el P de cada canción del dataset. Las X canciones con menor distancia son las recomendaciones,
+          con X según cuantas se quieran recomendar. 
+        </p>
+        <br />
+        <p>
+          A continuación se visualizan las recomendaciones utilizando PCA de los atributos originales. Se observa que al reportar las playlists a las que pertenecen las recomendaciones hay gran diversidad,
+          aunque la playlist de la canción input tiende a repetirse.
+        </p>
+        <br />
         <table style="border:none;">
           <tr>
-            <td style="width: 50%">
-              Se asumió que P refleja las características “de agrupación” de la canción de manera más fidedigna que los atributos crudos de las canciones,
-              aunque P es función de los atributos por lo que canciones muy similares deberían tener un P similar. Para encontrar las recomendaciones de una canción,
-              se calcularon las distancias euclidianas entre P de la canción input y el P de cada canción del dataset. Las X canciones con menor distancia son las recomendaciones,
-              con X según cuantas se quieran recomendar. Se visualizan las recomendaciones utilizando PCA de los atributos originales.
-              Se observa que al reportar las playlists a las que pertenecen las recomendaciones hay gran diversidad, aunque la playlist de la canción input tiende a repetirse.
+            <td style="width: 40%">
               Al reportar las distancias euclidianas en el vector de atributos se observa que no se están recomendando simplemente las canciones más similares a la canción input.
               Se intuye por lo tanto que se están recomendando canciones según atributos más ocultos capturados por el vector P que se espera tengan relación con sus características de agrupación.
               De todas maneras, existe correlación entre recomendaciones y similitud.
@@ -24331,7 +24371,7 @@ all of MD as it is not optimized for dense, information rich UIs.
             <td><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/recomendaciones_modelo_2_single.png" /></td>
           </tr>
           <tr>
-            <td style="width: 50%">
+            <td style="width: 40%">
               En el caso de que el input sea una lista de canciones se realizó un proceso similar.
               Para cada canción input, se ordenaron las canciones del dataset por la distancia en P y se calculó un score para cada una.
               Este score es 1 para la canción más similar y decae exponencialmente para posiciones más altas.
@@ -24345,19 +24385,26 @@ all of MD as it is not optimized for dense, information rich UIs.
         </table>
 
         <h3>Tercer modelo</h3>
-        <a href="https://github.com/alcazar90/CC5205-3-proyecto/commit/d2f1c45e7c278108b743279ec11dce5fb641d78e">Código</a>
+        <a href="https://github.com/alcazar90/CC5205-3-proyecto/commit/d2f1c45e7c278108b743279ec11dce5fb641d78e">Código</a><br /><br />
         <p>
           Otra forma de recomendar canciones respecto a una <i>playlist</i> o directamente desde una <i>canción</i> es basada en la cercanía que ésta tiene respecto a su entorno. En este modelo se utiliza otro enfoque utilizando Redes Neuronales, específicamente un AutoEncoder.<br>
-
         </p>
+        <br />
+        <p>
+          En este caso se entrenó una red neuronal (específicamente un autoencoder) de manera no supervisada, con el objetivo de aprender la representación codificada de las features_tracks (espacio latente)
+          para finalmente generar los datos de entrada (features_tracks) desde la representación codificada.
+        </p>
+        <br />
+        <p>
+          La red se entrenó con todas las canciones del dataset, pasándole como input las features_tracks.
+          Una vez entrenado el modelo, utilizamos el encoder para pasar de 11 features a solo 2 y así visualizar los distintos grupos en el espacio latente.
+        </p>
+        <br />
+        <br />
 
         <table style="border:none;">
           <tr>
             <td style="width: 50%">
-              En este caso se entrenó una red neuronal (específicamente un autoencoder) de manera no supervisada, con el objetivo de aprender la representación codificada de las features_tracks (espacio latente) para finalmente generar los datos de entrada (features_tracks) desde la representación codificada.<br>
-              <br>
-              La red se entrenó con todas las canciones del dataset, pasándole como input las features_tracks. Una vez entrenado el modelo, utilizamos el encoder para pasar de 11 features a solo 2 y así visualizar los distintos grupos en el espacio latente.<br>
-              <br>
               Por lo tanto, a la hora de realizar una recomendación se realizan los siguientes pasos:<br>
               <ol>
                 <li>Se reciben los features de una nueva canción o playlist
@@ -24386,12 +24433,22 @@ all of MD as it is not optimized for dense, information rich UIs.
 
         <h2>Pipeline de Validación</h2>
 
-        Para la evaluación de modelos, se realizó un Pipeline de Validación, consistente en tomar 20 canciones al azar de 50 playlists pre existentes (cada una originalmente tiene entre 210 y 375 canciones),
-        las cuales son entregadas a cada uno de los tres modelos.
-        Cada modelo realiza recomendaciones para los inputs entregados. Luego, se compara cuántas de esas canciones recomendadas estaban efectivamente dentro del resto de canciones en cada lista, que no fueron
-        entregadas como input al modelo. Para la comparación entre modelos entonces, se grafican histogramas con las frecuencias de porcentajes de coincidencia en cada modelo para las canciones recomendadas y
-        las canciones que efectivamente estuvieran dentro de la lista de donde se obtuvieron las canciones input. El código correspondiente al pipeline de validación se encuentra disponible en
+        <p>
+          Para la evaluación de modelos, se realizó un Pipeline de Validación, consistente en tomar 20 canciones al azar de 50 playlists pre existentes (cada una originalmente tiene entre 210 y 375 canciones),
+          las cuales son entregadas a cada uno de los tres modelos.
+          Cada modelo realiza recomendaciones para los inputs entregados. Luego, se compara cuántas de esas canciones recomendadas estaban efectivamente dentro del resto de canciones en cada lista, que no fueron
+          entregadas como input al modelo.
+        </p>
+        <br />
+        <p>
+          Para la comparación entre modelos entonces, se grafican histogramas con las frecuencias de porcentajes de coincidencia en cada modelo para las canciones recomendadas y
+          las canciones que efectivamente estuvieran dentro de la lista de donde se obtuvieron las canciones input.
+        </p>
+        <br />
+        <p>
+          El código correspondiente al pipeline de validación se encuentra disponible en
         <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/pipeline_validacion.ipynb">este enlace</a>.
+        </p>
 
         <h3>Resultados</h3>
 
@@ -24412,7 +24469,11 @@ all of MD as it is not optimized for dense, information rich UIs.
         <p>
           Se observa que, en promedio, para las 50 recomendaciones evaluadas, el modelo <strong>Recommender2</strong> es el que logra el mayor porcentaje de recomendaciones correctas, con un promedio de 
           15.2% de recomendaciones correctas. El modelo Recommender3 logra valores similares, y destaca que en estos dos modelos se presentaron algunos casos atípicos con recomendaciones correctas 
-          sobre el 50% en algunas playlists. Por otro lado, el modelo Recommender1 obtuvo porcentajes más bajos, pero siendo en promedio más consistente, con una menor varianza a los 2 anteriors.
+          sobre el 50% en algunas playlists.
+        </p>
+        <br />
+        <p>
+          Por otro lado, el modelo Recommender1 obtuvo porcentajes más bajos, pero siendo en promedio más consistente, con una menor varianza a los 2 anteriors.
         </p>
 
         <h2>Modelo promedio</h2>
@@ -24421,42 +24482,308 @@ all of MD as it is not optimized for dense, information rich UIs.
           Para generar un sólo recomendador, se propone ponderar los 3 sistemas generados en uno sólo. Para esto, el modelo final genera recomendaciones con cada uno de los 3 tipos de modelos y
           luego mezcla estas recomendaciones eligiendo aleatoreamente según ciertas probabilidades asociadas a cada modelo.
         </p>
+        <br />
         <p>
           Adicionalmente, se crea la función "Feedback" que actualiza las probabilidades asociadas a cada recomendador para ajustarse más a las preferencias del usuario.
           De esta manera, si al usuario le gustan más las recomendaciones de un cierto modelo de recomendación, aumentará la probabilidad de que se elijan recomendaciones de ese modelo.
         </p>
+        <br />
         <p>
           Se utilizó los porcentajes de eficiencia obtenidos en validación para obtener los pesos iniciales asociados a los modelos. De esta manera, el recomendador ponderado inicialmente
           tiene más probabilidades de elegir recomendaciones de los modelos que mayor puntaje tuvieron en validación. Con el paso del tiempo, estos puntajes podrían cambiar si el usuario
           tiene más preferencia por las recomendaciones de un mismo recomendador.
         </p>
 
+        <p>El código correspondiente al Recomendador Promedio se encuentra disponible en el siguiente <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/modelo_promedio.ipynb">enlace</a></p>
+
         <h3>Resultados</h3>
 
         <p>Se utilizó una nueva lista de 10 canciones al azar, obteniéndose las siguientes recomendaciones</p>
 
-        FALTA TABLA
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>track_name</th>
+              <th>artist_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Livin' On A Prayer</td>
+              <td>Bon Jovi</td>
+            </tr>
+            <tr>
+              <td>The Good Life</td>
+              <td>Weezer</td>
+            </tr>
+            <tr>
+              <td>Why God Made Love Songs - Single Version</td>
+              <td>Joel Crouse</td>
+            </tr>
+            <tr>
+              <td>Hard to Be Cool</td>
+              <td>Joe Nichols</td>
+            </tr>
+            <tr>
+              <td>Pour Some Sugar On Me (2012)</td>
+              <td>Def Leppard</td>
+            </tr>
+            <tr>
+              <td>Born Again Tomorrow</td>
+              <td>Bon Jovi</td>
+            </tr>
+            <tr>
+              <td>Sister Jack</td>
+              <td>Spoon</td>
+            </tr>
+            <tr>
+              <td>I Believe In A Thing Called Love</td>
+              <td>The Darkness</td>
+            </tr>
+            <tr>
+              <td>Storm Warning</td>
+              <td>Hunter Hayes</td>
+            </tr>
+            <tr>
+              <td>Broken Record</td>
+              <td>Alex Ebert</td>
+            </tr>
+            <tr>
+              <td>Naked</td>
+              <td>X Ambassadors</td>
+            </tr>
+            <tr>
+              <td>Nothin' But A Good Time - 2006 - Remaster</td>
+              <td>Poison</td>
+            </tr>
+            <tr>
+              <td>She Thinks She Needs Me</td>
+              <td>Andy Griggs</td>
+            </tr>
+            <tr>
+              <td>Don't It</td>
+              <td>Billy Currington</td>
+            </tr>
+            <tr>
+              <td>Pomatter Pie</td>
+              <td>The Waitress Band</td>
+            </tr>
+            <tr>
+              <td>Carry on Wayward Son</td>
+              <td>Kansas</td>
+            </tr>
+            <tr>
+              <td>Love Me Like You Mean It</td>
+              <td>Kelsea Ballerini</td>
+            </tr>
+            <tr>
+              <td>Katie Queen Of Tennessee</td>
+              <td>The Apache Relay</td>
+            </tr>
+            <tr>
+              <td>Tennessee Whiskey</td>
+              <td>Chris Stapleton</td>
+            </tr>
+            <tr>
+              <td>The Nights</td>
+              <td>Avicii</td>
+            </tr>
+          </tbody>
+        </table>
 
         <p>Se realizó además el mismo proceso del pipeline de validación, pero utilizando el modelo promedio, obteniéndose los siguientes porcentajes de canciones recomendadas correctamente</p>
 
-        FALTA GRAFICO
+        <center><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/validacion_modelo_promedio.png"/></center>
 
         <p>Vemos que, en promedio, la eficiencia del recomendador ponderado es un punto intermedio entre las eficiencias de cada recomendador por separado.</p>
 
-        <h1>Conclusiones</h1>
+        <h3>Feedback</h3>
+        <img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/modelo_promedio.png" width="600"/>
+        <p>
+          Por la validación del recomendador ponderado parecería a simple vista que sería preferible elegir el recomendador 2 o 3 en vez del ponderado.
+          Sin embargo, una ventaja de tener el ponderado es que el mismo usuario puede elegir el algoritmo que más desee y así tener un recomendador personalizado a sus preferencias;
+          Alta eficiencia de predicción de canciones de la misma playlist no implica necesariamente que el modelo da mejores recomendaciones,
+          ya que algunos usuarios pueden preferir canciones según otros atributos.
+        </p>
+        <br />
+        <strong>Algoritmo de Feedback</strong>
+        <br />
+        <br />
+        <p>
+          Para implementar el algoritmo de actualización de pesos ponderados, se buscó una fórmula 𝜙 de la forma: 
+        </p>
+        <center><p>
+          𝜙(𝑃,𝑖)=𝑃∗
+        </p></center>
+        <br />
+        <p>
+          Donde 𝑃 es el vector de probabilidades asociadas a los recomendadores, de la forma {𝑃1,...,𝑃𝑛} con 𝑛= cantidad de recomendadores, 𝑃∗ el vector de probabilidades luego de dar un feedback,
+          e 𝑖∈{1,...,𝑛} el recomendador al cual se le dió feedback positivo.
+        </p>
+        <br />
+        <p>
+          Se buscó que 𝜙 cumpliera que si 𝑖 es una variable aleatorea categórica con distribución 𝑃, entonces 𝔼(𝜙(𝑃,𝑖))=𝑃.
+          Es decir, que si se eligen canciones aleatoreamente sin ningún sesgo, entonces en promedio 𝑃 no cambie, o oscile aleatoreamente.
+          En otras palabras, el feedback sólo tiene efecto real si se elige un recomendador con una predilección real. El 𝜙 que cumple esto es 𝜙(𝑃,𝑖)=(1−𝜂)⋅𝑃+𝜂⋅𝑄 donde el vector 𝑄 cumple 𝑄𝑗=[1𝑗=𝑖] y 𝜂∈[0,1].
+        </p>
+        <br />
+        <p>A continuación mostraremos como funciona el algoritmo de feedback del recomendador promedio. Supongamos que al usuario le gustaron las siguientes canciones:</p>
+        <ul>
+          <li>The Good Life - Weezer</li>
+          <li>Sister Jack - Spoon</li>
+          <li>Don't It - Billy Currington</li>
+        </ul>
+        <p>
+          Las 3 canciones pertenecen al recomendador 2. Realizamos el feedback y observamos como cambian las probabilidades de elegir canciones y y también las recomendaciones en sí.
+          Primero vemos los pesos de cada recomendador antes del feedback.
+        </p>
+        <ul>
+          <li>
+            Recomendador 0 probabilidad: 0.067
+          </li>
+          <li>
+            Recomendador 1 probabilidad: 0.496
+          </li>
+          <li>
+            Recomendador 2 probabilidad: 0.435
+          </li>
+        </ul>
+        <p>
+          El feedback puede ser simplemente escuchar la recomendación, escucharla completa, ponerle "me gusta", etc.
+          Cada una de estas acciones tiene una relevancia distinta en determinar si al usuario le gustó la canción. Vemos como quedaron las probabilidades de cada lista,
+          luego de asignar una relevancia de 0.5 al feedback entregado para cada recomendación.
+        </p>
+
+        <ul>
+          <li>
+            Recomendador 0 probabilidad: 0.057
+          </li>
+          <li>
+            Recomendador 1 probabilidad: 0.568
+          </li>
+          <li>
+            Recomendador 2 probabilidad: 0.373
+          </li>
+        </ul>
 
         <p>
-          Respecto de los resultados obtenidos, si bien los porcentajes obtenidos parecieran en principio no ser alentadores, se debe tener en cuenta que parte de la idea de una recomendación,
-          es sugerir al usuario canciones que probablemente no conoce, pero pueden ser de su gusto. Por lo tanto, el validar las recomendaciones con canciones que ya se encontraban dentro de una 
-          selección de un usuario específico, podría no ser lo más adecuado. Una posible evaluación de mejor confianza, sería consultar directamente al usuario si la recomendación entregada ha
-          sido de su agrado.
-	<p>Por otro lado, tal como fue planteado en el hito 1, nuestros resultados pueden verse afectados por la falta de data que tenemos a disposición. Al igual que Spotify si hubiesemos contado 
-	 4 millones de listas para nuestro algoritmo, nuestros resultados podriamos haber terminado con resultados más precisos.</p>
-	<p>Durante el desarrollo de nuestro trabajo, en vez de generar un sólo modelo de recomendación se decidió realizar 3 modelos para poder robustecer nuestros resultados.
-	Con lo anterior pudimos resolver problemas que podían presentarse al sólo utilizar un modelo, como al tomar 20 canciones al azar y que dichas 20 canciones sean se comporten diferente para cada modelo.</p>
-	<p> </p>
-
+          Se observa un aumento en la probabilidad del recomendador 2. Exploramos si hubo cambios en las recomendaciones.
         </p>
+
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>track_name</th>
+              <th>artist_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Livin' On A Prayer</td>
+              <td>Bon Jovi</td>
+            </tr>
+            <tr>
+              <td>The Good Life</td>
+              <td>Weezer</td>
+            </tr>
+            <tr>
+              <td>Why God Made Love Songs - Single Version</td>
+              <td>Joel Crouse</td>
+            </tr>
+            <tr>
+              <td>Hard to Be Cool</td>
+              <td>Joe Nichols</td>
+            </tr>
+            <tr>
+              <td>Pour Some Sugar On Me (2012)</td>
+              <td>Def Leppard</td>
+            </tr>
+            <tr>
+              <td>Born Again Tomorrow</td>
+              <td>Bon Jovi</td>
+            </tr>
+            <tr>
+              <td>Sister Jack</td>
+              <td>Spoon</td>
+            </tr>
+            <tr>
+              <td>I Believe In A Thing Called Love</td>
+              <td>The Darkness</td>
+            </tr>
+            <tr>
+              <td>Storm Warning</td>
+              <td>Hunter Hayes</td>
+            </tr>
+            <tr>
+              <td>Broken Record</td>
+              <td>Alex Ebert</td>
+            </tr>
+            <tr>
+              <td>Naked</td>
+              <td>X Ambassadors</td>
+            </tr>
+            <tr>
+              <td>Nothin' But A Good Time - 2006 - Remaster</td>
+              <td>Poison</td>
+            </tr>
+            <tr>
+              <td>She Thinks She Needs Me</td>
+              <td>Andy Griggs</td>
+            </tr>
+            <tr>
+              <td>Don't It</td>
+              <td>Billy Currington</td>
+            </tr>
+            <tr>
+              <td>Pomatter Pie</td>
+              <td>The Waitress Band</td>
+            </tr>
+            <tr>
+              <td>Carry on Wayward Son</td>
+              <td>Kansas</td>
+            </tr>
+            <tr>
+              <td>Love Me Like You Mean It</td>
+              <td>Kelsea Ballerini</td>
+            </tr>
+            <tr>
+              <td>Katie Queen Of Tennessee</td>
+              <td>The Apache Relay</td>
+            </tr>
+            <tr>
+              <td>Tennessee Whiskey</td>
+              <td>Chris Stapleton</td>
+            </tr>
+            <tr>
+              <td>The Nights</td>
+              <td>Avicii</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Se observa que ahora "The Nights" se ubica una posición más arriba, remplazando a "Tennessee Whiskey".</p>
+
+        <h1>Conclusiones</h1>
+        <ul>
+          <li>
+            Durante el desarrollo de nuestro trabajo, en vez de generar un sólo modelo de recomendación se decidió realizar 3 modelos para poder robustecer nuestros resultados.
+            Con lo anterior pudimos resolver problemas que podían presentarse al sólo utilizar un modelo, como al tomar 20 canciones al azar y que dichas 20 canciones sean se comporten diferente para cada modelo.
+          </li>
+          <br />
+          <li>
+            Respecto de los resultados obtenidos, si bien los porcentajes obtenidos parecieran en principio no ser alentadores, se debe tener en cuenta que parte de la idea de una recomendación,
+            es sugerir al usuario canciones que probablemente no conoce, pero pueden ser de su gusto. Por lo tanto, el validar las recomendaciones con canciones que ya se encontraban dentro de una 
+            selección de un usuario específico, podría no ser lo más adecuado. Una posible evaluación de mejor confianza, sería consultar directamente al usuario si la recomendación entregada ha
+            sido de su agrado.
+          </li>
+          <br />
+          <li>
+            Por otro lado, tal como fue planteado en el hito 1, nuestros resultados pueden verse afectados por la falta de data que tenemos a disposición. Al igual que Spotify si hubiesemos contado 
+            4 millones de listas para nuestro algoritmo, nuestros resultados podriamos haber terminado con resultados más precisos.
+          </li>
+        </ul>
 
         <h1>Anexos</h1>
 
