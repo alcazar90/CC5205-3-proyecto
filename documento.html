@@ -24615,7 +24615,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         <p>
 	  Cuando el usuario realiza feedback positivo sobre alguna recomendación (reproducirla, agregarla a favoritos, etc), se pondera el vector de probabilidades 
 	  de cada algoritmo con otro vector de probabilidades que tiene valor 1 para la probabilidad asociada al algoritmo del cual se origina la canción a la que 
-	  se le dió feedback positivo. 
+	  se le dió feedback positivo, y 0 para el resto. 
 	  Esta ponderación se realiza según una cierta taza de cambio (relevancia) que es mayor mientras más más es el feedback positivo.
 	  Por ejemplo, agregar a favoritos puede tener una ponderación del 5%, mientras que sólo reproducir incompletamente una recomendación puede tener una
 	  ponderación de un 0.1%.
