@@ -24496,6 +24496,8 @@ all of MD as it is not optimized for dense, information rich UIs.
 
         <p>El código correspondiente al Recomendador Promedio se encuentra disponible en el siguiente <a href="https://github.com/alcazar90/CC5205-3-proyecto/blob/main/sandbox/modelo_promedio.ipynb">enlace</a></p>
 
+	<img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/modelo_promedio.png" width="600"/>
+	
         <h3>Resultados</h3>
 
         <p>Se utilizó una nueva lista de 10 canciones al azar, obteniéndose las siguientes recomendaciones</p>
@@ -24599,7 +24601,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         <p>Vemos que, en promedio, la eficiencia del recomendador ponderado es un punto intermedio entre las eficiencias de cada recomendador por separado.</p>
 
         <h3>Feedback</h3>
-        <img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/modelo_promedio.png" width="600"/>
+        
         <p>
           Por la validación del recomendador ponderado parecería a simple vista que sería preferible elegir el recomendador 2 o 3 en vez del ponderado.
           Sin embargo, una ventaja de tener el ponderado es que el mismo usuario puede elegir el algoritmo que más desee y así tener un recomendador personalizado a sus preferencias;
@@ -24611,24 +24613,22 @@ all of MD as it is not optimized for dense, information rich UIs.
         <br />
         <br />
         <p>
-          Para implementar el algoritmo de actualización de pesos ponderados, se buscó una fórmula 𝜙 de la forma: 
+	  Cuando el usuario realiza feedback positivo sobre alguna recomendación (reproducirla, agregarla a favoritos, etc), se pondera el vector de probabilidades 
+	  de cada algoritmo con otro vector de probabilidades que tiene valor 1 para la probabilidad asociada al algoritmo del cual se origina la canción a la que 
+	  se le dió feedback positivo. 
+	  Esta ponderación se realiza según una cierta taza de cambio (relevancia) que es mayor mientras más más es el feedback positivo.
+	  Por ejemplo, agregar a favoritos puede tener una ponderación del 5%, mientras que sólo reproducir incompletamente una recomendación puede tener una
+	  ponderación de un 0.1%.
+	</p>
+	<br />
+	<p>
+	  La ventaja de este método de feedback es que si se eligen recomendaciones al azar según la misma frecuencia en que se eligen (es decir, según las probabilidades
+	  asociadas a los distintos algoritmos de recomendación), entonces en promedio las probabilidades no cambian (su esperanza es sí misma), independientemente del 
+	  órden de magnitud de la probabilidad del algoritmo recomendador. De esta manera, la probabilidad del algoritmo recomendador sólo se modificará si existe una
+	  preferencia real.
         </p>
-        <center><p>
-          𝜙(𝑃,𝑖)=𝑃∗
-        </p></center>
-        <br />
-        <p>
-          Donde 𝑃 es el vector de probabilidades asociadas a los recomendadores, de la forma {𝑃1,...,𝑃𝑛} con 𝑛= cantidad de recomendadores, 𝑃∗ el vector de probabilidades luego de dar un feedback,
-          e 𝑖∈{1,...,𝑛} el recomendador al cual se le dió feedback positivo.
-        </p>
-        <br />
-        <p>
-          Se buscó que 𝜙 cumpliera que si 𝑖 es una variable aleatorea categórica con distribución 𝑃, entonces 𝔼(𝜙(𝑃,𝑖))=𝑃.
-          Es decir, que si se eligen canciones aleatoreamente sin ningún sesgo, entonces en promedio 𝑃 no cambie, o oscile aleatoreamente.
-          En otras palabras, el feedback sólo tiene efecto real si se elige un recomendador con una predilección real. El 𝜙 que cumple esto es 𝜙(𝑃,𝑖)=(1−𝜂)⋅𝑃+𝜂⋅𝑄 donde el vector 𝑄 cumple 𝑄𝑗=[1𝑗=𝑖] y 𝜂∈[0,1].
-        </p>
-        <br />
-        <p>A continuación mostraremos como funciona el algoritmo de feedback del recomendador promedio. Supongamos que al usuario le gustaron las siguientes canciones:</p>
+	<br />
+	<p> A continuación mostraremos como funciona el algoritmo de feedback del recomendador promedio. Supongamos que al usuario le gustaron las siguientes canciones:</p>
         <ul>
           <li>The Good Life - Weezer</li>
           <li>Sister Jack - Spoon</li>
@@ -24652,7 +24652,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         <p>
           El feedback puede ser simplemente escuchar la recomendación, escucharla completa, ponerle "me gusta", etc.
           Cada una de estas acciones tiene una relevancia distinta en determinar si al usuario le gustó la canción. Vemos como quedaron las probabilidades de cada lista,
-          luego de asignar una relevancia de 0.5 al feedback entregado para cada recomendación.
+          luego de asignar una relevancia (tasa de cambio o ponderación) del 5% al feedback entregado para cada recomendación.
         </p>
 
         <ul>
