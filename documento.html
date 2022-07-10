@@ -24785,12 +24785,40 @@ all of MD as it is not optimized for dense, information rich UIs.
             Por otro lado, tal como fue planteado en el hito 1, nuestros resultados pueden verse afectados por la falta de data que tenemos a disposición. Al igual que Spotify si hubiesemos contado 
             4 millones de listas para nuestro algoritmo, nuestros resultados podriamos haber terminado con resultados más precisos.
           </li>
-	  <br />
-	  <li>
-	    Finalmente, podemos concluir que a través de diferentes metodologías si es posible categorizar las playlist en base a las características de sus canciones y recomendar canciones similares.
-	  </li>
-          <br />  
-		  
+          <br />
+          <li>
+            Finalmente, podemos concluir que a través de diferentes metodologías si es posible categorizar las playlist en base a las características de sus canciones y recomendar canciones similares.
+          </li>
+          <br />  		  
+        </ul>
+
+        <h1>Trabajo Futuro y Proyecciones</h1>
+        <ul>
+          <li>
+            Estudiar la posibilidad de capturar la idiosincracia de una lista, su contexto y sentimiento, a través del aprendizaje de <i>embeddings</i> sobre la letra de las canciones.
+            Esto podría ser un elemento relevante para que el sistema de recomendación pueda extraer canciones candidatas a recomendar utilizando más que solo las métricas de distancia 
+            sobre los features de las canciones.
+          </li>
+          <br />
+          <li>
+            Habilitar el ajuste de preferencias sobre las recomendaciones a través de interfaz de diseño que permitan a los usuarios dar <i>feedback</i> al sistema de recomendación a través de una calificación.
+            Esto se puede realizar a través de influir en los pesos de la recomendación (e.g. disminuir o aumentar ponderado según <i>feedback</i>), o incluir las preferencias del usuario re-entrenando el sistema.
+            Ambas alternativas tienen ventajas y desventajas.
+          </li>
+          <br />
+          <li>
+            Profundizar la evaluación del sistema de recomendación. Un sistema de recomendación en un contexto de producción esta lejos de utilizar una sola métrica.
+            De hecho, en el diseño de estos sistemas, se ven involucrados distintos equipos que naturalmente tienen objetivos diferentes.
+            Por lo tanto, estudiar cómo interactuan métricas que persiguen distintos objetivos como el aumento de ingresos (u otros KPI), criterios de cobertura de productos, o de diversidad o justicia 
+            (e.g. genero, invisibilidad de temáticas, etc), y el <i>trade-off</i> que puede haber entre estos objetivos.
+          </li>
+          <br />
+          <li>
+            Tratamiento al problema de "cold start", cuando tenemos un nuevo usuario, artista, o canción. Una opción es identificar por componente geográfico con el objetivo de acotar la lista de canciones 
+            más populares a nivel local. Otra estrategia a explorar es utilizar información de las sesiones de usuarios dentro de los primeros periodos de uso en a aplicación, aprender en base a esta 
+            <i>embeddings</i>, y utilizar esto para recomendar a nuevos usuarios. Una tercera opción, es utilizar información de terceros que se puede obtener en base a distintas opciones de registro 
+            (e.g. gmail, Facebook, etcétera). Esta última tiene importantes cuestionamientos en cuanto a privacidad de la información.
+          </li>
         </ul>
 
         <h1>Anexos</h1>
