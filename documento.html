@@ -23929,11 +23929,14 @@ all of MD as it is not optimized for dense, information rich UIs.
       <h2>Tabla de contenidos</h2>
       <ul>
         <li>Motivación</li>
+        <li>Preguntas &amp; Problemas</li>
         <li>Dataset</li>
         <li>Análisis Exploratorio</li>
-        <li>Preguntas &amp; Problemas</li>
+        <li>Modelamiento y resultados</li>
+        <li>Conclusiones</li>
+        <li>Trabajo Futuro</li>
         <li>
-          Anexo 1: Diccionarios de Datos
+          Anexos
         </li>
       </ul>
       <h2 id="Motivaci&#243;n">Motivaci&#243;n<a class="anchor-link" href="#Motivaci&#243;n">&#182;</a></h2>
@@ -23962,7 +23965,55 @@ all of MD as it is not optimized for dense, information rich UIs.
       <p>Diseñar un sistema de recomendación es una forma de experimentar un caso práctico en la industria y entender
         como los usuarios de Spotify pueden tener una experiencia más armonica y completa al recibir canciones de su
         interes.</p>
-      <h2 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">&#182;</a></h2>
+
+        <h1 id="Preguntas-y-Problemas">Preguntas y Problemas<a class="anchor-link"
+          href="#Preguntas-y-Problemas">&#182;</a></h1>
+      <p>Con el dataset descrito, procederemos a responder las siguientes preguntas:</p>
+      <ul>
+        <li>
+          ¿Es posible categorizar las playlists o los géneros en base a las características de sus canciones y
+          artistas, con el fin de luego recomendar canciones similares?
+        </li>
+        <li>
+          ¿Existe alguna correlación entre las características de las canciones y la probabilidad de que estas se
+          encuentren en la misma playlist o tengan el mismo género?
+        </li>
+        <li>
+          ¿Se debe recomendar una canción en base a su popularidad (ej, gran presencia en muchas listas), o en base a
+          las características de la mismas que sean similares a las del gusto del usuario?
+        </li>
+        <li>
+          ¿Qué factores influencian en que una canción, artista o género sea más popular que los otros?
+        </li>
+        <li>
+          ¿Es posible realizar una recomendación en base a las características de las canciones que esta escuchando en
+          el momento y no en base a su histórico? (ej, siempre escucha canciones "felices" y en ese momento esta
+          escuchando musica "triste", ¿qué se prioriza?)
+        </li>
+      </ul>
+        <br/>
+      <p>Dadas las preguntas por responder, podríamos encontrarnos con los siguientes problemas:</p>
+      <ul>
+        <li>
+          <strong>Falta de datos</strong>: Spotify utiliza más de 4 millones de listas para su algoritmo de recomendación. Debemos
+          determinar con las metodologías pertinentes si la cantidad de datos que tenemos será suficiente para poder
+          obtener un sistema de recomendación con buen rendimiento.
+        </li>
+        <li>
+          <strong>Cambio de preferencias</strong>: dado que las tendencias músicales cambian constantemente debido a nuevos hits de
+          diferentes generos o incluso por cambios en los gustos musicales de cada individuo, es problable que un
+          sistema de recomendación de canciones o listas tenga problemas de generalización.<
+        </li>
+        <li>
+          <strong>Casos bordes</strong>: Existen casos de usuarios con preferencias diversas e impredensibles. En este caso, existen
+          problemas para poder entregar buenas recomendaciones a usuarios con una gran variedad de géneros dentro de su
+          listas o usuarios que escuchen música poco común como Crunkcore, Murga, entre otros.
+        </li>
+      </ul>
+
+      <br />
+      <br />
+      <h1 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">&#182;</a></h1>
       <p>El <em>dataset</em> utilizado en este proyecto es de carácter público y proviene de dos fuentes:</p>
       <ol>
         <li>El <em>dataset</em> del millón de <em>playlists</em> de Spotify cuya curatoría de datos
@@ -24190,51 +24241,7 @@ all of MD as it is not optimized for dense, information rich UIs.
           <h1><img src="https://raw.githubusercontent.com/alcazar90/CC5205-3-proyecto/main/fig/pca_3key_2.png" alt=""></h1>
         </blockquote>
         <br /><br />
-        <h1 id="Preguntas-y-Problemas">Preguntas y Problemas<a class="anchor-link"
-            href="#Preguntas-y-Problemas">&#182;</a></h1>
-        <p>Con el dataset descrito, procederemos a responder las siguientes preguntas:</p>
-        <ul>
-          <li>
-            ¿Es posible categorizar las playlists o los géneros en base a las características de sus canciones y
-            artistas, con el fin de luego recomendar canciones similares?
-          </li>
-          <li>
-            ¿Existe alguna correlación entre las características de las canciones y la probabilidad de que estas se
-            encuentren en la misma playlist o tengan el mismo género?
-          </li>
-          <li>
-            ¿Se debe recomendar una canción en base a su popularidad (ej, gran presencia en muchas listas), o en base a
-            las características de la mismas que sean similares a las del gusto del usuario?
-          </li>
-          <li>
-            ¿Qué factores influencian en que una canción, artista o género sea más popular que los otros?
-          </li>
-          <li>
-            ¿Es posible realizar una recomendación en base a las características de las canciones que esta escuchando en
-            el momento y no en base a su histórico? (ej, siempre escucha canciones "felices" y en ese momento esta
-            escuchando musica "triste", ¿qué se prioriza?)
-          </li>
-        </ul>
-          <br/>
-        <p>Dadas las preguntas por responder, podríamos encontrarnos con los siguientes problemas:</p>
-        <ul>
-          <li>
-            <strong>Falta de datos</strong>: Spotify utiliza más de 4 millones de listas para su algoritmo de recomendación. Debemos
-            determinar con las metodologías pertinentes si la cantidad de datos que tenemos será suficiente para poder
-            obtener un sistema de recomendación con buen rendimiento.
-          </li>
-          <li>
-            <strong>Cambio de preferencias</strong>: dado que las tendencias músicales cambian constantemente debido a nuevos hits de
-            diferentes generos o incluso por cambios en los gustos musicales de cada individuo, es problable que un
-            sistema de recomendación de canciones o listas tenga problemas de generalización.<
-          </li>
-          <li>
-            <strong>Casos bordes</strong>: Existen casos de usuarios con preferencias diversas e impredensibles. En este caso, existen
-            problemas para poder entregar buenas recomendaciones a usuarios con una gran variedad de géneros dentro de su
-            listas o usuarios que escuchen música poco común como Crunkcore, Murga, entre otros.
-          </li>
-        </ul>
-
+        
         <br />
         <h1>Modelamiento</h1>
         Se hizo el entrenamiento considerando 2000 listas y todas sus canciones. Solo se consideró canciones (tracks) con duración menor a 15 minutos. La selección de las 2000 playlists
